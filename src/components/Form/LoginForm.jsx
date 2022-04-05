@@ -7,7 +7,7 @@ das paginas seria melhor...
 */
 
 import React, { useState, useEffect } from 'react'
-import banner from "../../Assets/bgImage.jpg";
+import banner from "../../Assets/bgImage.png";
 // import data from "../../Database/data.json"
 
 export default function LoginForm() {
@@ -28,13 +28,15 @@ export default function LoginForm() {
 
   //Esta funcao serve para verificar o usario se existe no database
 
+  //Correct all data users
+  const [email,setEmail] = useState(""); //dados do email
+  const [senha,setSenha] = useState(""); //dados da senha
+
   const Login = (self) => {
 
     self.preventDefault(); //Prevent Deafult Form submit
 
-    //Correct all data users
-    const [email,setEmail] = useState(""); //dados do email
-    const [senha,setSenha] = useState(""); //dados da senha
+    
 
     //Agrupar os dados e transformar em json
 
@@ -47,7 +49,7 @@ export default function LoginForm() {
   return (
         <div className='wrapper grid grid-cols-2 bg-white border rounded-3xl mx-64 md:mx-10 md:grid-cols-1'>
             
-            <div className='bannerSide py-24 flex flex-col md:hidden'>
+            <div className='bannerSide py-24 flex flex-col md:hidden rounded-3xl bg-slate-100'>
                 <img src={banner} alt="sideImage" 
                 className='object-fit'
                 />
@@ -70,6 +72,7 @@ export default function LoginForm() {
                     
                     <input type="text" 
                     required
+                    onChange={(e) => setEmail(e.target.value)}
                     className='border border-none  outline outline-none flex-auto font-medium text-sm p-1'
                     />
                   
@@ -85,6 +88,7 @@ export default function LoginForm() {
 
                       <input type="password" 
                       required
+                      onChange={(e) => setSenha(e.target.value)}
                       className='border border-none  outline outline-none flex-auto'
                       />
 
