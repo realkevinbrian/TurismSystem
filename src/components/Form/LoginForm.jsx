@@ -45,9 +45,9 @@ export default function LoginForm() {
 
 
   return (
-        <div className='wrapper grid grid-cols-2 bg-white border rounded-3xl mx-64 '>
+        <div className='wrapper grid grid-cols-2 bg-white border rounded-3xl mx-64 md:mx-10 md:grid-cols-1'>
             
-            <div className='bannerSide py-24 flex flex-col sm:hidden'>
+            <div className='bannerSide py-24 flex flex-col md:hidden'>
                 <img src={banner} alt="sideImage" 
                 className='object-fit'
                 />
@@ -56,6 +56,7 @@ export default function LoginForm() {
             <div className='formSide flex flex-col p-6'>
 
                 <form className='flex-auto flex flex-col justify-center mx-4 gap-1' onSubmit={Login}>
+                  
                   <div className='text-bold pb-2 pl-2'>
                     <h1 className='font-semibold'>Login</h1>
                   </div>
