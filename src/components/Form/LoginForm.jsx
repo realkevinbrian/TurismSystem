@@ -28,14 +28,14 @@ export default function LoginForm() {
     return users;
   }, [baseUrl])
 
-  //Esta funcao serve para verificar o usario se existe no database
 
   //Correct all data users
   const [email,setEmail] = useState(""); //dados do email
   const [senha,setSenha] = useState(""); //dados da senha
 
-  const Login = (self) => {
 
+  //Esta funcao serve para verificar o usario se existe no database
+  const Login = (self) => {
     self.preventDefault(); //Prevent Deafult Form submit
   
   }
