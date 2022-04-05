@@ -12,19 +12,21 @@ import banner from "../../Assets/bgImage.png";
 
 export default function LoginForm() {
 
+  //base URL
+  const baseUrl = 'https://jsonplaceholder.typicode.com/users';
   //esta funcao que faz o fetch do database dos usuarios
-
+  const [users, setUsers] = useState("");
 
   useEffect(() => {
     
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch(baseUrl)
     .then(response => response.json())
-    .then(json => console.log(json))
-  
-    // return dados;
-  }, [])
-
-  
+    .then(json => setUsers(json))
+    .catch((Error)=>{
+      console.log(Error);
+    })
+    return users;
+  }, [baseUrl])
 
   //Esta funcao serve para verificar o usario se existe no database
 
@@ -35,12 +37,8 @@ export default function LoginForm() {
   const Login = (self) => {
 
     self.preventDefault(); //Prevent Deafult Form submit
-    //Agrupar os dados e transformar em json
-
-
   
   }
-
 
 
   return (
