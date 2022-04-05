@@ -35,9 +35,6 @@ export default function LoginForm() {
   const Login = (self) => {
 
     self.preventDefault(); //Prevent Deafult Form submit
-
-    
-
     //Agrupar os dados e transformar em json
 
 
