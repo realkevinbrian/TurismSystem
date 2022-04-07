@@ -37,6 +37,8 @@ export default function LoginForm() {
   //Esta funcao serve para verificar o usario se existe no database
   const Login = (self) => {
     self.preventDefault(); //Prevent Deafult Form submit
+    const data = {email,senha};
+    console.log(data);
   
   }
 
