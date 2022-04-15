@@ -5,8 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-
-
+// Aqui importamos todas bibliotecas neccessarias para crar a tabela
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,6 +15,10 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import SearchBar from '../SearchBar/SearchBar';
+
+/*Este sao dados para monstrar na tabela (COLUMNS)! 
+Como estamos na fase de teste, usei estes dados como amostra
+*/
 
 const columns = [
   { id: 'name', label: 'Nome', minWidth: 170 },
@@ -50,10 +53,20 @@ const columns = [
   },
 ];
 
+
+/*
+  Esta funcao serve cara criar dados em forma organizada
+  Para facilitar mostrar na tabela
+*/
 function createData(name, tipo, data, transaction , status,total) {
   // const sum = total ;
   return { name, tipo, data, transaction, status, total};
 }
+
+/*Este sao dados para monstrar na tabela (ROWS)! 
+Como estamos na fase de teste, usei estes dados como amostra
+ @importante => Seguindo  a funcao criada acima
+*/
 
 const rows = [
   createData('Marcos da Silva', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
@@ -75,32 +88,40 @@ const rows = [
 ];
 
 export default function TableComponent() {
+
+  //Este state serve para trocar de pagina ao clickar o botao de next
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
+  //Esta funcao serve para trocar de pagina ao clickar o botao de next
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
 
+   //Esta funcao serve para verificar quantos (ROWS) em dados temos
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
 
 
-  //method for searching
-  //set search
+  //Este state serve para pegar o estado da Busca
   const [query,setQuery] = useState("");
   // console.log(query);
 
   return (
+
     <Paper sx={{ width: '100%', overflow: 'hidden', borderRadius : '20px'}} className = "p-4">
+      
       <TableContainer sx={{ maxHeight: 440 }}>
+        
         <Table stickyHeader aria-label="sticky table">
+         
+         {/* Aqui e o nosso cabecalho */}
           <TableHead>
 
+          {/* O nosso Titulo => Financeiro*/}
           <TableRow>
-
               <TableCell 
               colSpan={2}
               style={{
@@ -112,14 +133,12 @@ export default function TableComponent() {
               >
                 Financeiro
               </TableCell>
-
             </TableRow>
 
           <TableRow>
 
-              <TableCell align="center" colSpan={2}>
-              
-              {/* este componente serve para fazer buscas*/}
+              {/* este => O componente de Buscas serve para fazer buscas*/}
+              <TableCell align="center" colSpan={2}>   
               <div>
                 <form className='border border-none'>
                     <div className="border border-black rounded-full flex justify-around p-0">
@@ -139,6 +158,7 @@ export default function TableComponent() {
 
               </TableCell>
 
+              {/* Esta funcao serve para contar rows e mostrar quantos (ROW temos na tabela) */}
               <TableCell align="center" colSpan={3}>
                 <TablePagination
                     rowsPerPageOptions={[5,10, 25, 100]}
@@ -168,6 +188,7 @@ export default function TableComponent() {
 
               </TableCell>
 
+              {/* Aqui contem o componente que mostra o total */}
               <TableCell
                 sx = {{
                   display : "flex",
@@ -182,6 +203,7 @@ export default function TableComponent() {
               
             </TableRow>
 
+            {/* Este (ROW) serve para monstrar o titulo correspondentes */}
             <TableRow>
               {columns.map((column) => (
 
@@ -192,14 +214,18 @@ export default function TableComponent() {
                 >
                   {column.label}
                   <FontAwesomeIcon icon={faArrowDownZA} className="px-1 text-xs"/>
+                
                 </TableCell>
 
               ))}
             </TableRow>
+
           </TableHead>
+
+          {/* Aqui Esta o corpo da Tabela */}
           <TableBody>
             
-            {/*  Esta funcao serve para fazer filter ou fazer buscas */}
+            {/*  Esta funcao serve para fazer filter/fazer buscas */}
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) 
               .filter(row => row.name.toLowerCase().includes(query))
@@ -230,8 +256,12 @@ export default function TableComponent() {
 
 
           </TableBody>
+
         </Table>
+
       </TableContainer>
+
+      {/* Aqui contem Pagination da tabela/ ver outros dados ( SEE OTHER ROWS) */}
       <TablePagination
         rowsPerPageOptions={[5,10, 25, 100]}
         component="div"
@@ -268,8 +298,9 @@ export default function TableComponent() {
           }
 
         }
-        
       />
+
     </Paper>
+    
   );
 }
