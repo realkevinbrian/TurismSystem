@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import TableComponent from '../Table/TableComponent';
 
 function Finance() {
   return (
-    <div>
-        Finance
+    <div className='bg-white '>
+        <TableComponent/>
     </div>
   )
 }
