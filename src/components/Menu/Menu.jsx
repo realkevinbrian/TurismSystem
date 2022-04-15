@@ -19,7 +19,7 @@ export default function Menu({visibility}) {
         <ul className='p-4 px-9 flex flex-col gap-4' >
              <li><a href='/admin'>Admin</a></li>
              <li><a href='/admin/finance'>Financeiro</a></li>
-             <li><a href='/admin/finance'>Financeiro</a></li>
+             <li><a href='/admin' aria-disabled>Comming Soon</a></li>
         </ul>
 
     </div>
