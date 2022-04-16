@@ -1,10 +1,10 @@
 import React from 'react'
-import TableComponent from "../Table/TableComponent";
+import CatTable from './CatTable'
 
 function Category() {
   return (
     <div>
-      <TableComponent/>
+      <CatTable/>
     </div>
   )
 }
