@@ -4,11 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Menu from '../Menu/Menu';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
 
   //Esta funcao serve para abrir e fechar o menu
   const [status, setStatus] = useState(false)
+
+  //navigate hooks
+  const navigate = useNavigate();
+
+  //Logout Function
+  const Logout = () => {
+    localStorage.clear();
+    navigate("/");
+  }
 
   
   return (
@@ -22,7 +32,7 @@ function Navbar() {
             <h2 className='uppercase'>
                 Ola, {"Kevin Brian"}
             </h2>
-            <button className='test-slate-400 hover:bg-white px-4 hover:text-black rounded-full'>Sair</button>
+            <button className='test-slate-400 hover:bg-white px-4 hover:text-black rounded-full' onClick={()=> Logout()}>Sair</button>
         </div>
         <Menu visibility = {status}/>
     </div>
