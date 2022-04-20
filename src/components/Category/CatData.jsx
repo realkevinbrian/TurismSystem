@@ -20,27 +20,17 @@ function CatData({data : rows, other}) {
   return (
     <>
         {
-            // rows.filter(row => row.name.toLowerCase().includes(query))
-            rows.map((row)=>{
+            rows.filter(row => row.nome.toLowerCase().includes(query))
+            .map((row)=>{
                 
-            console.log(row);
+            // console.log(columns);
 
             return(
                 <TableRow key={row.id}>
-                    {
-                        
-                        columns.map((column)=>{
-                            return(
-                                (column.id === 1) ? 
-                                <TableCell key={row.id}>{row.nome}</TableCell> : 
-                                (column.id === 2) ? 
-                                <TableCell>{row.tipo}</TableCell> : 
-                                (column.id === 3 ) ? 
-                                <TableCell align={column.align} ><Link to={`/admin/${row.id}`} className="text-cyan-600"><Edit/></Link></TableCell> : 
-                                <TableCell align={column.align} ><Link to={`/admin/${row.id}`} className="text-red-600"><Delete/></Link></TableCell>
-                            )
-                        })
-                    }
+                    <TableCell>{row.nome}</TableCell>
+                    <TableCell>{row.tipo}</TableCell>
+                    <TableCell align = "right"><Edit className='text-cyan-900'/></TableCell>
+                    <TableCell align = "right"><Delete className='text-red-500'/></TableCell>
                 </TableRow>
             )
             })

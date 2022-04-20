@@ -17,7 +17,7 @@ import TableRow from '@mui/material/TableRow';
 import SearchBar from '../SearchBar/SearchBar';
 import { Search } from '@material-ui/icons';
 import TableData from '../Table/TableData.jsx';
-import { CreateData,Rows,Columns} from '../Table/Functions';
+import { CreateData,rows,columns} from '../data';
 import TableLabels from '../Table/TableLabels.jsx';
 
 function Finance() {
@@ -44,7 +44,7 @@ function Finance() {
   }
 
   //Groupado para components
-  const allData = [page,rowsPerPage,query,Columns]; 
+  const allData = [page,rowsPerPage,query,columns]; 
 
 
   const TableTitle = "Financeiro";
@@ -81,7 +81,7 @@ function Finance() {
                 <TablePagination
                     rowsPerPageOptions={[5,10, 25, 100]}
                     component="div"
-                    count={Rows.length}
+                    count={rows.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
@@ -108,7 +108,7 @@ function Finance() {
           </TableRow>
 
           <TableRow>
-            <TableLabels data={Columns}/>
+            <TableLabels data={columns}/>
           </TableRow>
 
           </TableHead>          
@@ -116,7 +116,7 @@ function Finance() {
             {
 
               <TableData 
-              data = {Rows} 
+              data = {rows} 
               other={[...allData]}/>
 
             } 
@@ -128,7 +128,7 @@ function Finance() {
       <TablePagination
         rowsPerPageOptions={[5,10, 25, 100]}
         component="div"
-        count={Rows.length}
+        count={rows.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

@@ -81,7 +81,7 @@ function Category() {
    const allData = [page,rowsPerPage,query,Columns]; 
  
  
-   const TableTitle = "Cadastro";
+  const TableTitle = "Cadastro de Categorias";
     
 
   return (
