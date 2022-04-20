@@ -49,89 +49,16 @@ function createData(id,nome, tipo) {
       {id : 4, label : "Excluir", align : "right"}
   ]
 
+  /*
+    Funcao para fazer buscas
 
+  */
+  
 
 export default function CatTable() {
   return (
     <div className='Container'>
         
-        <Paper className="mt-12 p-4">
-            <TableContainer>
-                <Table>
-
-                    <TableHead>
-
-                        <TableRow className='text-xl font-bold pl-4'>
-                           <TableCell sx={{border : "none", fontSize : "1.6rem", fontWeight : "bold"}}>
-                                Cadastro de Categorias
-                           </TableCell>
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TableCell>
-                                <SearchBar/>
-                            </TableCell>
-
-                            <TableCell>
-                                <SearchBar/>
-                            </TableCell>
-
-                            <TableCell>
-                                Mostrar {5} Registos
-                            </TableCell>
-
-                            <TableCell align="right">
-                                <Link to="/" className='border p-3 rounded-full bg-cyan-800 text-white font-bold hover:bg-cyan-600'>Cadastrar novo</Link>
-                            </TableCell>
-
-                        </TableRow>
-
-                    </TableHead>
-
-                    <TableBody>
-
-                        <TableRow>
-                            {
-                                columns.map((column)=>{
-                                    return(
-                                        <TableCell key={column.id} align={column.align}>
-                                            {column.label}
-                                        </TableCell>
-                                    )
-                                })
-                            }
-
-                        </TableRow>
-
-                    {
-                        rows.map((row)=>{
-                            console.log(row)
-                            return(
-                                <TableRow key={row.id}>
-                                    {
-                                        columns.map((column)=>{
-                                            return(
-                                                (column.id === 1) ? 
-                                                <TableCell>{row.nome}</TableCell> : 
-                                                (column.id === 2) ? 
-                                                <TableCell>{row.tipo}</TableCell> : 
-                                                (column.id === 3 ) ? 
-                                                <TableCell align={column.align} ><Link to={`/admin/${row.id}`} className="text-cyan-600"><Edit/></Link></TableCell> : 
-                                                <TableCell align={column.align} ><Link to={`/admin/${row.id}`} className="text-red-600"><Delete/></Link></TableCell>
-                                            )
-                                        })
-                                    }
-                                </TableRow>
-                            )
-                        })
-                    }
-                    </TableBody>
-
-                </Table>
-            </TableContainer>
-        </Paper>
-
     </div>
   )
 }

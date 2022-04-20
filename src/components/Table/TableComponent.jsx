@@ -193,6 +193,7 @@ export default function TableComponent() {
 
             {/* Este (ROW) serve para monstrar o titulo correspondentes */}
             <TableRow>
+              
               {columns.map((column) => (
 
                 <TableCell
