@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import CatTable from './CatTable';
 import SearchBar from '../SearchBar/SearchBar';
 
 import Paper from '@mui/material/Paper';
@@ -11,9 +10,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableLabels from "../Table/TableLabels.jsx"
-import CatData from "./CatData"
-import Button from "../Button"
-
+import AgendaData from './AgendaData';
+import Button from "../Button";
 
 /*
 DATA
@@ -22,8 +20,8 @@ DATA
   Esta funcao serve cara criar dados em forma organizada
   Para facilitar mostrar na tabela
 */
-function createData(id,nome, tipo) {
-  return { id,nome, tipo,};
+function createData(Id,Nome, Data, Inicio, Entrada, Local){
+  return { Id,Nome, Data,Inicio, Entrada, Local};
 }
 
 /*Este sao dados para monstrar na tabela (ROWS)! 
@@ -32,12 +30,14 @@ Como estamos na fase de teste, usei estes dados como amostra
 */
 
 const Rows = [
-  createData(1, "Restaurante", "Estabelecimento"),
-  createData(2, "Comercio", "Estabelecimento"),
-  createData(3, "Balada", "Ponto Turisticos/Roteiro"),
-  createData(4, "Comercio", "Estabelecimento"),
-  createData(5, "Comercio", "Estabelecimento"),
-  createData(6, "Comercio", "Estabelecimento"),
+  createData(1, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(2, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(3, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(4, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(5, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(6, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(7, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
+  createData(8, "Luzes da torre", "23/07/2021", "20:00h", "$9", "Torre Eiffel-Paris"),
 
 ];
 
@@ -45,9 +45,12 @@ const Rows = [
 //labels
 const Columns = [
     {id : 1, label : "Nome", align : "left"},
-    {id : 2, label : "Tipo", align : "left"},
-    {id : 3, label : "Editar", align : "right"},
-    {id : 4, label : "Excluir", align : "right"}
+    {id : 2, label : "Data", align : "left"},
+    {id : 3, label : "Inicio", align : "left"},
+    {id : 4, label : "Entrada", align : "left"},
+    {id : 5, label : "Local", align : "right"},
+    {id : 6, label : "Editar", align : "right"},
+    {id : 7, label : "Excluir", align : "right"}
 ]
 
 
@@ -55,7 +58,7 @@ const Columns = [
 
 
 
-function Category() {
+function Agenda() {
 
    //Este state serve para trocar de pagina ao clickar o botao de next
    const [page, setPage] = React.useState(0);
@@ -82,7 +85,7 @@ function Category() {
    const allData = [page,rowsPerPage,query,Columns]; 
  
  
-  const TableTitle = "Cadastro de Categorias";
+  const TableTitle = "Agenda Cultural";
     
 
   return (
@@ -127,18 +130,17 @@ function Category() {
                     labelRowsPerPage = "Monstrar"
                     sx = {{'& .MuiTablePagination-actions .MuiTablePagination-displayedRows' : { display : 'none'}}}
                  />
-
+                 
               </TableCell>
 
               {/* Aqui contem o componente que mostra o total */}
               <TableCell
                 sx = {{
                   display : "flex",
-                  justifyContent : "center"
+                  justifyContent : "right"
                 }}
               >
-              <Button title="Cadastrar Novo" goto="/admin/category/cadastrar"/>
-              
+              <Button title="Cadastrar Novo" goto="/admin"/>
               </TableCell>
               
           </TableRow>
@@ -146,12 +148,11 @@ function Category() {
           <TableRow>
             <TableLabels data={Columns}/>
           </TableRow>
-
           </TableHead>          
           
           <TableBody>
             {
-              <CatData 
+              <AgendaData
                 data = {Rows} 
                 other={[...allData]}
               />
@@ -205,4 +206,4 @@ function Category() {
   )
 }
 
-export default Category
+export default Agenda

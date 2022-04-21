@@ -20,6 +20,7 @@ export default function Menu({visibility}) {
              <li><a href='/admin'>Admin</a></li>
              <li><a href='/admin/finance'>Financeiro</a></li>
              <li><a href='/admin/category'>Categorias</a></li>
+             <li><a href='/admin/agenda'>Agenda Cultural</a></li>
              <li><a href='/admin' aria-disabled>Comming Soon</a></li>
         </ul>
 

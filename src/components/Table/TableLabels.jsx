@@ -7,11 +7,12 @@ import TableCell from '@mui/material/TableCell';
 
 
 function TableLabels({data : columns}) {
+
+  console.log("Agenda labels",columns)
   return (
       <>
           {
             columns.map((column) => (
-
               <TableCell
                 key={column.id}
                 align={column.align}

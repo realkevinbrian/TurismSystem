@@ -4,6 +4,8 @@ import Finance from '../components/Finance/Finance';
 import Home from '../components/Home/Home'
 import Navbar from '../components/Navbar/Navbar';
 import Category from '../components/Category/Category';
+import Agenda from '../components/AgendaCultural/Agenda';
+import Cadastar from '../components/Category/Cadastar';
 
 
 
@@ -44,7 +46,10 @@ function AdminPanel() {
         case "category":
             setPage(<Category/>)
             break;
-
+        case "agenda":
+        setPage(<Agenda/>)
+        break;
+        
         default:
             setPage(<Home/>)
             break;
