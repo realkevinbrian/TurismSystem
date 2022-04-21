@@ -136,8 +136,8 @@ function Category() {
                   justifyContent : "center"
                 }}
               >
-              <Button title="Cadastrar Novo" goto="/admin/category/cadastrar"/>
-              
+
+              <a href="/Admin/category/cadastrar" className='bg-cyan-800 text-white px-12 py-4 rounded-full hover:bg-cyan-600'>Cadastrar novo</a>
               </TableCell>
               
           </TableRow>

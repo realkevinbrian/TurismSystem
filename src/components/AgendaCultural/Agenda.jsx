@@ -13,7 +13,6 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import React, { useState } from 'react';
-import Button from "../Button";
 import SearchBar from '../SearchBar/SearchBar';
 import TableLabels from "../Table/TableLabels.jsx";
 import AgendaData from './AgendaData';
@@ -173,7 +172,7 @@ function Agenda() {
                     justifyContent : "right"
                   }}
                 >
-                <Button title="Cadastrar Novo" goto="/admin"/>
+                  <a href = "/admin/agenda" className='bg-cyan-800 text-white px-12 py-4 rounded-full hover:bg-cyan-600'>Cadastrar novo</a>
                 </TableCell>
                 
             </TableRow>

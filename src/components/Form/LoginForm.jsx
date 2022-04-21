@@ -117,10 +117,9 @@ export default function LoginForm() {
                       <StyledInput>
                         <label>Password</label>
                         <input 
-                        type="text" 
+                        type="password" 
                         placeholder='Digite a sua password'
                         onChange={(self)=>setPassword(self.target.value)}
-
                         />
                       </StyledInput>
 

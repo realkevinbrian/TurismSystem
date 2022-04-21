@@ -67,7 +67,7 @@ function AdminPanel() {
   return (
     <div className='h-full bg-slate-50'>
         <Navbar/>
-        <div className="wrapper p-16 md:px-4 sm:px-4 lg:p-2">
+        <div className="wrapper p-16 md:px-4 sm:px-4 lg:p-16">
             {getPage}
         </div>
     </div>
