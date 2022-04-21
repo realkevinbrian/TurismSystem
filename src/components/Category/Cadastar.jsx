@@ -76,6 +76,7 @@ function Cadastar() {
                       <RegisterBtn>
                         Cadastrar
                       </RegisterBtn>
+
                   </form>
                 </FormBody>
             </div>

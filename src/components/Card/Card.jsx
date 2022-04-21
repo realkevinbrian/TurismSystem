@@ -59,7 +59,7 @@ const [card,setCard] = useState([
 
   return (
       
-    <div className='Container grid grid-cols-5 gap-4 md:grid-cols-2'>
+    <div className='Container grid grid-cols-5 gap-4 md:grid-cols-1'>
 
         {
             card.map(item=>(

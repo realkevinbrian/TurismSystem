@@ -60,9 +60,8 @@ function AdminPanel() {
         
 
   return (
-    <div className='h-screen bg-slate-50'>
+    <div className='h-full bg-slate-50'>
         <Navbar/>
-        
         <div className="wrapper p-16">
             {
                 getpage
