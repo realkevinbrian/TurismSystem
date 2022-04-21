@@ -15,6 +15,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import SearchBar from '../SearchBar/SearchBar';
+import { Search } from '@material-ui/icons';
 
 /*Este sao dados para monstrar na tabela (COLUMNS)! 
 Como estamos na fase de teste, usei estes dados como amostra
@@ -107,7 +108,9 @@ export default function TableComponent() {
 
   //Este state serve para pegar o estado da Busca
   const [query,setQuery] = useState("");
-  // console.log(query);
+  function SearchTable (search) {
+    setQuery(search)
+  }
 
   return (
 
@@ -139,27 +142,12 @@ export default function TableComponent() {
 
               {/* este => O componente de Buscas serve para fazer buscas*/}
               <TableCell align="center" colSpan={2}>   
-              <div>
-                <form className='border border-none'>
-                    <div className="border border-black rounded-full flex justify-around p-0">
-                        <input 
-                        type="text" 
-                        value={query}
-                        className='border border-none outline outline-none bg-transparent pl-2 m-0'
-                        placeholder='Pesquisar'
-                        onChange={(SearchWord)=>setQuery(SearchWord.target.value.toLowerCase())}
-                        />
-                        <button className='text-lg' type='submit'>
-                            <FontAwesomeIcon icon={faSearch}/>
-                        </button>
-                    </div>
-                </form>
-              </div>
-
+                  <SearchBar handleQuery={SearchTable}/>
               </TableCell>
 
               {/* Esta funcao serve para contar rows e mostrar quantos (ROW temos na tabela) */}
               <TableCell align="center" colSpan={3}>
+                
                 <TablePagination
                     rowsPerPageOptions={[5,10, 25, 100]}
                     component="div"
@@ -205,6 +193,7 @@ export default function TableComponent() {
 
             {/* Este (ROW) serve para monstrar o titulo correspondentes */}
             <TableRow>
+              
               {columns.map((column) => (
 
                 <TableCell
