@@ -1,30 +1,31 @@
-import React from 'react'
-import {useEffect, useState} from "react";
-import { useNavigate, useParams } from 'react-router-dom'
-
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginForm from '../components/Form/LoginForm';
+
 
 
 export default function Login() {
 
-  //navigate hook
+  /***
+   * Hook para Redirecionar 
+   */
   const navigate = useNavigate();
 
-  // Se o usuario tiver feito login avamos redirecionar para o admin
+  /***
+   * BASIC AUTHETICATION
+   * Se o usuario tiver feito Login avamos redirecionar para o admin
+   */
   useEffect(() => {
     //validate authetication
     const email = localStorage.getItem("email");
     const senha = localStorage.getItem("senha");
-    
-    console.log(email)
 
     if(email !== null || senha !== null){
-      
-        navigate("/admin");
-        // console.log("logged in");
+      navigate("/admin");
     }
   },[])
 
+  
   return (
     <div className='border bg-cyan-800 h-screen flex flex-col justify-center'>
         <LoginForm/>

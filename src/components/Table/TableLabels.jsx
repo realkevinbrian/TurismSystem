@@ -1,14 +1,11 @@
 import React from 'react'
-import { faSearch, faArrowDownZA } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowDownZA } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TableCell from '@mui/material/TableCell';
 
 
 
 function TableLabels({data : columns}) {
-
-  console.log("Agenda labels",columns)
   return (
       <>
           {
@@ -19,7 +16,9 @@ function TableLabels({data : columns}) {
                 style={{ minWidth: column.minWidth }}
               >
                 {column.label}
+                
                 <FontAwesomeIcon icon={faArrowDownZA} className="px-1 text-xs"/>
+              
               </TableCell>  
             ))
           }

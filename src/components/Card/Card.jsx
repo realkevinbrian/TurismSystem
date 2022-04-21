@@ -1,11 +1,25 @@
-import React from 'react'
-import { useState } from 'react';
-import { faUserAlt, faFlag, faShop, faMapLocation, faBinoculars, faSignature, faUser, } from '@fortawesome/free-solid-svg-icons';
+/***
+ * 
+ * ESTE COMPONENTE SERVE PARA MONSTRAR O RELATORIO DE INDICADORES NO ADMIN
+ * 
+ * 
+ */
+
+
+import { faBinoculars, faFlag, faMapLocation, faShop, faSignature, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+
+
+
 
 export default function Card() {
-
-const [card,setCard] = useState([
+/***
+ * 
+ * Here I initialized card state to Hold Cards Data 
+ * As we don't have an API for that
+ */
+const [card] = useState([
     {
         id: 1,
         title : `Usuarios`,
@@ -59,18 +73,16 @@ const [card,setCard] = useState([
 
   return (
       
-    <div className='Container grid grid-cols-5 gap-4 md:grid-cols-1'>
-
+    <div className='Container grid grid-cols-5 gap-4 md:grid-cols-1 sm:px-6'>
         {
             card.map(item=>(
-            <div className="card bg-white grid grid-cols-1 justify-center justify-items-center shadow-md rounded-md gap-8 p-4 hover:scale-110 hover:border hover:border-cyan-800 transition-all" key={item.id}>
-                <h1 className='text-lg font-medium text-center '>{item.title}</h1>
-                <FontAwesomeIcon icon={item.icon} className="text-6xl text-cyan-800"/>
-                <h2>{item.value}</h2>
-            </div>
+                <div className="card bg-white grid grid-cols-1 justify-center justify-items-center shadow-md rounded-md gap-8 p-4 hover:scale-110 hover:border hover:border-cyan-800 transition-all" key={item.id}>
+                    <h1 className='text-lg font-medium text-center '>{item.title}</h1>
+                    <FontAwesomeIcon icon={item.icon} className="text-6xl text-cyan-800"/>
+                    <h2>{item.value}</h2>
+                </div>
             ))
         }
-
     </div>
   )
 }

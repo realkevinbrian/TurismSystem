@@ -30,6 +30,16 @@ export const columns = [
       format: (value) => value.toFixed(2),
     },
   ];
+
+
+  /*
+  Esta funcao serve cara criar dados em forma organizada
+  Para facilitar mostrar na tabela
+*/
+export function createData(name, tipo, data, transaction , status,total) {
+  // const sum = total ;
+  return { name, tipo, data, transaction, status, total};
+}
   
 export const rows = [
     createData('Marcos da Silva', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
@@ -50,11 +60,3 @@ export const rows = [
     
   ];
 
-/*
-  Esta funcao serve cara criar dados em forma organizada
-  Para facilitar mostrar na tabela
-*/
-export function createData(name, tipo, data, transaction , status,total) {
-    // const sum = total ;
-    return { name, tipo, data, transaction, status, total};
-  }

@@ -1,41 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import Finance from '../components/Finance/Finance';
-import Home from '../components/Home/Home'
-import Navbar from '../components/Navbar/Navbar';
-import Category from '../components/Category/Category';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Agenda from '../components/AgendaCultural/Agenda';
-import Cadastar from '../components/Category/Cadastar';
+import Category from '../components/Category/Category';
+import Finance from '../components/Finance/Finance';
+import Home from '../components/Home/Home';
+import Navbar from '../components/Navbar/Navbar';
 
 
 
 function AdminPanel() {
 
-    //get URL PArameters
+    /***
+     * Aqui usamos o useParams para pegar dados no URL
+     */
     const Params = useParams();
     const category = Params.category;
-    const [getpage, setPage] = useState(<Home/>);
-    console.log(category)
+    const [getPage, setPage] = useState(<Home/>);
 
-
-
-
-    //use Navigate
+    /***
+     * Aqui usamos o Navigate hook para Redirecionar
+     */
     const navigate = useNavigate();
 
+    /***
+     * Aqui usamos o useEffect para verificacao imediato de o Usuario
+     * Já Fez o Login correctamente
+     */
     useEffect(() => {
 
-    //validate authetication
+    //=>GET STORED DATA IN LOCALSTORAGE
     const email = localStorage.getItem("email");
     const senha = localStorage.getItem("senha");
 
+    //=>VERIFICA SE SE A SENHA E EMAIL GUARDADO NO LOCALSTORAGE NAO ESTAO ==>NULL
     if(email === null && senha === null){
         navigate("/");
     }
 
-    //useEffect
-
-    //set page
+    /******************************************\
+     * ***************PAGINAS*******************\
+     ********************************************\
+    */
     switch (category) {
         case "home":
             setPage(<Home/>)
@@ -62,12 +67,9 @@ function AdminPanel() {
   return (
     <div className='h-full bg-slate-50'>
         <Navbar/>
-        <div className="wrapper p-16">
-            {
-                getpage
-            }
+        <div className="wrapper p-16 md:px-4 sm:px-4 lg:p-2">
+            {getPage}
         </div>
-        
     </div>
   )
 }

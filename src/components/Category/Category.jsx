@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import CatTable from './CatTable';
 import SearchBar from '../SearchBar/SearchBar';
 
 import Paper from '@mui/material/Paper';

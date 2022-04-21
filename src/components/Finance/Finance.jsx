@@ -1,10 +1,3 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { faSearch, faArrowDownZA } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
 // Aqui importamos todas bibliotecas neccessarias para crar a tabela
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -14,11 +7,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import * as React from 'react';
+import { useState } from 'react';
+import { columns, rows } from '../data';
 import SearchBar from '../SearchBar/SearchBar';
-import { Search } from '@material-ui/icons';
 import TableData from '../Table/TableData.jsx';
-import { CreateData,rows,columns} from '../data';
 import TableLabels from '../Table/TableLabels.jsx';
+
+
 
 function Finance() {
 
@@ -52,9 +48,9 @@ function Finance() {
 
   return (
     <div className=' pt-10'>
-    <Paper sx={{ width: '100%', overflow: 'hidden', borderRadius : '20px'}} className = "p-4">
+    <Paper sx={{ width: '100%', borderRadius : '20px'}} className = "p-4">
       <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table  aria-label="table">
           <TableHead>
 
             <TableRow>
@@ -107,9 +103,9 @@ function Finance() {
               
           </TableRow>
 
-          <TableRow>
-            <TableLabels data={columns}/>
-          </TableRow>
+            <TableRow>
+              <TableLabels data={columns}/>
+            </TableRow>
 
           </TableHead>          
           <TableBody>
@@ -118,6 +114,8 @@ function Finance() {
               <TableData 
               data = {rows} 
               other={[...allData]}/>
+
+              // console.log([rows])
 
             } 
           </TableBody>
