@@ -1,8 +1,11 @@
 import React from 'react'
+import Login from "../Components/Login"
 
 function Admin() {
   return (
-    <div>Admin</div>
+    <div>
+        <Login/>
+    </div>
   )
 }
 
