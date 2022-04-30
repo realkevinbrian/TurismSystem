@@ -3,19 +3,19 @@ import React from 'react'
 import { H5 } from '../Global'
 import "../../App.css"
 import "./styles.css"
-import StyledSearch, { SearchbyNumber } from '../Search'
-
+import StyledSearch, { SearchbyNumber, ShowTotal } from '../Search'
+import * as S from "./styled"
 
 function StyledTable() {
   return (
-    <>
+    <S.StyledTableContainer>
         <Paper>
             <TableContainer>
                 <Table>
                     <TableHead className='removeBorder'>
                         <TableRow>
                             <TableCell>
-                                <H5>Financeiro</H5>
+                                <S.TableTitle>Financeiro</S.TableTitle>
                             </TableCell>
                         </TableRow>
 
@@ -25,7 +25,15 @@ function StyledTable() {
                             </TableCell>
 
                             <TableCell>
+                                <StyledSearch/>
+                            </TableCell>
+
+                            <TableCell>
                                 <SearchbyNumber/>
+                            </TableCell>
+
+                            <TableCell align='left'>
+                                <ShowTotal/>
                             </TableCell>
                         </TableRow>
 
@@ -90,7 +98,7 @@ function StyledTable() {
                 </Table>
             </TableContainer>
         </Paper>
-    </>
+    </S.StyledTableContainer>
   )
 }
 

@@ -29,27 +29,25 @@ export const SearchInput = styled.input`
 
 
 /***
-**Search by Number component
+**TOTAL COMPONENT IN TABLE
 */
 
-export const SearchByNumber = styled.div`
-        border: 1px solid black;
-        background-color: red;
-        display:flex;
+export const ShowTotalWrapper = styled.div`
+    box-shadow: 1px 1px 1px 1px #a09f9f;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding:10px;
+    border-radius:5px;
+    gap:5px;
 
-`;
-export const SPAN = styled.span``;
+    //h4,h5
+    h4{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 
-//Dropown
-export const ShowNumsWrapper = styled.div`
-        border: 1px solid green;
-        width:70px;
-`;
-export const ShowNumSPAN = styled.div``;
-
-
-export const DropDownWrapper = styled.div``;
-export const DropDown = styled.div``;
-export const UL = styled.ul``;
-export const LI = styled.ul``;
-
+    h5{
+        font-size: 1rem;
+    }
+`
