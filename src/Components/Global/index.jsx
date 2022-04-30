@@ -54,5 +54,5 @@ export const SubmitBtn = styled(button)``;
 export const StyledInput = styled.input``;
 export const StyledLabel = styled.label``;
 
-
+export const Icon = styled.img``;
 export default GlobalStyles;

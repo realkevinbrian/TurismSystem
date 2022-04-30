@@ -14,10 +14,34 @@ export const LoginContainer = styled.section`
         align-items:center;
         justify-items: center;
         background-color:${({theme}) => theme.colors.dark_cyan};
-        
+
+        //=> MOBILE VERSION
+        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+        height:100%;
+        }
 `
 
-export const backButtonWrapper = styled.div``
+export const backButtonWrapper = styled.div`
+        display:none;
+
+        //=> MOBILE VERSION
+        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+        display: block;
+
+        svg{
+                background-color:${({theme}) => theme.colors.white};
+                padding: 4px;
+                font-size: 2rem;
+                position: absolute;
+                border-radius:50px;
+                transform: translateY(100px);
+
+        }
+
+        
+        }
+
+`
 
 
 //===============Login Wrapper===========\\
@@ -25,16 +49,14 @@ export const LoginWrapper = styled.div`
         display: grid;
         grid-template-columns: repeat(2,1fr);
         background-color:${({theme}) => theme.colors.white};
-        border-radius:30px;
-         
+        border-radius:30px;         
 
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
                 grid-template-columns: repeat(1,1fr);
                 border-radius:0px;
                 background-color: transparent;
-
-
+                padding:30px;
                 
         }
 
@@ -47,9 +69,9 @@ export const LoginBanner = styled.div`
         object-fit: contain;
 
         @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                position: absolute;
-                transform: translateY(-150px);
+                /* position: relative; */
                 z-index:1;
+
         }
         
 
@@ -61,10 +83,15 @@ export const BannerImage = styled.img`
         border-radius:30px 0px 0px 30px;
         //=> MOBILE VERSION
         @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                width:100%;
-                height:300px;
+                width:auto;
+                height:auto;
                 object-fit: contain;
-                border-radius:0;
+                border-radius:20px;
+                position: relative;
+                transform: translateY(150px);
+
+
+
         }
         
         
@@ -83,6 +110,7 @@ export const LoginContent = styled.div`
         @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
                 z-index:2;
                 background-color:${({theme}) => theme.colors.white};
+                border-radius: 20px;
         }
 
 `;
@@ -101,7 +129,6 @@ export const LoginHeader = styled.div`
             text-decoration: underline;
         }
 `
-
             //LOGIN BODY\\
 export const LoginBody = styled.div``;
             //FORM\\
@@ -145,9 +172,20 @@ export const FormOptionWrapper = styled.div`
         align-items:center;
         padding-top: 30px;
 
+        //=> MOBILE VERSION
+        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+                /* padding-top:10px; */
+
+                //button
+                button{
+                /* padding:5px 20px; */
+
+                }
+        }
+
         a{
             text-decoration: underline;
-            font-size:.8rem;
+            font-size:.6rem;
         }
 
         button{
@@ -162,6 +200,7 @@ export const FormOptionWrapper = styled.div`
             &:hover{
             background-color:#00a1e6;
             }
+
         }
 `;
 

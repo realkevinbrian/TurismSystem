@@ -10,11 +10,9 @@ function Login() {
         <S.LoginContainer>
             
             <S.LoginWrapper>
-
                 <S.backButtonWrapper>
                     <ArrowBack/>
-                </S.backButtonWrapper>
-                
+                </S.backButtonWrapper>                
                 <S.LoginBanner>
                     <S.BannerImage src={bannerImg}/>
                 </S.LoginBanner>
