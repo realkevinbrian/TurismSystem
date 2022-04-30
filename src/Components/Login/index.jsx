@@ -2,6 +2,7 @@ import React from 'react'
 import { Anchor,StyledInput, StyledLabel, SubmitBtn,H5,H1 } from '../Global'
 import * as S from './styled';
 import bannerImg from "../../Assets/bgImage.png";
+import { ArrowBack } from '@mui/icons-material';
 
 function Login() {
   return (
@@ -9,6 +10,10 @@ function Login() {
         <S.LoginContainer>
             
             <S.LoginWrapper>
+
+                <S.backButtonWrapper>
+                    <ArrowBack/>
+                </S.backButtonWrapper>
                 
                 <S.LoginBanner>
                     <S.BannerImage src={bannerImg}/>

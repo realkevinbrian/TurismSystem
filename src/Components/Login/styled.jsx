@@ -17,6 +17,7 @@ export const LoginContainer = styled.section`
         
 `
 
+export const backButtonWrapper = styled.div``
 
 
 //===============Login Wrapper===========\\
@@ -24,9 +25,18 @@ export const LoginWrapper = styled.div`
         display: grid;
         grid-template-columns: repeat(2,1fr);
         background-color:${({theme}) => theme.colors.white};
-
         border-radius:30px;
-        /* border:1px solid red; */
+         
+
+        //=> MOBILE VERSION
+        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+                grid-template-columns: repeat(1,1fr);
+                border-radius:0px;
+                background-color: transparent;
+
+
+                
+        }
 
 
 
@@ -35,6 +45,12 @@ export const LoginWrapper = styled.div`
 //===============Side Wrapper=============\\
 export const LoginBanner = styled.div`
         object-fit: contain;
+
+        @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+                position: absolute;
+                transform: translateY(-150px);
+                z-index:1;
+        }
         
 
 `;
@@ -43,6 +59,13 @@ export const BannerImage = styled.img`
         height:400px;
         object-fit: contain;
         border-radius:30px 0px 0px 30px;
+        //=> MOBILE VERSION
+        @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+                width:100%;
+                height:300px;
+                object-fit: contain;
+                border-radius:0;
+        }
         
         
 
@@ -56,6 +79,11 @@ export const LoginContent = styled.div`
         flex-direction: column;
         justify-content: space-between;
         padding:2rem;
+
+        @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+                z-index:2;
+                background-color:${({theme}) => theme.colors.white};
+        }
 
 `;
 

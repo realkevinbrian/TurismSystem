@@ -6,8 +6,8 @@ const theme = {
         white : "#ffff"
     },
     Layout : {
-        Mobile : "450px",
-        Tablets : "500px",
+        Mobile : "500px",
+        Tablets : "501px",
         Desktop : "1280px"
     }
 }
