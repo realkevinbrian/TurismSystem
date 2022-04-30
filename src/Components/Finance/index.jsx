@@ -1,8 +1,11 @@
 import React from 'react'
+import StyledTable from '../Table'
 
 function Finance() {
   return (
-    <div>Finance</div>
+    <>
+        <StyledTable/>
+    </>
   )
 }
 

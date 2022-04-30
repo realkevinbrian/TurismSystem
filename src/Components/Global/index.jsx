@@ -30,7 +30,13 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    th{
+        
+    }
+
+
 `
+
 
 //HEADERS
 export const H1 = styled.h1``;
