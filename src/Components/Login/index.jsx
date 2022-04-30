@@ -1,39 +1,42 @@
 import React from 'react'
-import { Anchor,StyledInput, StyledLabel, SubmitBtn } from '../Global'
-import * as S from './styled'
+import { Anchor,StyledInput, StyledLabel, SubmitBtn,H5,H1 } from '../Global'
+import * as S from './styled';
+import bannerImg from "../../Assets/bgImage.png";
 
 function Login() {
   return (
     <>
         <S.LoginContainer>
+            
             <S.LoginWrapper>
                 
                 <S.LoginBanner>
-                    <S.BannerImage/>
+                    <S.BannerImage src={bannerImg}/>
                 </S.LoginBanner>
 
-                <S.LoginContainer>
+                <S.LoginContent>
 
                     <S.LoginHeader>
-
+                        <H5>Não possui cadastro?</H5>
+                        <Anchor href="#">Cadastre-se</Anchor>
                     </S.LoginHeader>
 
                     <S.LoginBody>
                         <S.FormWrapper>
+                            <H1>Login</H1>
                             <S.Form>
-
                                 <S.InputGroup>
-                                    <StyledLabel/>
+                                    <StyledLabel>E-mail</StyledLabel>
                                     <StyledInput/>
                                 </S.InputGroup>
 
                                 <S.InputGroup>
-                                    <StyledLabel/>
+                                    <StyledLabel>Senha</StyledLabel>
                                     <StyledInput/>
                                 </S.InputGroup>
 
                                 <S.FormOptionWrapper>
-                                    <Anchor>Esqueci minha senha</Anchor>
+                                    <Anchor href='#'>Esqueci minha senha</Anchor>
                                     <SubmitBtn>Login</SubmitBtn>
                                 </S.FormOptionWrapper>
 
@@ -41,8 +44,10 @@ function Login() {
                         </S.FormWrapper>
                     </S.LoginBody>
 
-                </S.LoginContainer>
+                </S.LoginContent>
+            
             </S.LoginWrapper>
+        
         </S.LoginContainer>
     </>
   )

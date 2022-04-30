@@ -1,4 +1,36 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
+//***GLOBAL STYLED */
+const GlobalStyles = createGlobalStyle`
+
+    //body
+    body{
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+        *{
+            /* border:1px dashed red; */
+        }
+
+        h1,h2,h3,h4,h5{
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+        }
+
+        img{
+            width: 100%;
+            max-width:100%;
+        }
+
+        input{
+            outline:none;
+            border:1px solid transparent; 
+            background-color:transparent;
+        }
+    }
+
+`
 
 //HEADERS
 export const H1 = styled.h1``;
@@ -22,3 +54,5 @@ export const SubmitBtn = styled(button)``;
 export const StyledInput = styled.input``;
 export const StyledLabel = styled.label``;
 
+
+export default GlobalStyles;
