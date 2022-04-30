@@ -3,10 +3,15 @@ import React from 'react'
 import { H5 } from '../Global'
 import "../../App.css"
 import "./styles.css"
-import StyledSearch, { SearchbyNumber, ShowTotal } from '../Search'
+import StyledSearch, { SearchbyNumber} from '../Search'
 import * as S from "./styled"
 
-function StyledTable() {
+/***
+ * 
+ * REUSABLE TABLE COMPONENT
+ */
+
+function StyledTable({tableTitle,switchComponent}) {
   return (
     <S.StyledTableContainer>
         <Paper>
@@ -15,7 +20,7 @@ function StyledTable() {
                     <TableHead className='removeBorder'>
                         <TableRow>
                             <TableCell>
-                                <S.TableTitle>Financeiro</S.TableTitle>
+                                <S.TableTitle>{tableTitle}</S.TableTitle>
                             </TableCell>
                         </TableRow>
 
@@ -33,7 +38,7 @@ function StyledTable() {
                             </TableCell>
 
                             <TableCell align='left'>
-                                <ShowTotal/>
+                                {switchComponent}
                             </TableCell>
                         </TableRow>
 

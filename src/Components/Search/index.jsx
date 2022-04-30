@@ -77,21 +77,21 @@ export function StyledSearchbyName() {
   }
 
 
-  /***
-   * SHOW TOTAL
-   * 
-   */
+  // /***
+  //  * SHOW TOTAL
+  //  * 
+  //  */
 
-  export function ShowTotal(){
+  // export function ShowTotal(){
     
-    return(
-      <>
-        <S.ShowTotalWrapper>
-          <H4>Total</H4>
-          <H5>R$ 1250</H5>
-        </S.ShowTotalWrapper>
-      </>
+  //   return(
+  //     <>
+  //       <S.ShowTotalWrapper>
+  //         <H4>Total</H4>
+  //         <H5>R$ 1250</H5>
+  //       </S.ShowTotalWrapper>
+  //     </>
 
-    )
+  //   )
 
-  }
+  // }
