@@ -65,33 +65,14 @@ export function StyledSearchbyName() {
           onChange={handleChange}
         >
           <MenuItem value="">
-            <em>1</em>
+            <em>Mostrar Registos</em>
           </MenuItem>
-          <MenuItem value={10}>2</MenuItem>
-          <MenuItem value={20}>3</MenuItem>
-          <MenuItem value={30}>5</MenuItem>
+          <MenuItem value={10}>10</MenuItem>
+          <MenuItem value={20}>20</MenuItem>
+          <MenuItem value={30}>30</MenuItem>
         </Select>
       </FormControl>
       </>
     );
   }
-
-
-  // /***
-  //  * SHOW TOTAL
-  //  * 
-  //  */
-
-  // export function ShowTotal(){
-    
-  //   return(
-  //     <>
-  //       <S.ShowTotalWrapper>
-  //         <H4>Total</H4>
-  //         <H5>R$ 1250</H5>
-  //       </S.ShowTotalWrapper>
-  //     </>
-
-  //   )
-
-  // }
+  
