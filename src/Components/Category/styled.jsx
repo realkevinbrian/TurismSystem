@@ -39,3 +39,13 @@ export const styledCell = styled.div`
     align-items: center;
     gap:10px;
 `
+
+
+
+/***
+ * EDIT AND DELETE BTNS
+ */
+
+
+export const Edit = styled.a``;
+export const Delete = styled.a``;
