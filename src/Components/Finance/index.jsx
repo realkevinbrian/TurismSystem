@@ -31,6 +31,9 @@ function Finance() {
 }
 
 export default Finance
+
+
+
 /***
    * SHOW TOTAL
    * 
@@ -99,7 +102,7 @@ export function FinanceBodyData({Rows : rows,Columns : columns}){
                           value
                           }
                         </TableCell>
-                        
+
                       );
                     })}
                   </TableRow>
