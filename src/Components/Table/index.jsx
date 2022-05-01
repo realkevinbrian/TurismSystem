@@ -11,7 +11,7 @@ import * as S from "./styled"
  * REUSABLE TABLE COMPONENT
  */
 
-function StyledTable({tableTitle,switchComponent}) {
+function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
   return (
     <S.StyledTableContainer>
         <Paper>
@@ -42,63 +42,12 @@ function StyledTable({tableTitle,switchComponent}) {
                             </TableCell>
                         </TableRow>
 
-                        <TableRow>
-
-                            <TableCell>
-                                <H5>Financeiro</H5>
-                            </TableCell>
-
-                            <TableCell>
-                                <H5>Financeiro</H5>
-                            </TableCell>
-
-                            <TableCell>
-                                <H5>Financeiro</H5>
-                            </TableCell>
-
-                            <TableCell>
-                                <H5>Financeiro</H5>
-                            </TableCell>
-
-                        </TableRow>
+                        <TableRow>{labels}</TableRow>
 
                     </TableHead>
 
                     <TableBody>
-                        <TableRow>
-
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            <TableCell>
-                                Kevin
-                            </TableCell>
-                            
-                        </TableRow>
-
+                        {bodyData}
                     </TableBody>
                 </Table>
             </TableContainer>
