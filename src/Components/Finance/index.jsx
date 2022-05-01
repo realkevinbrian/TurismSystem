@@ -1,16 +1,15 @@
+import { TableCell, TableRow } from '@mui/material'
 import React from 'react'
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { H4, H5 } from '../Global'
 import StyledTable from '../Table'
-import { H5,H4 } from '../Global'
-import * as S from "./styled"
 import FinanceData from "./financeData"
+import * as S from "./styled"
 
 
 /***
  * At this point we are fetching table data in FinanceData Function created
+ * THIS IS FINANCE PAGE THOU...
  */
-// console.log(FinanceData());
-
 function Finance() {
 
   //At this point we read our data from @@financeData function 
@@ -76,6 +75,10 @@ export function FinanceLabels ({Columns}){
 }
 
 
+
+/****
+ * BODY DATA FOR FINANCE TABLE TO MAKE OUR TABLE REUSABLE
+ */
 export function FinanceBodyData({Rows : rows,Columns : columns}){
     return(
       <>
