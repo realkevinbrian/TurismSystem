@@ -9,6 +9,8 @@ import {ThemeProvider} from "styled-components"
 import store from "./Redux/index";
 import {Provider} from "react-redux"
 
+
+// console.log(store)
 ReactDOM.render(
   <React.StrictMode>
   <Provider store={store}>

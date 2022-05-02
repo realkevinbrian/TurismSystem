@@ -17,7 +17,7 @@ function Agenda() {
   const Rows = AgendaData().rows;
 
   // =>DEBUGGING ROWS
-  console.log(Rows)
+  // console.log(Rows)
 
   return (
     <>

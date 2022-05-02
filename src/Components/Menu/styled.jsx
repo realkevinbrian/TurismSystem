@@ -7,9 +7,9 @@ import styled from "styled-components";
  */
 
 export const MenuContainer = styled.div`
+    display: ${({menuState})=> (menuState) ? "grid" : "none"};
     height: 100vh;
     width: 150px;
-    display: grid;
     align-items: center;
     position: fixed;
     z-index: 50;

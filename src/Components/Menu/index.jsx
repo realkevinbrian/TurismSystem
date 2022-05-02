@@ -2,6 +2,9 @@ import { faCashRegister, faPieChart, faRegistered, faStoreAlt } from '@fortaweso
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import * as S from './styled';
+import {useSelector,useDispatch} from "react-redux"
+import {MenuActions} from "../../Redux/MenuSlice"
+
 
 function Menu() {
 
@@ -15,14 +18,18 @@ function Menu() {
     {id:4, label : "Agenda Cultural", link : "/admin/agenda", icon : faRegistered}
   ]);
 
+  //get menuState and add dispatch methods
+  const menuState = useSelector((state)=>state.menu.menuState)
+  const dispatch = useDispatch();
+
 
   return (
     <>
-        <S.MenuContainer>
+        <S.MenuContainer menuState={menuState}>
             <S.MenuListWrapper>
                 {
                     data.map((item)=>(
-                        <S.MenuItem key={item.id}>
+                        <S.MenuItem key={item.id} onClick={()=>dispatch(MenuActions.setMenuState(false))}>
                             <S.MenuLink href={item.link}>
                               <FontAwesomeIcon icon={item.icon}/>
                                 <span>{item.label}</span>
