@@ -8,6 +8,8 @@ import { Form } from "../../Components/Login/styled"
 import StyledTable from '../Table'
 import CategoryData from './CategoryData'
 import * as S from "./styled"
+import {useNavigate} from "react-router-dom"
+
 /***
  * At this point we are fetching table data in CategoryData Function created
  * THIS IS Category PAGE THOU...
@@ -43,7 +45,7 @@ export default Category
  export function RegisterBtn(){
   return(
     <>
-      <S.CadastroBtn>Cadastrar Novo</S.CadastroBtn>
+      <S.CadastroBtn href='/admin/categorias/cadastrar'>Cadastrar Novo</S.CadastroBtn>
     </>
   )
 
@@ -114,12 +116,13 @@ export function CategoryBodyData({Rows : rows,Columns : columns}){
  */
 
 export function CreateCategory(){
+  const navigate = useNavigate();
   return(
     <S.styledCreateCategoryContainer>
       <S.styledCreateCategory>
 
         <S.createCategoryHeader>
-          <ArrowBack/>
+          <ArrowBack onClick={()=>navigate("/admin/categorias")}/>
           <G.H5>Cadastro de Categorias</G.H5>
         </S.createCategoryHeader>
 

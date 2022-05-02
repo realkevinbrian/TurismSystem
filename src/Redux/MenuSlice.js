@@ -9,7 +9,8 @@ import {createSlice} from "@reduxjs/toolkit";
 const MenuSlice = createSlice({
     name : "menu",
     initialState : {
-        menuState : false
+        menuState : false,
+        AgendaState : false
     },
     reducers : {
 
@@ -19,6 +20,15 @@ const MenuSlice = createSlice({
                 state.menuState = false;
             }else{
                 state.menuState = true;
+            }
+        },
+
+        setAgendaState(state){
+            if(state.AgendaState){
+                state.AgendaState = false;
+            }else{
+                state.AgendaState = true;
+
             }
         }
     }

@@ -5,7 +5,7 @@ import {InputGroup} from "../../Components/Login/styled";
  * CADASTRE ME BUTTON
  */
 
-export const CadastroBtn = styled(button)`
+export const CadastroBtn = styled.a`
     background-color: ${({theme})=>theme.colors.dark_cyan};
     color:${({theme})=>theme.colors.white};
     padding:.4rem 2rem;
@@ -51,12 +51,10 @@ export const Edit = styled.a``;
 export const Delete = styled.a``;
 
 
-
 /****
  * CreateCategory StyledCompoent
  * 
  */
-
 
 //1 -> Containers
 export const styledCreateCategoryContainer = styled.div`

@@ -52,7 +52,15 @@ export const Bars = styled.div`
         }
 `;
 
-export const LogoWrapper = styled.div``;
+
+export const LogoWrapper = styled.div`
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+`;
 
 export const Logo = styled.img``;
 export const NavMenuLinksWrapper = styled.div`

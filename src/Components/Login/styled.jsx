@@ -97,6 +97,14 @@ export const LoginContent = styled.div`
         justify-content: space-between;
         padding:1rem;
 
+        //logo
+        img{
+                width:200px;
+                align-self: center;
+                justify-self: center;
+
+        }
+
         @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
                 z-index:2;
                 background-color:${({theme}) => theme.colors.white};
@@ -168,7 +176,7 @@ export const FormOptionWrapper = styled.div`
 
         a{
             text-decoration: underline;
-            font-size:.6rem;
+            font-size:.8rem;
         }
 
         button{

@@ -6,6 +6,9 @@ import { Anchor, H1, H5, StyledInput, StyledLabel, SubmitBtn } from '../Global';
 import * as S from './styled';
 import useAuth from "../../Hooks/useAuth";
 import {useNavigate} from "react-router-dom"
+import LOGO from "../../Assets/LOGO.png";
+import {Logo, LogoWrapper} from '../../Components/Navbar/styled'
+
 
 function Login() {
 
@@ -70,6 +73,10 @@ function Login() {
                         <H5>Não possui cadastro?</H5>
                         <Anchor href="#">Cadastre-se</Anchor>
                     </S.LoginHeader>
+
+                    <LogoWrapper>
+                        <Logo src={LOGO}/>
+                    </LogoWrapper>
 
                     <S.LoginBody>
                         <S.FormWrapper>

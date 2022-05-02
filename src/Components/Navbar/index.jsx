@@ -5,6 +5,7 @@ import Menu from "../Menu/index";
 import { useDispatch, useSelector } from 'react-redux';
 import {MenuActions} from "../../Redux/MenuSlice"
 import useAuth from "../../Hooks/useAuth";
+import LOGO from "../../Assets/LOGO.png";
 
 function Navbar() {
 
@@ -23,7 +24,7 @@ function Navbar() {
             </MenuIconWrapper>
 
             <LogoWrapper>
-                <Logo/>
+                <Logo src={LOGO}/>
             </LogoWrapper>
 
             <NavMenuLinksWrapper>
