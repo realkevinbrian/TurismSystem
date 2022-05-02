@@ -14,10 +14,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Login/>}/>
                 <Route path='/admin' element={<Admin/>}/>
-                <Route path='/admin/indicadores' element={<Home/>}/>
-                <Route path='/admin/finance' element={<Finance/>}/>
-                <Route path='/admin/categorias' element={<Category/>}/>
-                <Route path='/admin/agenda' element={<Agenda/>}/>
+                <Route path='/admin/:page' element={<Home/>}/>
             </Routes>
         </div>
     </Router>
