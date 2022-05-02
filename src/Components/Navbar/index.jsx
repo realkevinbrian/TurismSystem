@@ -1,9 +1,7 @@
 import React from 'react'
 import { Anchor, H4 } from '../Global'
 import { Bars, Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinksWrapper } from './styled'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import  library  from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import Menu from "../Menu/index";
 
 function Navbar() {
   return (
@@ -26,7 +24,7 @@ function Navbar() {
             </NavMenuLinksWrapper>
 
         </NavbarContainer>
-    
+        <Menu/>
     </>
   )
 }

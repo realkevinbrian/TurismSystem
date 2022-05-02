@@ -1,7 +1,7 @@
 import { faCashRegister, faPieChart, faRegistered, faStoreAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, {useState} from 'react'
-import * as S from './styled'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import * as S from './styled';
 
 function Menu() {
 
@@ -10,8 +10,8 @@ function Menu() {
    */
   const [data] = useState([
     {id:1, label : "Indicadores", link : "/admin", icon : faPieChart},
-    {id:2, label : "Financeiro", link : "/admin/finance", icon : faCashRegister},
-    {id:3, label : "Configurações", link : "/admin/category", icon : faStoreAlt},
+    {id:2, label : "Financeiro", link : "/admin/financeiro", icon : faCashRegister},
+    {id:3, label : "Configurações", link : "/admin/categorias", icon : faStoreAlt},
     {id:4, label : "Agenda Cultural", link : "/admin/agenda", icon : faRegistered}
   ]);
 
@@ -23,8 +23,10 @@ function Menu() {
                 {
                     data.map((item)=>(
                         <S.MenuItem key={item.id}>
-                            <FontAwesomeIcon icon={item.icon}/>
-                            <S.MenuLink href={item.link}>{item.label}</S.MenuLink>
+                            <S.MenuLink href={item.link}>
+                              <FontAwesomeIcon icon={item.icon}/>
+                                <span>{item.label}</span>
+                            </S.MenuLink>
                         </S.MenuItem>
                     )) 
                 }
