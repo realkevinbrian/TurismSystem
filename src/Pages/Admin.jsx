@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Login from "../Components/Login"
 import Navbar from '../Components/Navbar'
 import Home from "../Components/Indicadores"
@@ -11,33 +11,38 @@ function Admin() {
 
   //get params
   const getUrl = useParams().page;
-  // console.log(getUrl)
+  console.log(getUrl)
 
   //initialize state for page Display
   const [PAGE,SETPAGE] = useState(<Home/>)
 
-  //SWITCH CASE METHOD TO SWITCH TO PAGES ACCORDING TO PARAMETERS
-  switch (getUrl) {
+  useEffect((getUrl) => {
 
-    case "agenda":
-      console.log("Agenda")
-      break;
+      //SWITCH CASE METHOD TO SWITCH TO PAGES ACCORDING TO PARAMETERS
+    switch (getUrl) {
 
-    case "financeiro":
-      // SETPAGE(<Finance/>)
-      console.log("Financeiro")
-      break;
+      case "agenda":
+        SETPAGE(<Agenda/>)
+        console.log("Agenda")
+        break;
 
-    case "categoria":
-      // SETPAGE(<Category/>)
-      console.log("Categorias")
-      break;
+      case "financeiro":
+        SETPAGE(<Finance/>)
+        console.log("Financeiro")
+        break;
+
+      case "categoria":
+        SETPAGE(<Category/>)
+        console.log("Categorias")
+        break;
+    
+      default:
+        SETPAGE(<Home/>)
+        console.log("Home")
+        break;
+    }
   
-    default:
-      // SETPAGE(<Home/>)
-      console.log("Home")
-      break;
-  }
+  }, [])
   
   return(
     <>
