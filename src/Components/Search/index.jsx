@@ -1,13 +1,11 @@
 import React from 'react'
 import * as S from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
-import { H5,H4 } from '../Global'
 
 
 function StyledSearch() {

@@ -14,7 +14,7 @@ function Admin() {
   //initialize state for page Display
   const [PAGE,SETPAGE] = useState(<Home/>)
 
-  useEffect(() => {
+  useEffect((PAGE) => {
 
       //SWITCH CASE METHOD TO SWITCH TO PAGES ACCORDING TO PARAMETERS
     switch (getUrl) {

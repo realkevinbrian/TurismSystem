@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {button} from "../Global/index"
-import {InputGroup,Form,FormWrapper} from "../../Components/Login/styled";
+import {InputGroup} from "../../Components/Login/styled";
 /***
  * CADASTRE ME BUTTON
  */

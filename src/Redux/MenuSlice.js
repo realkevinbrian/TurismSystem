@@ -35,4 +35,4 @@ export const MenuActions = MenuSlice.actions;
  * Export default reducers
  */
 
-export default MenuSlice.reducer;
+export  default MenuSlice.reducer;

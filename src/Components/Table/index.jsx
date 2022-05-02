@@ -1,6 +1,5 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
-import { H5 } from '../Global'
 import "../../App.css"
 import "./styles.css"
 import StyledSearch, { SearchbyNumber} from '../Search'

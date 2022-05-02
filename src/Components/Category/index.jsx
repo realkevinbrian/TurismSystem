@@ -1,13 +1,13 @@
-import { faDeleteLeft,faFileImage,faPlus, faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faDeleteLeft, faEdit, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ArrowBack, Image } from "@mui/icons-material"
 import { TableCell, TableRow } from '@mui/material'
 import React from 'react'
+import * as G from "../../Components/Global/index"
+import { Form } from "../../Components/Login/styled"
 import StyledTable from '../Table'
 import CategoryData from './CategoryData'
-import {Form,FormWrapper} from "../../Components/Login/styled";
 import * as S from "./styled"
-import * as G from "../../Components/Global/index"
-import {CarRentalTwoTone, ArrowBack, Image} from "@mui/icons-material"
 /***
  * At this point we are fetching table data in CategoryData Function created
  * THIS IS Category PAGE THOU...

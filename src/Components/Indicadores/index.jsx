@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { Icon,H5 } from '../Global'
+import { H5 } from '../Global'
 import * as S from "./styled"
 
 //icons
-import { Library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserAlt, faFlag,faShop,faMapLocation,faLocationPin, faBinoculars,faSignature } from '@fortawesome/free-solid-svg-icons'
+import { faUserAlt, faFlag,faShop,faMapLocation,faSignature } from '@fortawesome/free-solid-svg-icons'
 
 function Indicadores() {
 

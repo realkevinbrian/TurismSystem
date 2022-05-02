@@ -7,14 +7,16 @@ import GlobalStyles from "./Components/Global"
 import theme from "./Components/Global/theme";
 import {ThemeProvider} from "styled-components"
 import store from "./Redux/index";
-
+import {Provider} from "react-redux"
 
 ReactDOM.render(
   <React.StrictMode>
-  <ThemeProvider theme={theme}>
-    <GlobalStyles/>
-    <App/>
-  </ThemeProvider>
+  <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles/>
+        <App/>
+      </ThemeProvider>
+  </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
