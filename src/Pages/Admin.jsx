@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Login from "../Components/Login"
 import Navbar from '../Components/Navbar'
 import Home from "../Components/Indicadores"
@@ -10,14 +10,42 @@ import { useParams } from 'react-router-dom'
 function Admin() {
 
   //get params
-  const getUrl = useParams();
-  console.log("Url paramas",getUrl)
-  //routers
-  // switch()
+  const getUrl = useParams().page;
+  // console.log(getUrl)
 
+  //initialize state for page Display
+  const [PAGE,SETPAGE] = useState(<Home/>)
+
+  //SWITCH CASE METHOD TO SWITCH TO PAGES ACCORDING TO PARAMETERS
+  switch (getUrl) {
+
+    case "agenda":
+      console.log("Agenda")
+      break;
+
+    case "financeiro":
+      // SETPAGE(<Finance/>)
+      console.log("Financeiro")
+      break;
+
+    case "categoria":
+      // SETPAGE(<Category/>)
+      console.log("Categorias")
+      break;
+  
+    default:
+      // SETPAGE(<Home/>)
+      console.log("Home")
+      break;
+  }
+  
   return(
-    <a href='/admin/categoria'>Click Me</a>
+    <>
+      <Navbar/>
+      {PAGE}
+    </>
   )
+  
 }
 
 export default Admin

@@ -109,7 +109,6 @@ export function CategoryBodyData({Rows : rows,Columns : columns}){
     
 }
 
-
 /***
  * CADASTRO DE CATEGORIAS  PAGE
  */
