@@ -5,6 +5,7 @@ import Home from "../Components/Indicadores"
 import Finance from "../Components/Finance"
 import Category, {CreateCategory} from "../Components/Category"
 import Agenda from "../Components/Agenda"
+import Menu from "../Components/Menu";
 
 function Admin() {
   return (
@@ -14,7 +15,8 @@ function Admin() {
         {/* <Finance/> */}
         {/* <Category/> */}
         {/* <Agenda/> */}
-        <CreateCategory/>
+        {/* <CreateCategory/> */}
+        <Menu/>
     </div>
   )
 }
