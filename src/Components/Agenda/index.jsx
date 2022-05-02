@@ -31,7 +31,6 @@ function Agenda() {
     </>
   )
 }
-
 export default Agenda
 
 /***
@@ -81,7 +80,6 @@ export function AgendaBodyData({Rows : rows,Columns : columns}){
                 // rows.filter(row => row.nome)
                 rows.map((row)=>{
                 // console.log(columns);
-    
                 return(
                     <TableRow key={row.id}>
                         <TableCell>{row.name}</TableCell>
