@@ -30,12 +30,12 @@ function Login() {
                             <S.Form>
                                 <S.InputGroup>
                                     <StyledLabel>E-mail</StyledLabel>
-                                    <StyledInput/>
+                                    <StyledInput type="text" autocomplete/>
                                 </S.InputGroup>
 
                                 <S.InputGroup>
                                     <StyledLabel>Senha</StyledLabel>
-                                    <StyledInput/>
+                                    <StyledInput type="password" autocomplete/>
                                 </S.InputGroup>
 
                                 <S.FormOptionWrapper>

@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
   <ThemeProvider theme={theme}>
     <GlobalStyles/>
-    <App />
+    <App/>
   </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
