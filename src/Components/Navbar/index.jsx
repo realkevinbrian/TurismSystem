@@ -4,11 +4,13 @@ import { Bars, Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinks
 import Menu from "../Menu/index";
 import { useDispatch, useSelector } from 'react-redux';
 import {MenuActions} from "../../Redux/MenuSlice"
+import useAuth from "../../Hooks/useAuth";
 
 function Navbar() {
 
   //get menuState and add dispatch methods
   const dispatch = useDispatch();
+  useAuth();
 
   return (
     <>
@@ -26,7 +28,7 @@ function Navbar() {
 
             <NavMenuLinksWrapper>
                 <H4>Ola, Administrador</H4>
-                <Anchor href="#">Sair</Anchor>
+                <Anchor href="/logout">Sair</Anchor>
             </NavMenuLinksWrapper>
 
         </NavbarContainer>

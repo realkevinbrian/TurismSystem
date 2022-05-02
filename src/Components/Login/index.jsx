@@ -1,10 +1,57 @@
 import { ArrowBack } from '@mui/icons-material';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {LinearProgress, Alert} from "@mui/material"
 import bannerImg from "../../Assets/bgImage.png";
 import { Anchor, H1, H5, StyledInput, StyledLabel, SubmitBtn } from '../Global';
 import * as S from './styled';
+import useAuth from "../../Hooks/useAuth";
+import {useNavigate} from "react-router-dom"
 
 function Login() {
+
+    useAuth();
+    //=>SETUP DATA IN FORM
+    const [email,setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [getErrors,setErrors] = useState("");
+    const [isLoading,setLoading] = useState(false);
+
+    //=>SETUP NAVIGATE
+    const Navigate = useNavigate();
+
+    
+    //Authetication
+    function handleSubmit(self){
+        //prevent from reloading
+        self.preventDefault();
+
+        /***
+         * THIS WOULD BE OUR DATABASE DATA IN THAT CASE
+         */
+        let db_email = "abc@abc.com";
+        let db_password = "12345";
+        
+        if(email == db_email && password == db_password){
+            // console.log("Correct password");
+            setErrors("");
+                setTimeout(() => {
+                    setLoading(true)
+                    setTimeout(()=>{
+                        setLoading(false);
+                        Navigate("/admin");
+
+                        //store LocalStorage
+                        localStorage.setItem("email", {email})
+                        localStorage.setItem("password", {password})
+
+                    },1000)
+                }, 1);   
+        }else{
+            setErrors("Email ou Senha Incorrecta! Tente de Novo");
+        }
+        
+    }
+
   return (
     <>
         <S.LoginContainer>
@@ -27,23 +74,28 @@ function Login() {
                     <S.LoginBody>
                         <S.FormWrapper>
                             <H1>Login</H1>
-                            <S.Form>
+                            <S.Form onSubmit = {handleSubmit}>
                                 <S.InputGroup>
                                     <StyledLabel>E-mail</StyledLabel>
-                                    <StyledInput type="text" autocomplete/>
+                                    <StyledInput type="email" autocomplete onChange={(self)=>setEmail(self.target.value)} required/>
                                 </S.InputGroup>
 
                                 <S.InputGroup>
                                     <StyledLabel>Senha</StyledLabel>
-                                    <StyledInput type="password" autocomplete/>
+                                    <StyledInput type="password" autocomplete onChange={(self)=>setPassword(self.target.value)} required/>
                                 </S.InputGroup>
+                                
+                                {getErrors && <Alert variant="outlined" severity="error">{getErrors}</Alert>}
 
                                 <S.FormOptionWrapper>
                                     <Anchor href='#'>Esqueci minha senha</Anchor>
-                                    <SubmitBtn>Login</SubmitBtn>
+                                    <SubmitBtn type="submit">Login</SubmitBtn>
                                 </S.FormOptionWrapper>
-
+                            
                             </S.Form>
+                                
+                                {isLoading && <LinearProgress/>}
+
                         </S.FormWrapper>
                     </S.LoginBody>
 
@@ -57,3 +109,14 @@ function Login() {
 }
 
 export default Login
+
+
+export function Logout(){
+    
+    //=>SETUP NAVIGATE
+    const Navigate = useNavigate();
+    useEffect(() => {
+        localStorage.clear();
+        Navigate("/login");
+    }, [])
+}

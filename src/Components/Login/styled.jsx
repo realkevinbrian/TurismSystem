@@ -20,7 +20,6 @@ export const LoginContainer = styled.section`
         height:100%;
         }
 `
-
 export const backButtonWrapper = styled.div`
         display:none;
 
@@ -42,8 +41,6 @@ export const backButtonWrapper = styled.div`
         }
 
 `
-
-
 //===============Login Wrapper===========\\
 export const LoginWrapper = styled.div`
         display: grid;
@@ -63,7 +60,6 @@ export const LoginWrapper = styled.div`
 
 
     `;
-
 //===============Side Wrapper=============\\
 export const LoginBanner = styled.div`
         object-fit: contain;
@@ -89,13 +85,7 @@ export const BannerImage = styled.img`
                 border-radius:20px;
                 position: relative;
                 transform: translateY(150px);
-
-
-
         }
-        
-        
-
 `;
 
 //===============Right Side Wrapper=============\\
@@ -105,7 +95,7 @@ export const LoginContent = styled.div`
         grid-template-columns: 1fr;
         flex-direction: column;
         justify-content: space-between;
-        padding:2rem;
+        padding:1rem;
 
         @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
                 z-index:2;
@@ -117,7 +107,6 @@ export const LoginContent = styled.div`
 
             //LOGIN HEADER\\
 export const LoginHeader = styled.div`
-        /* border:1px solid red; */
         display:flex;
         flex-direction:column;
         font-size: .8rem;
@@ -132,6 +121,7 @@ export const LoginHeader = styled.div`
             //LOGIN BODY\\
 export const LoginBody = styled.div``;
             //FORM\\
+
 export const FormWrapper = styled.div`
         /* * {border:1px dashed red;} */
         display: flex;
@@ -174,13 +164,6 @@ export const FormOptionWrapper = styled.div`
 
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                /* padding-top:10px; */
-
-                //button
-                button{
-                /* padding:5px 20px; */
-
-                }
         }
 
         a{
