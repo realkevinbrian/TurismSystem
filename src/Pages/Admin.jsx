@@ -4,13 +4,16 @@ import Navbar from '../Components/Navbar'
 import Home from "../Components/Indicadores"
 import Finance from "../Components/Finance"
 import Category from "../Components/Category"
+import Agenda from "../Components/Agenda"
+
 function Admin() {
   return (
     <div>
         <Navbar/>
         {/* <Home/> */}
         {/* <Finance/> */}
-        <Category/>
+        {/* <Category/> */}
+        <Agenda/>
     </div>
   )
 }

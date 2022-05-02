@@ -1,10 +1,10 @@
+import { faDeleteLeft, faEdit } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TableCell, TableRow } from '@mui/material'
 import React from 'react'
 import StyledTable from '../Table'
-import * as S from "./styled"
 import CategoryData from './CategoryData'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileEdit, faEdit, faDeleteLeft, faClose } from '@fortawesome/free-solid-svg-icons'
+import * as S from "./styled"
 
 /***
  * At this point we are fetching table data in CategoryData Function created
@@ -16,7 +16,7 @@ function Category() {
   const Columns = CategoryData().columns;
   const Rows = CategoryData().rows;
 
-  console.log(Rows)
+  // =>DEBUGGING ROWS console.log(Rows)
 
   return (
     <>
@@ -33,20 +33,16 @@ function Category() {
 
 export default Category
 
-
-
 /***
    * CADASTRE_SE BUTTON
    * 
    */
 
  export function RegisterBtn(){
-    
   return(
     <>
       <S.CadastroBtn>Cadastrar Novo</S.CadastroBtn>
     </>
-
   )
 
 }
@@ -73,8 +69,6 @@ export function CategoryLabels({Columns}){
   )
 }
 
-
-
 /****
  * BODY DATA FOR Category TABLE TO MAKE OUR TABLE REUSABLE
  */
@@ -89,8 +83,6 @@ export function CategoryBodyData({Rows : rows,Columns : columns}){
     
                 return(
                     <TableRow key={row.id}>
-
-                        
                         <TableCell>
                           {
                               (row.name === "restaurante") ? <S.styledCell><S.Ball className='bg-cyan-900'/><span>{row.name}</span></S.styledCell> 
