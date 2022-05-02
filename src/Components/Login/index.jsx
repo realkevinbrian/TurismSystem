@@ -1,8 +1,8 @@
-import React from 'react'
-import { Anchor,StyledInput, StyledLabel, SubmitBtn,H5,H1 } from '../Global'
-import * as S from './styled';
-import bannerImg from "../../Assets/bgImage.png";
 import { ArrowBack } from '@mui/icons-material';
+import React from 'react';
+import bannerImg from "../../Assets/bgImage.png";
+import { Anchor, H1, H5, StyledInput, StyledLabel, SubmitBtn } from '../Global';
+import * as S from './styled';
 
 function Login() {
   return (

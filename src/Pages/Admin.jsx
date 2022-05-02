@@ -5,19 +5,18 @@ import Home from "../Components/Indicadores"
 import Finance from "../Components/Finance"
 import Category, {CreateCategory} from "../Components/Category"
 import Agenda from "../Components/Agenda"
-import Menu from "../Components/Menu";
+import { useParams } from 'react-router-dom'
 
 function Admin() {
-  return (
-    <div>
-        {/* <Navbar/> */}
-        {/* <Home/> */}
-        {/* <Finance/> */}
-        {/* <Category/> */}
-        {/* <Agenda/> */}
-        {/* <CreateCategory/> */}
-        <Menu/>
-    </div>
+
+  //get params
+  const getUrl = useParams();
+  console.log("Url paramas",getUrl)
+  //routers
+  // switch()
+
+  return(
+    <a href='/admin/categoria'>Click Me</a>
   )
 }
 
