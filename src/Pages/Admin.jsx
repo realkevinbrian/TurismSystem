@@ -1,4 +1,5 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect} from 'react';
+import * as G from "../Components/Global/index"
 import Navbar from '../Components/Navbar'
 import Home from "../Components/Indicadores"
 import Finance from "../Components/Finance"
@@ -27,7 +28,7 @@ function Admin() {
         SETPAGE(<Finance/>)
         break;
 
-      case "categoria":
+      case "categorias":
         SETPAGE(<Category/>)
         break;
     
@@ -41,7 +42,9 @@ function Admin() {
   return(
     <>
       <Navbar/>
+      <G.PAGECONTAINER>
       {PAGE}
+      </G.PAGECONTAINER>
     </>
   )
   

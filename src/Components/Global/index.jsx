@@ -62,3 +62,13 @@ export const StyledLabel = styled.label``;
 
 export const Icon = styled.img``;
 export default GlobalStyles;
+
+
+/***
+ * PAGE CONTAINER
+ */
+
+
+ export const PAGECONTAINER = styled.section`
+ padding-top: 4rem;
+`
