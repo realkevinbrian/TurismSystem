@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"
 import { useDispatch } from "react-redux"
 import * as G from "../../Components/Global/index"
 import { MenuActions } from "../../Redux/MenuSlice"
@@ -8,8 +9,6 @@ import { AgendaBodyData } from './AgendaBodyData'
 import AgendaLabels from "./AgendaLabels"
 import { CadastrarAgenda } from './CadastrarAgenda'
 import * as S from "./styled"
-
-
 /***
  * At this point we are fetching table data in AgendaData Function created
  * THIS IS Agenda PAGE THOU...
@@ -18,15 +17,13 @@ function AgendaCultural() {
 
   //At this point we read our data from @@AgendaData function 
   const Columns = AgendaData().columns;
-  const Rows = AgendaData().rows;
-
   return (
     <G.Container>
         <StyledTable 
         tableTitle = "Agenda Cultural" 
         switchComponent = {<RegisterBtn/>} 
         labels={<AgendaLabels/>}
-        bodyData = {<AgendaBodyData Rows={Rows} Columns={Columns}/>}
+        bodyData = {<AgendaBodyData Columns={Columns}/>}
         />
         <CadastrarAgenda/>
     </G.Container>

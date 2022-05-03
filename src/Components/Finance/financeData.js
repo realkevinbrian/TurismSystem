@@ -41,9 +41,9 @@ const columns = [
   Esta funcao serve cara criar dados em forma organizada
   Para facilitar mostrar na tabela
 */
-function createData(name, tipo, data, transaction , status,total) {
+function createData(id,name, tipo, data, transaction , status,total) {
   // const sum = total ;
-  return { name, tipo, data, transaction, status, total};
+  return {id,name, tipo, data, transaction, status, total};
 }
 
 /*Este sao dados para monstrar na tabela (ROWS)! 
@@ -52,21 +52,21 @@ Como estamos na fase de teste, usei estes dados como amostra
 */
 
 const rows = [
-  createData('Marcos da Silva', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
+  createData(1,'Marcos da Silva', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
 
-  createData('Amorim\'s Lounge', 'Estabelecimento', "23/06/2021", "Cartao","Pago", "R$1200"),
+  createData(2,'Amorim\'s Lounge', 'Estabelecimento', "23/06/2021", "Cartao","Pago", "R$1200"),
 
-  createData('Fernanda Machado', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
+  createData(3,'Fernanda Machado', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
 
-  createData('Shakespeare e Companhia', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
+  createData(4,'Shakespeare e Companhia', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
 
-  createData('La Pergola', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
+  createData(5,'La Pergola', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
 
-  createData('Aline do Amaral', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
+  createData(6,'Aline do Amaral', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
 
-  createData('Spikel', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
+  createData(7,'Spikel', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200"),
 
-  createData('La Pergolas', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200")
+  createData(8,'La Pergolas', 'Guia Turístico', "23/07/2021", "Boleto","Pendente", "R$1200")
   
 ];
 

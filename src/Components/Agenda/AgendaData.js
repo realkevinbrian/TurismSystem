@@ -42,6 +42,8 @@ const rows = [
   createData(12,"Tailandia","23/07/2021", "20:00h","$9","Torre Eiffel-Paris")
 ];
 
+// console.log(rows);
+
 
 return {columns,rows}
 
