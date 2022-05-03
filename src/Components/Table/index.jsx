@@ -27,10 +27,11 @@ function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
                             <TableCell>
                                 <StyledSearch/>
                             </TableCell>
-
+                            
+                            {/* 
                             <TableCell>
                                 <StyledSearch/>
-                            </TableCell>
+                            </TableCell> */}
 
                             <TableCell>
                                 <SearchbyNumber/>

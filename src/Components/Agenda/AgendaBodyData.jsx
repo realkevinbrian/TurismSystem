@@ -10,7 +10,6 @@ import data from "../../Api/server"
  */
 
 
-
 export function AgendaBodyData() {
   // console.log("Agenda :", data.agenda)
   const [agendaData, setAgendaData] = useState(data.agenda);
@@ -27,9 +26,8 @@ export function AgendaBodyData() {
     <>
       {
         agendaData.map((row) => {
-          // console.log(columns);
           return (
-            <TableRow key={row.id}>
+            <TableRow hover tabIndex={-1} key={row.id}>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.start}</TableCell>

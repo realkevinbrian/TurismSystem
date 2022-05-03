@@ -66,8 +66,8 @@ export function CadastrarAgenda() {
 
             <S.styledFileInputWrapper>
               <S.styledFileInputBox>
-                {/* <FontAwesomeIcon icon={faFileImage}/> */}
-                <Image />
+                <input type="file"/>
+                <Image/>
                 <FontAwesomeIcon icon={faPlus} />
               </S.styledFileInputBox>
             </S.styledFileInputWrapper>

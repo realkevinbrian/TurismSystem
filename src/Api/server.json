@@ -24,6 +24,15 @@
             {"id":6,"name":"Aline do Amaral","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
             {"id":7,"name":"Spikel","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
             {"id":8,"name":"La Pergolas","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"}
-    ]
+    ],
+    "category" : [
+        {"id":1,"name":"restaurante","type":"Estabelecimento"},
+        {"id":2,"name":"comercio","type":"Ponto Turistico"},
+        {"id":3,"name":"balada","type":"Roteiro"},
+        {"id":4,"name":"livraria","type":"Roteiro"},
+        {"id":5,"name":"lazer","type":"Roteiro"},
+        {"id":6,"name":"bar","type":"Roteiro"},
+        {"id":7,"name":"cultural","type":"Estabelecimento"}
+]
 
 }
