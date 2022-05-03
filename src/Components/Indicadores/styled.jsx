@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 
 //Container
-export const Indicadores = styled.section`
+export const Indicadores = styled.div`
         /* border: 2px dashed red; */
         height: auto;
         display: grid;
@@ -23,7 +23,7 @@ export const Indicadores = styled.section`
 
 
 `;
-export const IndicadoresWrapper = styled.section`
+export const IndicadoresWrapper = styled.div`
         display: grid;
         grid-template-columns: repeat(4,1fr);
         align-items: center;

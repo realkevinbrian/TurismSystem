@@ -18,7 +18,7 @@ import {useSelector, useDispatch} from "react-redux"
  * At this point we are fetching table data in AgendaData Function created
  * THIS IS Agenda PAGE THOU...
  */
-function Agenda() {
+function AgendaCultural() {
 
   //At this point we read our data from @@AgendaData function 
   const Columns = AgendaData().columns;
@@ -27,7 +27,7 @@ function Agenda() {
   
 
   return (
-    <>
+    <G.Container>
         <StyledTable 
         tableTitle = "Agenda Cultural" 
         switchComponent = {<RegisterBtn/>} 
@@ -35,10 +35,10 @@ function Agenda() {
         bodyData = {<AgendaBodyData Rows={Rows} Columns={Columns}/>}
         />
         <CadastrarAgenda/>
-    </>
+    </G.Container>
   )
 }
-export default Agenda
+export default AgendaCultural
 
 /***
    * CADASTRE_SE BUTTON

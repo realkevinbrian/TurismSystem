@@ -10,7 +10,8 @@ const MenuSlice = createSlice({
     name : "menu",
     initialState : {
         menuState : false,
-        AgendaState : false
+        AgendaState : false,
+        NavbarState : false
     },
     reducers : {
 
@@ -30,6 +31,10 @@ const MenuSlice = createSlice({
                 state.AgendaState = true;
 
             }
+        },
+
+        setNavbarState(state,action){
+            state.NavbarState = action.payload
         }
     }
 })

@@ -5,6 +5,8 @@ import * as S from "./styled"
 //icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserAlt, faFlag,faShop,faMapLocation,faSignature } from '@fortawesome/free-solid-svg-icons'
+import * as G from "../../Components/Global/index"
+
 
 function Indicadores() {
 
@@ -21,7 +23,7 @@ function Indicadores() {
   ])
   
   return (
-    <>
+    <G.Container>
 
       <S.Indicadores>
         <S.Header>
@@ -50,7 +52,7 @@ function Indicadores() {
 
       </S.Indicadores>
     
-    </>
+    </G.Container>
   )
 }
 

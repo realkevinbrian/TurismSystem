@@ -7,31 +7,30 @@ import {MenuActions} from "../../Redux/MenuSlice"
 import useAuth from "../../Hooks/useAuth";
 import LOGO from "../../Assets/LOGO.png";
 
-function Navbar() {
 
+function Navbar() {
   //get menuState and add dispatch methods
   const dispatch = useDispatch();
-  useAuth();
+            useAuth();
+
+
+  //NAVBAR STATE CHECK
 
   return (
     <>
         <NavbarContainer>
-            
             <MenuIconWrapper onClick={()=>dispatch(MenuActions.setMenuState(true))}>
                 <Bars/>
                 <Bars/>
                 <Bars/>
             </MenuIconWrapper>
-
             <LogoWrapper>
                 <Logo src={LOGO}/>
             </LogoWrapper>
-
             <NavMenuLinksWrapper>
                 <H4>Ola, Administrador</H4>
                 <Anchor href="/logout">Sair</Anchor>
             </NavMenuLinksWrapper>
-
         </NavbarContainer>
         <Menu/>
     </>

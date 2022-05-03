@@ -14,7 +14,7 @@ import {useNavigate} from "react-router-dom"
  * At this point we are fetching table data in CategoryData Function created
  * THIS IS Category PAGE THOU...
  */
-function Category() {
+function CategoryMain() {
 
   //At this point we read our data from @@CategoryData function 
   const Columns = CategoryData().columns;
@@ -23,19 +23,18 @@ function Category() {
   // =>DEBUGGING ROWS console.log(Rows)
 
   return (
-    <>
+    <G.Container>
         <StyledTable 
         tableTitle = "Cadastro de Categorias" 
         switchComponent = {<RegisterBtn/>} 
         labels={<CategoryLabels Columns={Columns}/>}
         bodyData = {<CategoryBodyData Rows={Rows} Columns={Columns}/>}
-        
         />
-    </>
+    </G.Container>
   )
 }
 
-export default Category
+export default CategoryMain
 
 /***
    * CADASTRE_SE BUTTON

@@ -8,7 +8,8 @@ import useAuth from "../../Hooks/useAuth";
 import {useNavigate} from "react-router-dom"
 import LOGO from "../../Assets/LOGO.png";
 import {Logo, LogoWrapper} from '../../Components/Navbar/styled'
-
+import {MenuActions} from "../../Redux/MenuSlice"
+import {useDispatch} from "react-redux"
 
 function Login() {
 
@@ -18,10 +19,12 @@ function Login() {
     const [password, setPassword] = useState("");
     const [getErrors,setErrors] = useState("");
     const [isLoading,setLoading] = useState(false);
-
     //=>SETUP NAVIGATE
     const Navigate = useNavigate();
 
+    //=>DISPATCH navbar state @@Close the navbar
+    const dispatch = useDispatch();
+    // dispatch(MenuActions.setNavbarState(false))
     
     //Authetication
     function handleSubmit(self){
@@ -35,18 +38,16 @@ function Login() {
         let db_password = "12345";
         
         if(email == db_email && password == db_password){
-            // console.log("Correct password");
             setErrors("");
                 setTimeout(() => {
                     setLoading(true)
                     setTimeout(()=>{
                         setLoading(false);
                         Navigate("/admin");
-
                         //store LocalStorage
                         localStorage.setItem("email", {email})
                         localStorage.setItem("password", {password})
-
+                        dispatch(MenuActions.setNavbarState(true))
                     },1000)
                 }, 1);   
         }else{
@@ -125,5 +126,5 @@ export function Logout(){
     useEffect(() => {
         localStorage.clear();
         Navigate("/login");
-    }, [])
+    })
 }

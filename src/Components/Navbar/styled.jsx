@@ -16,7 +16,6 @@ export const NavbarContainer = styled.nav`
         position: fixed;
         width: 100%;
         top: 0;
-
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
         padding: 1.5rem 1rem;

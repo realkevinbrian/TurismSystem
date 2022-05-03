@@ -3,6 +3,12 @@ import { createGlobalStyle } from "styled-components";
 //***GLOBAL STYLED */
 const GlobalStyles = createGlobalStyle`
 
+    section{
+        /* padding-top: 100px; */
+    }
+
+
+
     //body
     body{
         margin:0px;
@@ -71,4 +77,12 @@ export default GlobalStyles;
 
  export const PAGECONTAINER = styled.section`
  padding-top: 4rem;
+`
+
+/**
+ * Container theme
+ */
+
+export const Container = styled.section`
+        padding-top:5rem;
 `
