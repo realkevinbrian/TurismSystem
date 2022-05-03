@@ -1,11 +1,11 @@
-import React from 'react'
-import { Anchor, H4 } from '../Global'
-import { Bars, Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinksWrapper } from './styled'
-import Menu from "../Menu/index";
-import { useDispatch, useSelector } from 'react-redux';
-import {MenuActions} from "../../Redux/MenuSlice"
-import useAuth from "../../Hooks/useAuth";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import LOGO from "../../Assets/LOGO.png";
+import useAuth from "../../Hooks/useAuth";
+import { MenuActions } from "../../Redux/MenuSlice";
+import { Anchor, H4 } from '../Global';
+import Menu from "../Menu/index";
+import { Bars, Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinksWrapper } from './styled';
 
 
 function Navbar() {

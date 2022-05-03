@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import {button} from "../Global/index"
-import {InputGroup} from "../../Components/Login/styled";
+import styled from "styled-components";
+import { InputGroup } from "../../Components/Login/styled";
+import { button } from "../Global/index";
 
 
 /***

@@ -1,15 +1,15 @@
 import { ArrowBack } from '@mui/icons-material';
-import React, {useState, useEffect} from 'react';
-import {LinearProgress, Alert} from "@mui/material"
+import { Alert, LinearProgress } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import bannerImg from "../../Assets/bgImage.png";
+import LOGO from "../../Assets/LOGO.png";
+import { Logo, LogoWrapper } from '../../Components/Navbar/styled';
+import useAuth from "../../Hooks/useAuth";
+import { MenuActions } from "../../Redux/MenuSlice";
 import { Anchor, H1, H5, StyledInput, StyledLabel, SubmitBtn } from '../Global';
 import * as S from './styled';
-import useAuth from "../../Hooks/useAuth";
-import {useNavigate} from "react-router-dom"
-import LOGO from "../../Assets/LOGO.png";
-import {Logo, LogoWrapper} from '../../Components/Navbar/styled'
-import {MenuActions} from "../../Redux/MenuSlice"
-import {useDispatch} from "react-redux"
 
 function Login() {
 
@@ -37,7 +37,7 @@ function Login() {
         let db_email = "abc@abc.com";
         let db_password = "12345";
         
-        if(email == db_email && password == db_password){
+        if(email === db_email && password === db_password){
             setErrors("");
                 setTimeout(() => {
                     setLoading(true)

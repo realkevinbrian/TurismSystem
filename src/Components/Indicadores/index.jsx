@@ -1,11 +1,11 @@
+import { faFlag, faMapLocation, faShop, faSignature, faUserAlt } from '@fortawesome/free-solid-svg-icons'
+//icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
+import * as G from "../../Components/Global/index"
 import { H5 } from '../Global'
 import * as S from "./styled"
 
-//icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserAlt, faFlag,faShop,faMapLocation,faSignature } from '@fortawesome/free-solid-svg-icons'
-import * as G from "../../Components/Global/index"
 
 
 function Indicadores() {

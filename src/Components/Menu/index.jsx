@@ -1,9 +1,9 @@
 import { faCashRegister, faPieChart, faRegistered, faStoreAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { MenuActions } from "../../Redux/MenuSlice";
 import * as S from './styled';
-import {useSelector,useDispatch} from "react-redux"
-import {MenuActions} from "../../Redux/MenuSlice"
 
 
 function Menu() {
