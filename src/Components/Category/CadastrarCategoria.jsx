@@ -27,7 +27,7 @@ export function CadastrarCategoria() {
 
         <S.createCategoryHeader>
           <G.Anchor href="/admin"><ArrowBack /></G.Anchor>
-          <G.H5>Cadastro de Category Cultural</G.H5>
+          <G.H5>Cadastro de Categoria</G.H5>
         </S.createCategoryHeader>
 
         <S.createCategoryFormWrapper>
