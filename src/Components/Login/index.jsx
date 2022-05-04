@@ -1,5 +1,5 @@
 import { ArrowBack } from '@mui/icons-material';
-import { Alert, LinearProgress } from "@mui/material";
+import {LinearProgress } from "@mui/material";
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +25,13 @@ function Login() {
     //=>DISPATCH navbar state @@Close the navbar
     const dispatch = useDispatch();
     // dispatch(MenuActions.setNavbarState(false))
+
+    useEffect(()=>{
+        //authetication
+    if(localStorage.length !== 0){
+        Navigate("/admin")
+    }
+    },)
     
     //Authetication
     function handleSubmit(self){
@@ -34,7 +41,7 @@ function Login() {
         /***
          * THIS WOULD BE OUR DATABASE DATA IN THAT CASE
          */
-        let db_email = "abc@abc.com";
+        let db_email = "admin@company.com";
         let db_password = "12345";
         
         if(email === db_email && password === db_password){

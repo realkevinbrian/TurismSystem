@@ -22,17 +22,6 @@ export const CadastroBtn = styled(button)`
     }
 
 `
-/***
- * Customize ball
- */
-
-export const Ball = styled.div`
-
-        width : 15px;
-        height :15px;
-        /* background-color: #7a7979; */
-        border-radius:50%;
-`
 
 export const styledCell = styled.div`
     display: flex;

@@ -15,7 +15,7 @@ export function FinanceBodyData({Columns: columns }) {
   const queryNum = useSelector(state => state.query.queryByNumber);
 
   //dados financeiros do Database
-  const [dadosFinanceiros, setDadosFinanceiros] = useState(data.finance);
+  const [dadosFinanceiros] = useState(data.finance);
 
   return (
     <>

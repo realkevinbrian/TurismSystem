@@ -1,8 +1,7 @@
 import React from 'react'
-import axios from "axios"
 import { useDispatch } from "react-redux"
-import * as G from "../../Components/Global/index"
 import { MenuActions } from "../../Redux/MenuSlice"
+import * as G from "../../Components/Global/index"
 import StyledTable from '../Table'
 import AgendaData from '././AgendaData'
 import { AgendaBodyData } from './AgendaBodyData'

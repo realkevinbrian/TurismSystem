@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
         /* padding-top: 100px; */
     }
 
-
+     
     //body
     body{
         margin:0px;

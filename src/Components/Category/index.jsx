@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux"
+import { MenuActions } from "../../Redux/MenuSlice"
 import React from 'react'
 import * as G from "../../Components/Global/index"
 import StyledTable from '../Table'
@@ -5,6 +7,7 @@ import { CategoryBodyData } from './CategoryBodyData'
 import CategoryData from './CategoryData'
 import { CategoryLabels } from './CategoryLabels'
 import * as S from "./styled"
+import {CadastrarCategoria} from "./CadastrarCategoria"
 
 /***
  * At this point we are fetching table data in CategoryData Function created
@@ -26,6 +29,7 @@ function CategoryMain() {
         labels={<CategoryLabels Columns={Columns}/>}
         bodyData = {<CategoryBodyData Rows={Rows} Columns={Columns}/>}
         />
+        <CadastrarCategoria/>
     </G.Container>
   )
 }
@@ -33,14 +37,17 @@ function CategoryMain() {
 export default CategoryMain
 
 /***
-   * CADASTRE_SE BUTTON
+   * ==================CADASTRE_SE BUTTON===============
    * 
    */
 
  export function RegisterBtn(){
+
+  //=> OPEN REGISTRAR Category CULTURAL
+  const dispatch = useDispatch();
   return(
     <>
-      <S.CadastroBtn href='/admin/categorias/cadastrar'>Cadastrar Novo</S.CadastroBtn>
+      <S.CadastroBtn onClick={()=>dispatch(MenuActions.setCategoryState(true))}>Cadastrar Novo</S.CadastroBtn>
     </>
   )
 

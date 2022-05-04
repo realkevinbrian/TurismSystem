@@ -14,7 +14,7 @@ function Menu() {
   const [data] = useState([
     {id:1, label : "Indicadores", link : "/admin", icon : faPieChart},
     {id:2, label : "Financeiro", link : "/admin/financeiro", icon : faCashRegister},
-    {id:3, label : "Configurações", link : "/admin/categoria", icon : faStoreAlt},
+    {id:3, label : "Categoria", link : "/admin/categoria", icon : faStoreAlt},
     {id:4, label : "Agenda Cultural", link : "/admin/agenda", icon : faRegistered}
   ]);
 
