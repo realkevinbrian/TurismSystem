@@ -45,8 +45,8 @@ function Login() {
                         setLoading(false);
                         Navigate("/admin");
                         //store LocalStorage
-                        localStorage.setItem("email", {email})
-                        localStorage.setItem("password", {password})
+                        localStorage.setItem("email", email)
+                        localStorage.setItem("password", password)
                         dispatch(MenuActions.setNavbarState(true))
                     },1000)
                 }, 1);   
@@ -93,7 +93,7 @@ function Login() {
                                     <StyledInput type="password" autocomplete onChange={(self)=>setPassword(self.target.value)} required/>
                                 </S.InputGroup>
                                 
-                                {getErrors && <Alert variant="outlined" severity="error">{getErrors}</Alert>}
+                                {getErrors && <S.customAlert variant="outlined" severity="error">{getErrors}</S.customAlert>}
 
                                 <S.FormOptionWrapper>
                                     <Anchor href='#'>Esqueci minha senha</Anchor>

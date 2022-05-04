@@ -58,6 +58,10 @@ export const LogoWrapper = styled.div`
     align-items: center;
     justify-content: center;
     align-content: center;
+
+    img{
+            width: 200px;
+    }
     
 `;
 

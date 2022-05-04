@@ -9,19 +9,9 @@ export default function useAuth() {
     const Navigate = useNavigate();
     const dispatch = useDispatch();
     useEffect(() => {
-
-        let email = localStorage.getItem("email");
-        let password = localStorage.getItem("password");
-
-        console.log("email", email);
-        console.log("password",password);
-
-        if(!email && !password){
+        if(!localStorage.length){
             Navigate("/login")
         }
-
-
-        
     }, [])
     
 

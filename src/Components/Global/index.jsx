@@ -8,7 +8,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
 
-
     //body
     body{
         margin:0px;
@@ -85,4 +84,35 @@ export default GlobalStyles;
 
 export const Container = styled.section`
         padding-top:5rem;
+`
+
+/**
+ * Error Page
+ */
+
+export const NotFound = styled.div`
+    /* background:red; */
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction:column;
+
+    h5{
+        font-size:4rem;
+        background-color:#bb0a30;
+        color:white;
+        padding: 10px;
+    }
+
+    a{
+        text-decoration: underline;
+        font-size:2rem;
+
+        & :hover{
+            color:#065fa8;
+        }
+        
+    }
+    
 `

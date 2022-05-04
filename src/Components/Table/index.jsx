@@ -34,15 +34,16 @@ function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
                                 <StyledSearch/>
                             </S.CustomTableHeader> */}
 
-                            <S.CustomTableHeader>
+                            <S.CustomTableHeader align="right">
                                 <SearchbyNumber/>
                             </S.CustomTableHeader>
 
-                            <S.CustomTableHeader align='right'>
+                            <S.CustomTableHeader align="right">
                                 {switchComponent}
                             </S.CustomTableHeader>
                             
                         </S.HeadCustomTableRow>
+                        
                         <TableRow>{labels}</TableRow>
                     </TableHead>
 

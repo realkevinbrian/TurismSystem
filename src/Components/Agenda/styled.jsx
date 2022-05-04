@@ -67,20 +67,34 @@ export const styledCreateCategoryContainer = styled.div`
             cursor:pointer;
         }
 
+        
+
 
         //ON MOBILE DEVICES
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-        margin:0rem 1rem;
+        margin:0rem 0rem;
+        align-items: center;
+        justify-content:center;
+        position:fixed;
         
         }
 `;
 
 export const styledCreateCategory = styled.section`
+        width:375px;
         display:grid;
         background-color:white;
         box-shadow:1px 1px 5px 5px #00000049;
         transform: translateY(-10px);
+
+        //=> MOBILE VERSION
+        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+        transform: translateY("");
+        width:375px;
+        margin:1rem;
+
+        }
 `;
 export const createCategoryHeader = styled.div`
         display:flex;

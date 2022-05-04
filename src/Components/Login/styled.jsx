@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { Alert} from "@mui/material";
+
 /**
  * ************************************\
  * ========STYLED COMPONENTS============\
@@ -196,3 +198,13 @@ export const FormOptionWrapper = styled.div`
 `;
 
  
+
+/***
+ * CUSTOM ALERT
+ */
+
+export const customAlert = styled(Alert)`
+        
+        border-radius: 6px !important;
+        padding:2px 10px!important;
+`
