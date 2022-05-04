@@ -1,7 +1,8 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 import "../../App.css"
-import StyledSearch, { SearchbyNumber } from '../Search'
+import StyledSearch from '../Search'
+import { SearchbyNumber } from "../Search/SearchbyNumber"
 import * as S from "./styled"
 import "./styles.css"
 
@@ -16,34 +17,33 @@ function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
         <Paper>
             <TableContainer>
                 <Table>
-                    <TableHead className='removeBorder'>
+                    <TableHead>
                         <TableRow>
-                            <TableCell>
+                            <S.CustomTableCell>
                                 <S.TableTitle>{tableTitle}</S.TableTitle>
-                            </TableCell>
+                            </S.CustomTableCell>
                         </TableRow>
 
-                        <TableRow>
-                            <TableCell>
+                        <S.HeadCustomTableRow>
+                            <S.CustomTableHeader>
                                 <StyledSearch/>
-                            </TableCell>
+                            </S.CustomTableHeader>
                             
                             {/* 
-                            <TableCell>
+                            <S.CustomTableHeader>
                                 <StyledSearch/>
-                            </TableCell> */}
+                            </S.CustomTableHeader> */}
 
-                            <TableCell>
+                            <S.CustomTableHeader>
                                 <SearchbyNumber/>
-                            </TableCell>
+                            </S.CustomTableHeader>
 
-                            <TableCell align='left'>
+                            <S.CustomTableHeader align='right'>
                                 {switchComponent}
-                            </TableCell>
-                        </TableRow>
-
+                            </S.CustomTableHeader>
+                            
+                        </S.HeadCustomTableRow>
                         <TableRow>{labels}</TableRow>
-
                     </TableHead>
 
                     <TableBody>

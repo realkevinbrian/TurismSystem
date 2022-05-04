@@ -4,17 +4,22 @@ import { TableCell, TableRow } from '@mui/material';
 import React, {useState} from 'react';
 import * as S from "./styled";
 import data from "../../Api/server";
-
+import { useSelector } from 'react-redux';
 /****
  * BODY DATA FOR Category TABLE TO MAKE OUR TABLE REUSABLE
  */
 
 export function CategoryBodyData() {
 
+  //get BYSTRING AND BYNUM
+  const query = useSelector(state => state.query.query_string);
+  const queryNum = useSelector(state => state.query.queryByNumber);
+
+
    //=>Category Data from the server
    const [categoryData, setcategoryData] = useState(data.category);
 
-   //Handle on Click
+   //Handle on Click DETETE FUNCTIONALITY
    const handleDelete = (categoryId) =>{
      let newData = categoryData.filter(item => item.id !== categoryId);
      setcategoryData(newData);
@@ -23,8 +28,9 @@ export function CategoryBodyData() {
   return (
     <>
       {
-        // rows.filter(row => row.nome)
-        categoryData.map((row) => {
+        categoryData.filter(row => row.name.toLowerCase().includes(query))
+        .slice(0,queryNum)
+        .map((row) => {
           return (
             <TableRow key={row.id}>
               <TableCell>

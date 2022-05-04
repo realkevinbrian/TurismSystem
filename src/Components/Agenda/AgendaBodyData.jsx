@@ -4,6 +4,7 @@ import { TableCell, TableRow } from '@mui/material';
 import React, { useState } from 'react';
 import * as S from "./styled";
 import data from "../../Api/server"
+import { useSelector } from 'react-redux';
 
 /****
  * BODY DATA FOR Agenda TABLE TO MAKE OUR TABLE REUSABLE
@@ -11,7 +12,14 @@ import data from "../../Api/server"
 
 
 export function AgendaBodyData() {
-  // console.log("Agenda :", data.agenda)
+  //query databystring and byNumber
+  const query = useSelector(state => state.query.query_string);
+  const queryNum = useSelector(state => state.query.queryByNumber);
+
+
+
+
+  // => AgendaData
   const [agendaData, setAgendaData] = useState(data.agenda);
 
   //Handle on Click
@@ -25,7 +33,9 @@ export function AgendaBodyData() {
   return (
     <>
       {
-        agendaData.map((row) => {
+        agendaData.filter(row => row.name.toLowerCase().includes(query))
+        .slice(0,queryNum)
+        .map((row) => {
           return (
             <TableRow hover tabIndex={-1} key={row.id}>
               <TableCell>{row.name}</TableCell>

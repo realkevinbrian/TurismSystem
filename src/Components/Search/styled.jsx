@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Select from '@mui/material/Select';
 
 
 /***
@@ -26,6 +27,19 @@ export const SearchInput = styled.input`
     color : ${({theme}) => theme.colors.dark_cyan}
 `;
 
+/**
+   CUSTOM SELECY
+*/
 
+export const CustomSelectContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 5px;
+`;
+export const CustomSelect = styled(Select)`
+height: 20px;
+min-width: 70px;
+
+`
 
 

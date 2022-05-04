@@ -1,5 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import MenuSlice from "./MenuSlice";
+import QuerySlice from "./QuerySlice";
 
 /***
  * Setup store
@@ -7,7 +8,8 @@ import MenuSlice from "./MenuSlice";
 
 const store = configureStore({
     reducer : {
-        menu : MenuSlice
+        menu : MenuSlice,
+        query : QuerySlice
     }
 
 })
