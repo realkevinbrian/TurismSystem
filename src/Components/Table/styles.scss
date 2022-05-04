@@ -1,0 +1,13 @@
+.removeBorder {
+    
+    tr:nth-child(1){
+        // background-color: green;
+        border: 1px solid transparent;
+
+        th{
+            border-bottom-color: transparent!important;
+
+        }
+    }
+}
+
