@@ -11,7 +11,8 @@ const MenuSlice = createSlice({
     initialState : {
         menuState : false,
         AgendaState : false,
-        NavbarState : false
+        NavbarState : false,
+        CategoryState : false
     },
     reducers : {
 
@@ -35,7 +36,15 @@ const MenuSlice = createSlice({
 
         setNavbarState(state,action){
             state.NavbarState = action.payload
+        },
+        setCategoryState(state){
+            if(state.CategoryState === true){
+                state.CategoryState = false;
+            }else{
+                state.CategoryState = true;
+            }
         }
+        
     }
 })
 

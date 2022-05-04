@@ -5,7 +5,6 @@ import Agenda from './Pages/Agenda';
 import Category from './Pages/Category';
 import Finance from './Pages/Finance';
 import Login,{Logout} from './Components/Login';
-import Navbar from "./Components/Navbar";
 import NotFound from "./Pages/ErrorPage"
 function App() {
     return ( 

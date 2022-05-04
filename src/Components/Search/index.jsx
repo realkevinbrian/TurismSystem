@@ -1,6 +1,5 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FormControl from '@mui/material/FormControl';
 import React from 'react';
 import * as S from './styled';
 import {QueryActions} from "../../Redux/QuerySlice";
