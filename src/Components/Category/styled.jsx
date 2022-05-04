@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {button} from "../Global/index"
 import {InputGroup} from "../../Components/Login/styled";
+import Select from '@mui/material/Select';
 
 /***
  * CADASTRE ME BUTTON
@@ -24,7 +25,7 @@ export const CadastroBtn = styled(button)`
 
 
 /***
- * Customize ball
+ * SIDE COLORS DISPLAY ON TABLE CATEGORIA
  */
 
 export const Ball = styled.div`
@@ -129,7 +130,6 @@ export const createCategoryHeader = styled.div`
 `;
 export const createCategoryFormWrapper = styled.div`
         padding:30px 20px;
-
         //ON MOBILE DEVICES
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
@@ -142,7 +142,7 @@ export const createCategoryFormWrapper = styled.div`
 
 //2 -> Childrens
 export const styledInputGroup = styled(InputGroup)`
-    padding:3px 15px;
+    /* padding:3px 15px; */
     border:1.5px solid ${({theme}) => theme.colors.dark_cyan};
 
     label{
@@ -151,12 +151,75 @@ export const styledInputGroup = styled(InputGroup)`
         margin:0px 4px;
     }
 
-    input{
+    input[type="text"]{
         font-size:.8rem;
-
     }
+`
 
 
+/***
+ * COLOR PICKER 
+ */
 
+export const ColorPickerContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+    font-size:.8rem!important;
+    color:#c4c4c4;
+    margin-bottom: 10rem;
+    //ON MOBILE DEVICES
+        //=> MOBILE VERSION
+        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+        /* padding:5rem 20px; */
+        margin-bottom: 2rem;
+
+        
+        
+        }
+
+    //select color input
+    input[type="color"]{
+        position:absolute;
+        width:135px;
+        height:45px;
+        transform: translateY(50px) translateX(9px);
+        border-radius: 10px;
+        opacity:0;
+        
+    }
+`
+export const ColorPickerIcon = styled.img`
+        width:150px;
+`
+/***
+ * CUSTOM SELECT 
+ */
+export const CustomSelectContainer = styled.div`
+    display: flex;
+    gap: 5px;
+    height:30px;
+`;
+export const CustomSelect = styled(Select)`
+    height:25px;
+    font-size:.8rem!important;
+    color: #999999 !important;
+`
+
+/**
+ * Styled Color
+ */
+export const SelectedColor = styled.div`
+        width: 30px;
+        height:30px;
+        background-color: ${({color}) => color};
+        align-self:center;
+        position: relative;
+        transform: translateY(-55px) translateX(-30px);
+        border-radius: 50%;
+        border:5px solid white;
 
 `
+
+/**
+ * 
+ */

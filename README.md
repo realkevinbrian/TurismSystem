@@ -2,8 +2,6 @@
 
 Documentation
 
-Components
-
-**Login Component**
-The index in Login component is the root for the component
-and Styled.jsx is where all components are styled
+Para Accessar 
+Email : admin@company.com
+Senha : 12345

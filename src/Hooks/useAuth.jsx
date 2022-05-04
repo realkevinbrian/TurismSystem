@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 export default function useAuth() {
 
     const Navigate = useNavigate();
-    useEffect((Navigate) => {
+    useEffect(() => {
         if(!localStorage.length){
             Navigate("/login")
         }
