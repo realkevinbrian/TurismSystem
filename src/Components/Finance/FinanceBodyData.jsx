@@ -1,7 +1,7 @@
 import { TableCell, TableRow } from '@mui/material';
 import React, {useState} from 'react';
-import data from "../../Api/server"
 import { useSelector } from 'react-redux';
+import {selectAll} from "../../features/FinanceSlice"
 
 
 /****
@@ -15,7 +15,9 @@ export function FinanceBodyData({Columns: columns }) {
   const queryNum = useSelector(state => state.query.queryByNumber);
 
   //dados financeiros do Database
-  const [dadosFinanceiros] = useState(data.finance);
+  const dadosFinanceiros = useSelector(selectAll);
+
+  // console.log(finance)
 
   return (
     <>
@@ -24,7 +26,7 @@ export function FinanceBodyData({Columns: columns }) {
         .slice(0,queryNum)
         .filter(row => row.name.toLowerCase().includes(query))
         .map((row) => (
-          <TableRow hover tabIndex={-1} key={row.id}>
+          <TableRow hover key={row.id}>
             <TableCell>{row.name}</TableCell>
             <TableCell>{row.tipo}</TableCell>
             <TableCell>{row.data}</TableCell>

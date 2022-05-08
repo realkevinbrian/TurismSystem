@@ -52,7 +52,8 @@ const MenuSlice = createSlice({
  * Export actions
  */
 
-export const MenuActions = MenuSlice.actions;
+export const {setMenuState, setAgendaState, setCategoryState,setNavbarState} = MenuSlice.actions;
+
 
 
 /***

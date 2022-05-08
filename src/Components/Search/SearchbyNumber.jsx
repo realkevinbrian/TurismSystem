@@ -1,7 +1,7 @@
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
-import { QueryActions } from "../../Redux/QuerySlice";
+import { QueryActions } from "../../features/QuerySlice";
 import { useDispatch, useSelector } from "react-redux";
 import * as S from "./styled"
 

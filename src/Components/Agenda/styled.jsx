@@ -10,11 +10,12 @@ import { button } from "../Global/index";
 export const CadastroBtn = styled(button)`
     background-color: ${({theme})=>theme.colors.dark_cyan};
     color:${({theme})=>theme.colors.white};
-    padding:.4rem 2rem;
+    padding:.4rem 1rem;
     border-radius:50px;
     transition:all 0.2s linear;
     font-size:.9rem;
     font-weight: 400;
+    word-break: keep-all;
 
     //on hover
     &:hover{
@@ -31,8 +32,12 @@ export const styledCell = styled.div`
 /***
  * EDIT AND DELETE BTNS
  */
-export const Edit = styled.a``;
-export const Delete = styled.a``;
+export const Edit = styled.a`
+    cursor :pointer;
+`;
+export const Delete = styled.a`
+    cursor :pointer;
+`;
 
 
 /****

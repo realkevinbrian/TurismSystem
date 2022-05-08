@@ -4,7 +4,7 @@ import { TableCell, TableRow } from '@mui/material'
 
 
 export const StyledTableContainer = styled.div`
-    padding: 60px;
+    padding: 30px;
 
     //table paper
     & .MuiPaper-root, 
@@ -40,7 +40,9 @@ export const CustomTableCell = styled(TableCell)`
 
 export const CustomTableHeader = styled(TableCell)`
     /* border:1px solid transparent!important; */
-    /* border-bottom-color: black!important; */
+    /* > * {border-bottom-color: black!important;} */
+    /* display: flex; */
+    
 `
 
 export const HeadCustomTableRow = styled(TableRow)`

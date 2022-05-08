@@ -2,7 +2,7 @@ import { faCashRegister, faPieChart, faRegistered, faStoreAlt } from '@fortaweso
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { MenuActions } from "../../Redux/MenuSlice";
+import {setMenuState} from "../../features/MenuSlice";
 import * as S from './styled';
 
 
@@ -29,7 +29,7 @@ function Menu() {
             <S.MenuListWrapper>
                 {
                     data.map((item)=>(
-                        <S.MenuItem key={item.id} onClick={()=>dispatch(MenuActions.setMenuState(false))}>
+                        <S.MenuItem key={item.id} onClick={()=>dispatch(setMenuState(false))}>
                             <S.MenuLink href={item.link}>
                               <FontAwesomeIcon icon={item.icon}/>
                                 <span>{item.label}</span>

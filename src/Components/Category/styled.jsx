@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 export const CadastroBtn = styled(button)`
     background-color: ${({theme})=>theme.colors.dark_cyan};
     color:${({theme})=>theme.colors.white};
-    padding:.4rem 2rem;
+    padding:.4rem 1.2rem;
     border-radius:50px;
     transition:all 0.2s linear;
     font-size:.9rem;
@@ -49,8 +49,12 @@ export const styledCell = styled.div`
  */
 
 
-export const Edit = styled.a``;
-export const Delete = styled.a``;
+export const Edit = styled.a`
+        cursor: pointer;
+`;
+export const Delete = styled.a`
+        cursor: pointer;
+`;
 
 
 /****
@@ -221,5 +225,10 @@ export const SelectedColor = styled.div`
 `
 
 /**
- * 
+ * Table Row Input to Edit table
  */
+
+export const StyledEditInput = styled.input`
+        width:100%;
+        border-bottom-color: #e9e9e9;
+`
