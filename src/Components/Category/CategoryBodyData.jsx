@@ -52,13 +52,13 @@ export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
   return(
       <TableRow key={row.id}>
         <TableCell>
-          {(row.name === "restaurante") ? <S.styledCell><S.Ball className='bg-cyan-900' /><span>{row.name}</span></S.styledCell>
-            : (row.name === "comercio") ? <S.styledCell><S.Ball className='bg-red-900' /><span>{row.name}</span></S.styledCell>
-              : (row.name === "balada") ? <S.styledCell><S.Ball className='bg-green-900' /><span>{row.name}</span></S.styledCell>
-                : (row.name === "livraria") ? <S.styledCell><S.Ball className='bg-green-900' /><span>{row.name}</span></S.styledCell>
-                  : (row.name === "lazer") ? <S.styledCell><S.Ball className='bg-blue-900' /><span>{row.name}</span></S.styledCell>
-                    : (row.name === "bar") ? <S.styledCell><S.Ball className='bg-yellow-900' /><span>{row.name}</span></S.styledCell>
-                      : (row.name === "cultural") ? <S.styledCell><S.Ball className='bg-orange-900' /><span>{row.name}</span></S.styledCell> 
+          {(row.name === "restaurante") ? <S.styledCell><S.Ball bColor ={"#c85ba9"}/><span>{row.name}</span></S.styledCell>
+            : (row.name === "comercio") ? <S.styledCell><S.Ball bColor ={"#95a28e"}/><span>{row.name}</span></S.styledCell>
+              : (row.name === "balada") ? <S.styledCell><S.Ball bColor ={"#ed5252"}/><span>{row.name}</span></S.styledCell>
+                : (row.name === "livraria") ? <S.styledCell><S.Ball bColor ={"#95a28e"}/><span>{row.name}</span></S.styledCell>
+                  : (row.name === "lazer") ? <S.styledCell><S.Ball bColor ={"#61be8c"}/><span>{row.name}</span></S.styledCell>
+                    : (row.name === "bar") ? <S.styledCell><S.Ball bColor ={"#f4a072"}/><span>{row.name}</span></S.styledCell>
+                      : (row.name === "cultural") ? <S.styledCell><S.Ball bColor ={"#789aff"}/><span>{row.name}</span></S.styledCell> 
                         : <S.styledCell><S.Ball className='bg-cyan-900' /><span>{row.name}</span></S.styledCell>}
         </TableCell>
         <TableCell>{row.type}</TableCell>

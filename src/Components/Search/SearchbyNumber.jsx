@@ -7,12 +7,15 @@ import * as S from "./styled"
 
 /***
  * filter rows
+ * In this component It contains two! 
+ * Search by Number funcionality
  */
 
 export function SearchbyNumber() {
   //set qeury data
   const num = useSelector(state => state.query.queryByNumber);
   const dispatch = useDispatch();
+  
 
   return (
     <>

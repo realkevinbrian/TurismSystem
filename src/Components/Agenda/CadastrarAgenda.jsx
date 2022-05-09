@@ -28,8 +28,15 @@ export function CadastrarAgenda() {
   const [date, setDate] = useState(null);
   const [start, setStartTime] = useState(null);
   const [entrance, setEntrance] = useState(null);
-  const [local, setLocal] = useState(null);
-  const data = {name,date,start,entrance,local}
+  const [city, setCity] = useState("Cidade");
+  const [region, setRegion] = useState("região");
+  const [country, setCountry] = useState("país");
+  const data = {name,date,start,entrance}
+
+  //teste
+  console.log("City", city)
+  console.log("Regiao", region)
+  console.log("Country", country)
 
   //SUBMIT DATA
   const handleSubmit = (self) =>{
@@ -86,13 +93,14 @@ export function CadastrarAgenda() {
                 placeholder='digite o valor da entrada' />
             </S.styledInputGroup>
 
-            <S.styledInputGroup>
-              <G.StyledLabel>Local</G.StyledLabel>
-              <G.StyledInput
-                onChange={(self) => setLocal(self.target.value)}
-                type="text"
-                placeholder='digite o local do evento' />
-            </S.styledInputGroup>
+            <CustomMultiSelectWrapper 
+            city ={city}
+            region = {region} 
+            country = {country}
+            setCity={setCity} 
+            setRegion={setRegion} 
+            setCountry={setCountry}
+            />
 
             <S.styledInputGroup>
               <G.StyledLabel>Data</G.StyledLabel>
@@ -117,3 +125,45 @@ export function CadastrarAgenda() {
     </S.styledCreateCategoryContainer>
   );
 }
+
+
+/***
+ * Componente para Selecionar o Local do evento
+ * O componente inclui O select de {Cidade , regiao e Pais}
+ */
+
+export function CustomMultiSelectWrapper({setCity,setRegion,setCountry,city,region,country}){
+
+  return(
+    <>
+      <S.styledSelectContainer>
+        <S.styledSelectButton>Selecione o Local</S.styledSelectButton>
+        <S.styledSelectWrapper>
+
+          {/**City Select */}
+          <S.styledSelect value={city} onChange={(self)=>setCity(self.target.value)}>
+            <S.styledMenuItem value={"Cidade"}><em>Cidade</em></S.styledMenuItem>
+            <S.styledMenuItem value={"Brazilia"}>Brazilia</S.styledMenuItem>
+            <S.styledMenuItem value={"Mexico"}>Mexico</S.styledMenuItem>
+          </S.styledSelect>
+
+          {/** Region Select */}
+          <S.styledSelect value={region} onChange={(self)=>setRegion(self.target.value)}>
+            <S.styledMenuItem value={"região"}><em>Região</em></S.styledMenuItem>
+            <S.styledMenuItem value={"Brazilia"}>Brazilia</S.styledMenuItem>
+            <S.styledMenuItem value={"Mexico"}>Mexico</S.styledMenuItem>
+          </S.styledSelect>
+          
+          {/** Country Select */}
+          <S.styledSelect value={country} onChange={(self)=>setCountry(self.target.value)}>
+            <S.styledMenuItem value={"país"}><em>Pais</em></S.styledMenuItem>
+            <S.styledMenuItem value={"Brazilia"}>Brazilia</S.styledMenuItem>
+            <S.styledMenuItem value={"Mexico"}>Mexico</S.styledMenuItem>
+          </S.styledSelect>
+
+        </S.styledSelectWrapper>
+      </S.styledSelectContainer>
+    </>
+  )
+}
+

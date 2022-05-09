@@ -33,7 +33,6 @@ function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
                             <S.CustomTableHeader>
                                 <StyledSearch placeholder="pesquise"/>
                             </S.CustomTableHeader>
-            
 
                             <S.CustomTableHeader>
                                 <SearchbyNumber/>

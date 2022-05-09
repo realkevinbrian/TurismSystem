@@ -1,5 +1,7 @@
 import { TableCell } from '@mui/material';
 import React from 'react';
+import * as M from "@mui/icons-material"
+
 
 /****
  * LABELS FOR FINANCE TABLE TO MAKE OUR TABLE REUSABLE
@@ -15,6 +17,8 @@ export function FinanceLabels({ Columns }) {
           return (
             <TableCell key={column.id}>
               {column.label}
+              <M.ArrowUpwardTwoTone/>
+              <M.ArrowDownwardTwoTone/>
             </TableCell>
           );
         })}

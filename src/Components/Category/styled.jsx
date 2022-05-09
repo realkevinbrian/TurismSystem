@@ -32,7 +32,7 @@ export const Ball = styled.div`
 
         width : 15px;
         height :15px;
-        /* background-color: #7a7979; */
+        background-color: ${({bColor}) => bColor};
         border-radius:50%;
 `
 

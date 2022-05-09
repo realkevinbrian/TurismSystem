@@ -9,7 +9,7 @@ const QuerySlice = createSlice({
     name : "query",
     initialState : {
         query_string : '',
-        queryByNumber : 5
+        queryByNumber : 10
     },
 
     reducers : {

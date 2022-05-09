@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { InputGroup } from "../../Components/Login/styled";
 import { button } from "../Global/index";
+import { Select, MenuItem } from "@mui/material";
+
 
 
 /***
@@ -144,7 +146,10 @@ export const styledInputGroup = styled(InputGroup)`
 
 `
 
-//SPECIAL IMAGE IMPUT
+/**
+ * SPECIAL IMAGE INPUT 
+ * STYLED INPUT
+ * **/
 export const styledFileInputWrapper = styled.div`
     display:flex;
     flex-direction:column;
@@ -187,4 +192,30 @@ export const styledFileInputBox = styled.div`
             }
 
 `;
-// export const styledFileInput = styled.div``;
+
+
+/***
+ * Componente para Selecionar o Local do evento
+ * O componente inclui O select de {Cidade , regiao e Pais}
+ */
+
+export const styledSelectContainer = styled.div`
+`;
+export const styledSelectButton = styled.h6`
+        font-size: .9rem;
+`;
+export const styledSelect = styled(Select)`
+        height:30px;
+        border:1.5px solid ${({theme}) => theme.colors.dark_cyan};
+        outline: none;
+        outline-style: none;
+
+        
+`;
+export const styledMenuItem = styled(MenuItem)``;
+export const styledSelectWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:10px;
+`
+
