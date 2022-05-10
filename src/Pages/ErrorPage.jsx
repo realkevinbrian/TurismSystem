@@ -4,10 +4,10 @@ import {Link} from "react-router-dom"
 function ErrorPage() {
   return (
     <G.NotFound>
-        <G.H5>404 Page Not Found!</G.H5>
-        <Link to="/">Go back to Admin</Link>
+        <G.H5>404 Página não encontrada.</G.H5>
+        <Link to="/">Retorne à página anterior</Link>
     </G.NotFound>
   )
 }
 
-export default ErrorPage
+export default ErrorPage;
