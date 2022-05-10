@@ -1,8 +1,7 @@
 {
 	"folders": [
 		{
-			"name": "TurismSystem",
-			"path": "."
+			"path": "src"
 		}
 	],
 	"settings": {
