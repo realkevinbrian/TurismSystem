@@ -2,6 +2,7 @@ import { TableCell, TableRow } from '@mui/material';
 import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import {selectAll} from "../../features/FinanceSlice"
+import * as S from "./styled"
 
 
 /****
@@ -27,17 +28,17 @@ export function FinanceBodyData({Columns: columns }) {
         .filter(row => row.name.toLowerCase().includes(query))
         .map((row) => (
           <TableRow hover key={row.id}>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.tipo}</TableCell>
-            <TableCell>{row.data}</TableCell>
-            <TableCell>{row.transaction}</TableCell>
-            <TableCell>
+            <S.CustomTableCell>{row.name}</S.CustomTableCell>
+            <S.CustomTableCell>{row.tipo}</S.CustomTableCell>
+            <S.CustomTableCell>{row.data}</S.CustomTableCell>
+            <S.CustomTableCell>{row.transaction}</S.CustomTableCell>
+            <S.CustomTableCell>
               {(row.status === "Pendente") ? 
                 <span className='text-red-500'>{row.status}</span> : 
                 <span className='text-green-600'>{row.status}</span>
               }
-            </TableCell>
-            <TableCell>{row.total}</TableCell>
+            </S.CustomTableCell>
+            <S.CustomTableCell>{row.total}</S.CustomTableCell>
           </TableRow>
         )
         )}

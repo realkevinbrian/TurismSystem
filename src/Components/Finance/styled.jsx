@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import style from "styled-components";
+import {styled} from "@mui/material/styles"
+import { TableCell } from "@mui/material";
 
 /***
 **TOTAL COMPONENT IN TABLE
 */
-export const ShowTotalWrapper = styled.div`
+export const ShowTotalWrapper = style.div`
         text-align: center;
         padding: 10px;
         box-shadow: 1px 1px 10px 2px #d8d6d695;
@@ -21,4 +23,17 @@ export const ShowTotalWrapper = styled.div`
             font-weight: 400;
             font-size: 1rem;
         }
+`
+
+/***
+ * STYLED MUI COMONENTES
+ */
+
+export const CustomTableCell = styled(TableCell)`
+    padding: 16px;
+    border-bottom-color:#000000;
+
+`
+export const CustomTableCellHead = styled(TableCell)`
+    background-color: red;
 `

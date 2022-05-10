@@ -62,8 +62,8 @@ export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
                         : <S.styledCell><S.Ball className='bg-cyan-900' /><span>{row.name}</span></S.styledCell>}
         </TableCell>
         <TableCell>{row.type}</TableCell>
-        <TableCell align="right"><S.Edit className='text-cyan-900' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit} /></S.Edit></TableCell>
-        <TableCell align="right"><S.Edit className='text-red-500'><FontAwesomeIcon icon={faDeleteLeft} onClick={()=>dispatch(DeleteRow({id : row.id}))}/></S.Edit></TableCell>
+        <TableCell align="right" sx={{minWidth:"0px"}}><S.Edit className='text-cyan-900 text-lg' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit} /></S.Edit></TableCell>
+        <TableCell align="right" sx={{width:"10px" }}><S.Edit className='text-red-500 text-lg'><FontAwesomeIcon icon={faDeleteLeft} onClick={()=>dispatch(DeleteRow({id : row.id}))}/></S.Edit></TableCell>
       </TableRow>
   )
 }

@@ -1,4 +1,4 @@
-import { Paper, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 import StyledSearch from '../Search'
 import { SearchbyNumber } from "../Search/SearchbyNumber"
@@ -24,27 +24,29 @@ function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
                             </S.CustomTableCell>
                         </TableRow>
 
-                        <S.HeadCustomTableRow>
+                        <TableRow>
 
-                            <S.CustomTableHeader>
+                            <TableCell align='left'>
                                 <StyledSearch placeholder="pesquise por nome"/>
-                            </S.CustomTableHeader>
+                            </TableCell>
 
-                            <S.CustomTableHeader>
+                            <TableCell>
                                 <StyledSearch placeholder="pesquise"/>
-                            </S.CustomTableHeader>
+                            </TableCell>
 
-                            <S.CustomTableHeader>
+                            <TableCell>
                                 <SearchbyNumber/>
-                            </S.CustomTableHeader>
+                            </TableCell>
 
-                            <S.CustomTableHeader>
+                            <TableCell>
+                            </TableCell>
+
+                            <TableCell colSpan={1}>
                                 {switchComponent}
-                            </S.CustomTableHeader>
+                            </TableCell>
                             
-                        </S.HeadCustomTableRow>
+                        </TableRow>
                     <TableRow>{labels}</TableRow>
-                        
                     </TableHead>
                     <TableBody>
                         {bodyData}
