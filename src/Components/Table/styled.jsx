@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import style from "styled-components";
 import { TableCell, TableRow } from '@mui/material'
+import {styled} from "@mui/material"
 
 
 
-export const StyledTableContainer = styled.div`
-    padding: 60px;
+export const StyledTableContainer = style.div`
+    padding: 30px;
 
     //table paper
     & .MuiPaper-root, 
@@ -17,7 +18,7 @@ export const StyledTableContainer = styled.div`
     //table header
 `
 
-export const TableTitle = styled.h4`
+export const TableTitle = style.h4`
     font-size:2rem;
     padding-top: 30px;
 `
@@ -28,7 +29,6 @@ export const TableTitle = styled.h4`
 export const CustomTableCell = styled(TableCell)`
     
     border:1px solid transparent!important;
-
     h1,h2,h3,h4,h5{
         padding:0;
         font-size: 1.5rem;
@@ -39,8 +39,8 @@ export const CustomTableCell = styled(TableCell)`
 ///customize table
 
 export const CustomTableHeader = styled(TableCell)`
-    /* border:1px solid transparent!important; */
-    /* border-bottom-color: black!important; */
+    
+    
 `
 
 export const HeadCustomTableRow = styled(TableRow)`

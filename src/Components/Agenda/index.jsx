@@ -1,34 +1,27 @@
 import React from 'react'
 import { useDispatch } from "react-redux"
-import { MenuActions } from "../../Redux/MenuSlice"
+import {setAgendaState} from "../../features/MenuSlice"
 import * as G from "../../Components/Global/index"
 import StyledTable from '../Table'
-import AgendaData from '././AgendaData'
 import { AgendaBodyData } from './AgendaBodyData'
 import AgendaLabels from "./AgendaLabels"
 import { CadastrarAgenda } from './CadastrarAgenda'
 import * as S from "./styled"
-/***
- * At this point we are fetching table data in AgendaData Function created
- * THIS IS Agenda PAGE THOU...
- */
-function AgendaCultural() {
 
-  //At this point we read our data from @@AgendaData function 
-  const Columns = AgendaData().columns;
+
+function AgendaCultural() {
   return (
     <G.Container>
         <StyledTable 
         tableTitle = "Agenda Cultural" 
         switchComponent = {<RegisterBtn/>} 
         labels={<AgendaLabels/>}
-        bodyData = {<AgendaBodyData Columns={Columns}/>}
+        bodyData = {<AgendaBodyData/>}
         />
         <CadastrarAgenda/>
     </G.Container>
   )
 }
-
 export default AgendaCultural
 
 
@@ -38,12 +31,11 @@ export default AgendaCultural
    */
 
  export function RegisterBtn(){
-
   //=> OPEN REGISTRAR AGENDA CULTURAL
   const dispatch = useDispatch();
   return(
     <>
-      <S.CadastroBtn onClick={()=>dispatch(MenuActions.setAgendaState(true))}>Cadastrar Novo</S.CadastroBtn>
+      <S.CadastroBtn onClick={()=>dispatch(setAgendaState(true))}>Cadastrar Novo</S.CadastroBtn>
     </>
   )
 

@@ -1,58 +1,60 @@
-import { Paper, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Grid, Box } from '@mui/material'
 import React from 'react'
-import "../../App.css"
 import StyledSearch from '../Search'
 import { SearchbyNumber } from "../Search/SearchbyNumber"
 import * as S from "./styled"
-import "./styles.css"
 
-/***
- * 
- * REUSABLE TABLE COMPONENT
- */
+
+/********************************************\
+*********REUSABLE TABLE COMPONENT*************\
+***********************************************\
+\**********************************************/
 
 function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
   return (
     <S.StyledTableContainer>
-        <Paper>
-            <TableContainer>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <S.CustomTableCell>
-                                <S.TableTitle>{tableTitle}</S.TableTitle>
-                            </S.CustomTableCell>
-                        </TableRow>
+         <Paper sx={{ width: '100%' }}>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
+                <TableCell sx={{borderBottomColor:"transparent", padding:"10px", paddingLeft:"20px", fontSize:"19px"}}>{tableTitle}</TableCell>
+            </TableRow>
+            <TableRow>
 
-                        <S.HeadCustomTableRow>
-                            <S.CustomTableHeader>
-                                <StyledSearch/>
-                            </S.CustomTableHeader>
-                            
-                            {/* 
-                            <S.CustomTableHeader>
-                                <StyledSearch/>
-                            </S.CustomTableHeader> */}
+              <TableCell align="justify" colSpan={3}>
 
-                            <S.CustomTableHeader align="right">
-                                <SearchbyNumber/>
-                            </S.CustomTableHeader>
+                <Grid container spacing={4}>
+                    <Grid item xs={4}>
+                        <StyledSearch placeholder={"Pesquise por nome"}/>
+                    </Grid>
 
-                            <S.CustomTableHeader align="right">
-                                {switchComponent}
-                            </S.CustomTableHeader>
-                            
-                        </S.HeadCustomTableRow>
-                        
-                        <TableRow>{labels}</TableRow>
-                    </TableHead>
+                    <Grid item xs={4}>
+                        <StyledSearch placeholder={"Pesquise"}/>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <SearchbyNumber/>
+                    </Grid>
+                </Grid>
+              </TableCell>
 
-                    <TableBody>
-                        {bodyData}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </Paper>
+               <TableCell align="right" colSpan={4}>
+                 <Box>
+                    {switchComponent}
+                 </Box>
+              </TableCell>
+
+            </TableRow>
+            <TableRow>
+                {labels}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+              {bodyData}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
     </S.StyledTableContainer>
   )
 }

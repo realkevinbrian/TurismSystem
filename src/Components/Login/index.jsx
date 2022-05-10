@@ -1,5 +1,6 @@
 import { ArrowBack } from '@mui/icons-material';
-import {LinearProgress } from "@mui/material";
+import { LinearProgress } from "@mui/material";
+import {setNavbarState} from "../../features/MenuSlice"
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +8,6 @@ import bannerImg from "../../Assets/bgImage.png";
 import LOGO from "../../Assets/LOGO.png";
 import { Logo, LogoWrapper } from '../../Components/Navbar/styled';
 import useAuth from "../../Hooks/useAuth";
-import { MenuActions } from "../../Redux/MenuSlice";
 import { Anchor, H1, H5, StyledInput, StyledLabel, SubmitBtn } from '../Global';
 import * as S from './styled';
 
@@ -54,7 +54,7 @@ function Login() {
                         //store LocalStorage
                         localStorage.setItem("email", email)
                         localStorage.setItem("password", password)
-                        dispatch(MenuActions.setNavbarState(true))
+                        dispatch(setNavbarState(true))
                     },1000)
                 }, 1);   
         }else{

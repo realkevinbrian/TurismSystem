@@ -1,26 +1,53 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ArrowBack, Image } from "@mui/icons-material";
+import { ArrowBack } from "@mui/icons-material";
+import { CircularProgress, MenuItem,LinearProgress } from '@mui/material';
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import ColorPickerImg from "../../Assets/ColorPicker.png";
+import * as G from "../Global/index";
 import { Form } from "../Login/styled";
 import * as S from "./styled";
-import * as G from "../Global/index";
-import { useSelector } from "react-redux";
-import ColorPickerImg from "../../Assets/ColorPicker.png"
-import { InputLabel,Input, Select, MenuItem } from '@mui/material';
+import { selectAll, CreateCategory} from '../../features/CategorySlice';
+import {setCategoryState} from "../../features/MenuSlice";
 
 /**
  * CADASTRO DE CATEGORIAS  PAGE
  *
  */
-
-
-
 export function CadastrarCategoria() {
+  //initialize dispathc
+  const dispatch = useDispatch();
+
+  //get Category State and get cateogy exisiting types
+  const categoryType = useSelector(selectAll);
   const CategoryState = useSelector((state) => state.menu.CategoryState);
-  const [color,setColor] = useState("#181764")
-  const [category,setCategory] = useState("Selecione uma ou mais categorias")
   
+  //get form data
+  const [color,setColor] = useState("#181764");
+  const [progress, setProgress] = useState(false);
+  // const [category,setCategory] = useState("Selecione uma ou mais categorias")
+  const [name, setName] = useState(null);
+  const [type, setType] = useState("Selecione uma ou mais categorias");
+  const data = {name, type, color};
+
+  //SUBMIT DATA
+  const handleSubmit = (self) =>{
+    //disable default submit
+    self.preventDefault();
+    dispatch(CreateCategory({id: categoryType[categoryType.length - 1].id + 1, ...data}))
+
+    setTimeout(() => {
+      setProgress(true)
+        setTimeout(()=>{
+          dispatch(setCategoryState(false));
+          setProgress(false)
+        },200)    
+    }, 500);
+  }
+
+
+
+
   return (
     <S.styledCreateCategoryContainer CategoryState={CategoryState}>
       <S.styledCreateCategory>
@@ -31,12 +58,15 @@ export function CadastrarCategoria() {
         </S.createCategoryHeader>
 
         <S.createCategoryFormWrapper>
-          <Form>
+
+          <Form onSubmit={handleSubmit}>
 
             <S.styledInputGroup>
               <G.StyledLabel>Nome</G.StyledLabel>
               <G.StyledInput
+                onChange={(self) => setName(self.target.value)}
                 type="text"
+                required
                 placeholder='digite o nome do evento' />
             </S.styledInputGroup>
 
@@ -45,23 +75,28 @@ export function CadastrarCategoria() {
              <S.CustomSelect 
              autoWidth={true} 
              variant="standard"
-             value={category}
-             onChange={(self)=>setCategory(self.target.value)}
+             required
+             value={type}
+             onChange={(self)=>setType(self.target.value)}
              >
                <MenuItem value={"Selecione uma ou mais categorias"} disabled={true}><small>Selecione uma ou mais categorias</small></MenuItem>
-               <MenuItem value={"Estabelecimento"}>Estabelecimento</MenuItem>
-               <MenuItem value={"Ponto Turistico"}>Ponto Turistico</MenuItem>
-               <MenuItem value={"Roteiro"}>Roteiro</MenuItem>
+               {
+                   categoryType.map(item => (
+                        <MenuItem value={item.type} key={item.id}>{item.type}</MenuItem>
+                  ))
+               }
+               
+             
              </S.CustomSelect>
            </S.styledInputGroup>
 
             <S.ColorPickerContainer>
               <G.H6>Selecione a cor para categoria</G.H6>
-              <input type="color" onChange={(self)=> setColor(self.target.value)}/>
+              <input required type="color" onChange={(self)=> setColor(self.target.value)}/>
               <S.ColorPickerIcon src={ColorPickerImg} />
               <S.SelectedColor color={color}/>
             </S.ColorPickerContainer>
-
+            {progress && <LinearProgress/>}
             <S.CadastroBtn>Cadastrar</S.CadastroBtn>
           </Form>
         </S.createCategoryFormWrapper>

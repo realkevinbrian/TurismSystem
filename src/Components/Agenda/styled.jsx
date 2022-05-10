@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { InputGroup } from "../../Components/Login/styled";
 import { button } from "../Global/index";
+import { Select, MenuItem, Tooltip } from "@mui/material";
+
 
 
 /***
@@ -10,11 +12,12 @@ import { button } from "../Global/index";
 export const CadastroBtn = styled(button)`
     background-color: ${({theme})=>theme.colors.dark_cyan};
     color:${({theme})=>theme.colors.white};
-    padding:.4rem 2rem;
+    padding:.4rem 1rem;
     border-radius:50px;
     transition:all 0.2s linear;
     font-size:.9rem;
     font-weight: 400;
+    word-break: keep-all;
 
     //on hover
     &:hover{
@@ -31,8 +34,12 @@ export const styledCell = styled.div`
 /***
  * EDIT AND DELETE BTNS
  */
-export const Edit = styled.a``;
-export const Delete = styled.a``;
+export const Edit = styled.a`
+    cursor :pointer;
+`;
+export const Delete = styled.a`
+    cursor :pointer;
+`;
 
 
 /****
@@ -43,7 +50,7 @@ export const Delete = styled.a``;
 export const styledCreateCategoryContainer = styled.div`
         height:100vh;
         display: ${({AgendaState})=> (AgendaState) ? "flex" : "none"};
-        align-items: end;
+        align-items: center;
         justify-content:end;
         position:fixed;
         top:0px;
@@ -51,13 +58,9 @@ export const styledCreateCategoryContainer = styled.div`
         z-index:100px;
         background-color: #0000006e;
         width: 100%;
-
         img,svg{
             cursor:pointer;
         }
-
-        
-
 
         //ON MOBILE DEVICES
         //=> MOBILE VERSION
@@ -75,7 +78,8 @@ export const styledCreateCategory = styled.section`
         display:grid;
         background-color:white;
         box-shadow:1px 1px 5px 5px #00000049;
-        transform: translateY(-10px);
+        top:0px;
+        
 
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
@@ -88,7 +92,7 @@ export const styledCreateCategory = styled.section`
 export const createCategoryHeader = styled.div`
         display:flex;
         justify-content: space-between;
-        padding:20px 10px;
+        padding:10px 10px;
         border:1px solid transparent;
         border-bottom-color: #808080;
         font-weight:bold;
@@ -106,7 +110,7 @@ export const createCategoryHeader = styled.div`
         }
 `;
 export const createCategoryFormWrapper = styled.div`
-        padding:30px 20px;
+        padding:15px;
 
         //ON MOBILE DEVICES
         //=> MOBILE VERSION
@@ -120,7 +124,7 @@ export const createCategoryFormWrapper = styled.div`
 
 //2 -> Childrens
 export const styledInputGroup = styled(InputGroup)`
-    padding:3px 15px;
+    /* padding:3px 15px; */
     border:1.5px solid ${({theme}) => theme.colors.dark_cyan};
 
     label{
@@ -139,12 +143,15 @@ export const styledInputGroup = styled(InputGroup)`
 
 `
 
-//SPECIAL IMAGE IMPUT
+/**
+ * SPECIAL IMAGE INPUT 
+ * STYLED INPUT
+ * **/
 export const styledFileInputWrapper = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 `;
 export const styledFileInputBox = styled.div`
             display:flex;
@@ -182,4 +189,30 @@ export const styledFileInputBox = styled.div`
             }
 
 `;
-// export const styledFileInput = styled.div``;
+
+
+/***
+ * Componente para Selecionar o Local do evento
+ * O componente inclui O select de {Cidade , regiao e Pais}
+ */
+
+export const styledSelectContainer = styled.div`
+`;
+export const styledSelectButton = styled.h6`
+        font-size: .9rem;
+`;
+export const styledSelect = styled(Select)`
+        height:30px;
+        border:1.5px solid ${({theme}) => theme.colors.dark_cyan};
+        outline: none;
+        outline-style: none;
+
+        
+`;
+export const styledMenuItem = styled(MenuItem)``;
+export const styledSelectWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:10px;
+`
+

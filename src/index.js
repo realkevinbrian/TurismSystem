@@ -6,7 +6,7 @@ import App from './App';
 import GlobalStyles from "./Components/Global"
 import theme from "./Components/Global/theme";
 import {ThemeProvider} from "styled-components"
-import store from "./Redux/index";
+import store from "./features/index";
 import {Provider} from "react-redux"
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import LOGO from "../../Assets/LOGO.png";
 import useAuth from "../../Hooks/useAuth";
-import { MenuActions } from "../../Redux/MenuSlice";
+import {setMenuState} from "../../features/MenuSlice";
 import { Anchor, H4 } from '../Global';
 import Menu from "../Menu/index";
 import { Bars, Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinksWrapper } from './styled';
@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <>
         <NavbarContainer>
-            <MenuIconWrapper onClick={()=>dispatch(MenuActions.setMenuState(true))}>
+            <MenuIconWrapper onClick={()=>dispatch(setMenuState(true))}>
                 <Bars/>
                 <Bars/>
                 <Bars/>

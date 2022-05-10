@@ -40,5 +40,3 @@ export const CustomSelect = styled(Select)`
 height: 20px;
 min-width: 70px;
 `
-
-

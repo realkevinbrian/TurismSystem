@@ -1,14 +1,15 @@
 
 /***
- * THIS SLICE IS RESAPONSABLE FOR QUERY/SEARCHIND IN TABLES
+ * THIS SLICE IS RESPONSABLE FOR QUERY/SEARCHIND IN TABLES
  */
 import { createSlice } from "@reduxjs/toolkit";
+
 
 const QuerySlice = createSlice({
     name : "query",
     initialState : {
         query_string : '',
-        queryByNumber : 5
+        queryByNumber : 10
     },
 
     reducers : {
