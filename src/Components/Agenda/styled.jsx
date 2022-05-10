@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { InputGroup } from "../../Components/Login/styled";
 import { button } from "../Global/index";
-import { Select, MenuItem } from "@mui/material";
+import { Select, MenuItem, Tooltip } from "@mui/material";
 
 
 
@@ -58,6 +58,7 @@ export const styledCreateCategoryContainer = styled.div`
         z-index:100px;
         background-color: #0000006e;
         width: 100%;
+        padding-top: 100px;
 
         img,svg{
             cursor:pointer;
@@ -82,7 +83,8 @@ export const styledCreateCategory = styled.section`
         display:grid;
         background-color:white;
         box-shadow:1px 1px 5px 5px #00000049;
-        transform: translateY(-10px);
+        /* transform: translateY(-10px); */
+        
 
         //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){

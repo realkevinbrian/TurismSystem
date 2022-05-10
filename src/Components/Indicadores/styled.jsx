@@ -25,15 +25,15 @@ export const Indicadores = styled.div`
 `;
 export const IndicadoresWrapper = styled.div`
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
         align-items: center;
         gap: 2rem;
         cursor: pointer;
 
-        //=> MOBILE VERSION
+        /* //=> MOBILE VERSION
         @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
             grid-template-columns: repeat(1,1fr);
-        }
+        } */
 `;
 
 export const Header = styled.div`  

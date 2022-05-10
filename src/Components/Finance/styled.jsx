@@ -30,10 +30,8 @@ export const ShowTotalWrapper = style.div`
  */
 
 export const CustomTableCell = styled(TableCell)`
-    padding: 16px;
-    border-bottom-color:#000000;
 
 `
 export const CustomTableCellHead = styled(TableCell)`
-    background-color: red;
+
 `

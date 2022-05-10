@@ -23,8 +23,6 @@ export function FinanceLabels({ Columns }) {
           return (
             <S.CustomTableCell key={column.id}>
               {column.label}
-              <M.ArrowUpwardTwoTone/>
-              <M.ArrowDownwardTwoTone/>
             </S.CustomTableCell>
           );
         })}

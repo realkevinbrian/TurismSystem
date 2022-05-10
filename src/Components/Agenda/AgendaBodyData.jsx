@@ -46,16 +46,16 @@ export function AgendaBodyData() {
  * Read Only Row
  */
 
- export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
+ export const ReadOnlyRow = ({data:row,setEditId}) =>{
   const dispatch = useDispatch();
 
   return(
     <TableRow hover tabIndex={-1} key={row.id}>
-      <TableCell>{row.name}</TableCell>
+      <TableCell colSpan={0} sx={{maxWidth:"100px"}}>{row.name}</TableCell>
       <TableCell>{row.date}</TableCell>
       <TableCell>{row.start}</TableCell>
       <TableCell>{row.entrance}</TableCell>
-      <TableCell>{row.local}</TableCell>
+      <TableCell sx={{maxWidth:"450px"}}>{row.local}</TableCell>
       <TableCell align="right"><S.Edit className='text-cyan-900' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit}/></S.Edit></TableCell>
       <TableCell align="right"><S.Edit className='text-red-500'><FontAwesomeIcon icon={faDeleteLeft} onClick={()=>dispatch(DeleteRow({id : row.id}))}/></S.Edit></TableCell>
     </TableRow>
@@ -76,7 +76,6 @@ export function AgendaBodyData() {
    const [start_time, setStartTime] = useState(null);
    const [entrance, setEntrance] = useState(null);
    const [local, setLocal] = useState(null);
-   const data = {name,date,start_time,entrance,local}
 
    //Update method
    const handleUpdate = (id) =>{

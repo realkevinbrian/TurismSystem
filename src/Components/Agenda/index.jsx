@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux"
 import {setAgendaState} from "../../features/MenuSlice"
 import * as G from "../../Components/Global/index"
 import StyledTable from '../Table'
-import AgendaData from '././AgendaData'
 import { AgendaBodyData } from './AgendaBodyData'
 import AgendaLabels from "./AgendaLabels"
 import { CadastrarAgenda } from './CadastrarAgenda'
@@ -11,16 +10,13 @@ import * as S from "./styled"
 
 
 function AgendaCultural() {
-
-  //At this point we read our columns from @@AgendaData function 
-  const Columns = AgendaData().columns;
   return (
     <G.Container>
         <StyledTable 
         tableTitle = "Agenda Cultural" 
         switchComponent = {<RegisterBtn/>} 
         labels={<AgendaLabels/>}
-        bodyData = {<AgendaBodyData Columns={Columns}/>}
+        bodyData = {<AgendaBodyData/>}
         />
         <CadastrarAgenda/>
     </G.Container>
@@ -39,7 +35,7 @@ export default AgendaCultural
   const dispatch = useDispatch();
   return(
     <>
-      <S.CadastroBtn onClick={()=>dispatch(setAgendaState(true))}>Cadastrar_Novo</S.CadastroBtn>
+      <S.CadastroBtn onClick={()=>dispatch(setAgendaState(true))}>Cadastrar Novo</S.CadastroBtn>
     </>
   )
 

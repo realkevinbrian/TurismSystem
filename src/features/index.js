@@ -4,6 +4,7 @@ import QuerySlice from "./QuerySlice";
 import CategorySlice from "./CategorySlice";
 import AgendaSlice from "./AgendaSlice"
 import FinanceSlice from "./FinanceSlice"
+import ApprovedSlice from "./ApprovedSlice"
 
 /***
  * Setup store
@@ -15,7 +16,8 @@ const store = configureStore({
         query : QuerySlice,
         category : CategorySlice,
         agenda : AgendaSlice,
-        finance : FinanceSlice
+        finance : FinanceSlice,
+        approved : ApprovedSlice
     }
 
 })

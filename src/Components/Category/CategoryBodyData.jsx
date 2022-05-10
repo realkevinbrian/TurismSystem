@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TableCell, TableRow } from '@mui/material';
 import React, {useState} from 'react';
 import * as S from "./styled";
-// import data from "../../Api/server";
 import { useSelector,useDispatch } from 'react-redux';
-import { MenuActions } from "../../features/MenuSlice"
-import { StyledInput } from '../Global';
 import { selectAll, DeleteRow, UpdateRow } from '../../features/CategorySlice';
 
 /****
@@ -62,8 +59,8 @@ export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
                         : <S.styledCell><S.Ball className='bg-cyan-900' /><span>{row.name}</span></S.styledCell>}
         </TableCell>
         <TableCell>{row.type}</TableCell>
-        <TableCell align="right" sx={{minWidth:"0px"}}><S.Edit className='text-cyan-900 text-lg' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit} /></S.Edit></TableCell>
-        <TableCell align="right" sx={{width:"10px" }}><S.Edit className='text-red-500 text-lg'><FontAwesomeIcon icon={faDeleteLeft} onClick={()=>dispatch(DeleteRow({id : row.id}))}/></S.Edit></TableCell>
+        <TableCell align="right"><S.Edit className='text-cyan-900 text-lg' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit} /></S.Edit></TableCell>
+        <TableCell align="right" sx={{margin:"10px"}} colSpan={0}><S.Edit className='text-red-500 text-lg'><FontAwesomeIcon icon={faDeleteLeft} onClick={()=>dispatch(DeleteRow({id : row.id}))}/></S.Edit></TableCell>
       </TableRow>
   )
 }

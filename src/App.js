@@ -6,7 +6,8 @@ import Category from './Pages/Category';
 import Finance from './Pages/Finance';
 import Login,{Logout} from './Components/Login';
 import NotFound from "./Pages/ErrorPage"
-import {CadastrarCategoria} from "./Components/Category/CadastrarCategoria"
+import Approved from "./Pages/Approved"
+
 
 function App() {
     return ( 
@@ -18,8 +19,8 @@ function App() {
             <Route path="/admin" element={<Home/>}/>
             <Route path='/admin/agenda' element={<Agenda/>}/>
             <Route path='/admin/categoria' element={<Category/>}/>
-            <Route path='/admin/categoria/:id' element={<CadastrarCategoria/>}/>
             <Route path='/admin/financeiro' element={<Finance/>}/>
+            <Route path='/admin/approvados' element={<Approved/>}/>
             <Route path='/*' element={<NotFound/>}/>
         </Routes>
     </Router>

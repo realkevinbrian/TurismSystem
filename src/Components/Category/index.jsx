@@ -4,7 +4,6 @@ import React from 'react'
 import * as G from "../../Components/Global/index"
 import StyledTable from '../Table'
 import { CategoryBodyData } from './CategoryBodyData'
-import CategoryData from './CategoryData'
 import { CategoryLabels } from './CategoryLabels'
 import * as S from "./styled"
 import {CadastrarCategoria} from "./CadastrarCategoria"
@@ -15,18 +14,14 @@ import {CadastrarCategoria} from "./CadastrarCategoria"
  */
 function CategoryMain() {
 
-  //At this point we read our data from @@CategoryData function 
-  const Columns = CategoryData().columns;
-
-  // =>DEBUGGING ROWS console.log(Rows)
 
   return (
     <G.Container>
         <StyledTable 
         tableTitle = "Cadastro de Categorias" 
         switchComponent = {<RegisterBtn/>} 
-        labels={<CategoryLabels Columns={Columns}/>}
-        bodyData = {<CategoryBodyData Columns={Columns}/>}
+        labels={<CategoryLabels/>}
+        bodyData = {<CategoryBodyData/>}
         />
         <CadastrarCategoria/>
     </G.Container>

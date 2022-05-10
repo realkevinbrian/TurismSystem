@@ -1,19 +1,22 @@
 import { TableCell } from '@mui/material';
 import React from 'react';
 
+
 /****
- * LABELS FOR Category TABLE TO MAKE OUR TABLE REUSABLE
+ * LABELS FOR Approved TABLE TO MAKE OUR TABLE REUSABLE
  */
-export function CategoryLabels() {
-  
-  /*Este sao dados para monstrar na tabela (COLUMNS)! 
-Como estamos na fase de teste, usei estes dados como amostra
-*/
+
+
+export default function ApprovedLabels() {
+
+   /*Este sao dados para monstrar na tabela (Labels)! 
+  Como estamos na fase de teste, usei estes dados como amostra
+  */
   const columns = [
     { id: 'name', label: 'Nome',align : "left"},
     { id: 'type', label: 'Tipo', align : "left"},
-    { id: 'edit', label: 'Editar', align : "right" },
-    { id: 'delete', label: 'Excluir', align : "right" }
+    { id: 'date', label: 'Data', align : "left" },
+    { id: 'details', label: 'Detalhes', align : "right" }
   ];
 
   return (
@@ -29,3 +32,4 @@ Como estamos na fase de teste, usei estes dados como amostra
     </>
   );
 }
+
