@@ -8,7 +8,7 @@ import * as G from "../../Components/Global/index";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAll, CreateAgenda} from '../../features/AgendaSlice';
 import { setAgendaState} from '../../features/MenuSlice';
-import { CircularProgress, MenuItem,LinearProgress } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 
 
 /**
@@ -33,18 +33,11 @@ export function CadastrarAgenda() {
   const [country, setCountry] = useState("país");
   const data = {name,date,start,entrance}
 
-  //teste
-  console.log("City", city)
-  console.log("Regiao", region)
-  console.log("Country", country)
-
   //SUBMIT DATA
   const handleSubmit = (self) =>{
     //disable default submit
     self.preventDefault();
 
-    console.log("Submitted")
-    // console.log(agendaAll)
     dispatch(CreateAgenda({id: agendaAll[agendaAll.length - 1].id + 1, ...data}))
 
     setTimeout(() => {

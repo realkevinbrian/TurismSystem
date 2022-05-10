@@ -28,7 +28,7 @@ function Menu() {
     otherLinks : {
       title : "Financeiro",
       Mainlinks : [
-        { id : 1, title : "Relatorio Financeiro",link : "admin/financeiro"},
+        { id : 1, title : "Relatorio Financeiro",link : "/admin/financeiro"},
       ]
     }, icon : faCoins},
 
@@ -36,9 +36,9 @@ function Menu() {
     otherLinks : {
       title : "Configurações Gerais",
       Mainlinks : [
-        { id : 1, title : "Termos de Uso",link : "/termsAndContions"},
+        { id : 1, title : "Termos de Uso",link : "/admin/termsAndContions"},
         { id : 2, title : "Aprovações", link : "/admin/approvados"},
-        { id : 3, title : "Denuncias", link : "/denuncias"},
+        { id : 3, title : "Denuncias", link : "/admin/denuncias"},
       ]
     }, icon : faGear},
 

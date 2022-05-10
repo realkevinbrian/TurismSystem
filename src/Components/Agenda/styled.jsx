@@ -50,7 +50,7 @@ export const Delete = styled.a`
 export const styledCreateCategoryContainer = styled.div`
         height:100vh;
         display: ${({AgendaState})=> (AgendaState) ? "flex" : "none"};
-        align-items: end;
+        align-items: center;
         justify-content:end;
         position:fixed;
         top:0px;
@@ -58,14 +58,9 @@ export const styledCreateCategoryContainer = styled.div`
         z-index:100px;
         background-color: #0000006e;
         width: 100%;
-        padding-top: 100px;
-
         img,svg{
             cursor:pointer;
         }
-
-        
-
 
         //ON MOBILE DEVICES
         //=> MOBILE VERSION
@@ -83,7 +78,7 @@ export const styledCreateCategory = styled.section`
         display:grid;
         background-color:white;
         box-shadow:1px 1px 5px 5px #00000049;
-        /* transform: translateY(-10px); */
+        top:0px;
         
 
         //=> MOBILE VERSION
@@ -97,7 +92,7 @@ export const styledCreateCategory = styled.section`
 export const createCategoryHeader = styled.div`
         display:flex;
         justify-content: space-between;
-        padding:20px 10px;
+        padding:10px 10px;
         border:1px solid transparent;
         border-bottom-color: #808080;
         font-weight:bold;
@@ -115,7 +110,7 @@ export const createCategoryHeader = styled.div`
         }
 `;
 export const createCategoryFormWrapper = styled.div`
-        padding:30px 20px;
+        padding:15px;
 
         //ON MOBILE DEVICES
         //=> MOBILE VERSION
@@ -129,7 +124,7 @@ export const createCategoryFormWrapper = styled.div`
 
 //2 -> Childrens
 export const styledInputGroup = styled(InputGroup)`
-    padding:3px 15px;
+    /* padding:3px 15px; */
     border:1.5px solid ${({theme}) => theme.colors.dark_cyan};
 
     label{
@@ -156,7 +151,7 @@ export const styledFileInputWrapper = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 `;
 export const styledFileInputBox = styled.div`
             display:flex;
