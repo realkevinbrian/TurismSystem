@@ -62,15 +62,12 @@ function Menu() {
 
   //Funcao para fechar o menu ao clickar ao lado
   function handleCloseMenu (self) {
-    
-    //primeiro verificamos se o elemento tem classNames 
-    if(self.target.className){ 
-      /*
-      *assim que confirmamos que tem classNames, 
-      *Aplicamos a funcao de Includes para verificar se temos algum className Especidicado
-      */
-      if(self.target.className.includes("MenuContainer")) dispatch(setMenuState());
-    }}
+    try{
+      if(self.target.className.includes("MenuContainer")){
+        dispatch(setMenuState());
+      }
+    }catch(e){}
+  }
 
   return (
     <>
