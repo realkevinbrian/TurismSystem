@@ -1,4 +1,5 @@
-export const plugins = [
-  require('postcss-focus'),
-  require('autoprefixer')
-];
+module.exports = {
+  plugins: {
+    autoprefixer: {},
+  }
+}

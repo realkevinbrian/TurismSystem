@@ -2,15 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
 import GlobalStyles from "./Components/Global"
 import theme from "./Components/Global/theme";
 import {ThemeProvider} from "styled-components"
 import store from "./features/index";
 import {Provider} from "react-redux"
 
-
-// console.log(store)
 ReactDOM.render(
   <React.StrictMode>
   <Provider store={store}>
