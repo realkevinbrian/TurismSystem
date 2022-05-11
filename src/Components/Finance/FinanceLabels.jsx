@@ -1,18 +1,10 @@
-import { TableCell } from '@mui/material';
 import React from 'react';
-import * as M from "@mui/icons-material"
-import * as S from "./styled"
-import { ThemeProvider } from '@mui/material';
+import * as S from "./styled";
 
 /****
  * LABELS FOR FINANCE TABLE TO MAKE OUR TABLE REUSABLE
  */
 
-// const useStyles = makeStyles(({
-//   tableCell: {
-//     backgroundColor : "#ff0000"
-//   }
-// }))
 
 export function FinanceLabels({ Columns }) {
 

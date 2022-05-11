@@ -1,10 +1,8 @@
-import { TableCell, TableRow } from '@mui/material';
 import * as MICON from '@mui/icons-material';
-import React, {useState} from 'react';
-import * as S from "./styled";
-// import data from "../../Api/Approved";
-import { useSelector,useDispatch } from 'react-redux';
-import { selectAll, DeleteRow, UpdateRow } from '../../features/ApprovedSlice';
+import { TableCell, TableRow } from '@mui/material';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectAll } from '../../features/ApprovedSlice';
 
 /****
  * BODY DATA FOR Aproved TABLE TO MAKE OUR TABLE REUSABLE
@@ -16,7 +14,6 @@ export default function ApprovedBodyData() {
   const query = useSelector(state => state.query.query_string);
   const queryNum = useSelector(state => state.query.queryByNumber);
   const AprovedData = useSelector(selectAll);
-  const [editRowId, setEditId] = useState(null)
   
 
   return (
@@ -27,7 +24,7 @@ export default function ApprovedBodyData() {
         .map((row) => {
           return (
             <React.Fragment>
-              <ReadOnlyRow data={row} setEditId={setEditId}/>
+              <ReadOnlyRow data={row}/>
             </React.Fragment>
           );
         })}
@@ -41,9 +38,7 @@ export default function ApprovedBodyData() {
  * Read Only Row
  */
 
-export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
-  const dispatch = useDispatch();
-
+export const ReadOnlyRow = ({data:row}) =>{
   return(
       <TableRow key={row.id}>
         <TableCell>{row.name}</TableCell>

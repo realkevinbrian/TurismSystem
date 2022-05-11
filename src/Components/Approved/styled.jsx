@@ -1,7 +1,4 @@
-import styled from "styled-components"
-import {button} from "../Global/index"
-import {InputGroup} from "../Login/styled";
-import Select from '@mui/material/Select';
+import styled from "styled-components";
 
 
 

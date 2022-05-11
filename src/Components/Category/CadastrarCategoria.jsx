@@ -1,14 +1,13 @@
 import { ArrowBack } from "@mui/icons-material";
-import { CircularProgress, MenuItem,LinearProgress } from '@mui/material';
+import { LinearProgress, MenuItem } from '@mui/material';
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import ColorPickerImg from "../../Assets/ColorPicker.png";
+import { CreateCategory, selectAll } from '../../features/CategorySlice';
+import { setCategoryState } from "../../features/MenuSlice";
 import * as G from "../Global/index";
 import { Form } from "../Login/styled";
 import * as S from "./styled";
-import { selectAll, CreateCategory} from '../../features/CategorySlice';
-import {setCategoryState} from "../../features/MenuSlice";
 
 /**
  * CADASTRO DE CATEGORIAS  PAGE

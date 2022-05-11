@@ -12,6 +12,7 @@ const CategorySlice = createSlice({
         UpdateRow(state,{payload}){
             state.value.map(item => {
                 if(item.id === payload.id){
+                    
                     //check if payload not null
                     if(payload.name !== null){
                         item.name = payload.name;
