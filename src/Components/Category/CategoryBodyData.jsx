@@ -26,7 +26,7 @@ export function CategoryBodyData() {
         .slice(0,queryNum)
         .map((row) => {
           return (
-            <React.Fragment>
+            <React.Fragment key={row.id}>
               { (row.id === editRowId) ? <EditableRow data={row} setEditId={setEditId}/>
               : <ReadOnlyRow data={row} setEditId={setEditId}/>
               }
@@ -43,21 +43,12 @@ export function CategoryBodyData() {
  * Read Only Row
  */
 
-export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
+export const ReadOnlyRow = ({data:row,setEditId}) =>{
   const dispatch = useDispatch();
 
   return(
       <TableRow key={row.id}>
-        <TableCell>
-          {(row.name === "restaurante") ? <S.styledCell><S.Ball bColor ={"#c85ba9"}/><span>{row.name}</span></S.styledCell>
-            : (row.name === "comercio") ? <S.styledCell><S.Ball bColor ={"#95a28e"}/><span>{row.name}</span></S.styledCell>
-              : (row.name === "balada") ? <S.styledCell><S.Ball bColor ={"#ed5252"}/><span>{row.name}</span></S.styledCell>
-                : (row.name === "livraria") ? <S.styledCell><S.Ball bColor ={"#95a28e"}/><span>{row.name}</span></S.styledCell>
-                  : (row.name === "lazer") ? <S.styledCell><S.Ball bColor ={"#61be8c"}/><span>{row.name}</span></S.styledCell>
-                    : (row.name === "bar") ? <S.styledCell><S.Ball bColor ={"#f4a072"}/><span>{row.name}</span></S.styledCell>
-                      : (row.name === "cultural") ? <S.styledCell><S.Ball bColor ={"#789aff"}/><span>{row.name}</span></S.styledCell> 
-                        : <S.styledCell><S.Ball className='' bColor={row.color} /><span>{row.name}</span></S.styledCell>}
-        </TableCell>
+        <TableCell><S.styledCell><S.Ball bColor={row.color}/><span>{row.name}</span></S.styledCell></TableCell>
         <TableCell>{row.type}</TableCell>
         <TableCell align="right"><S.Edit className='text-cyan-900 text-lg' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit} /></S.Edit></TableCell>
         <TableCell align="right" sx={{margin:"10px"}} colSpan={0}><S.Edit className='text-red-500 text-lg'><FontAwesomeIcon icon={faDeleteLeft} onClick={()=>dispatch(DeleteRow({id : row.id}))}/></S.Edit></TableCell>
@@ -74,28 +65,33 @@ export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
    
   const dispatch = useDispatch();
    //Grap our form edit values
-   const [name, setName] = useState(null);
-   const [type, setType] = useState(null);
+   const [name, setName] = useState(row.name);
+   const [type, setType] = useState(row.type);
+   const [color,setColor] = useState(row.color)
 
    //Update method
    const handleUpdate = (id) =>{
-    dispatch(UpdateRow({id : id, name, type}))
+    dispatch(UpdateRow({id : id, name, type, color}))
     setEditId(null);
 
   }
 
-
   return(
       <TableRow key={row.id}>
         <TableCell>
-          <S.StyledEditInput 
-          type="text" placeholder='Atualize Nome'
-          onChange={(self) => setName(self.target.value)}
-          />
+          <S.styledCell>
+            <S.styledColorInput type="color" value={color} onChange={(self) => setColor(self.target.value)}/>
+            <S.StyledEditInput 
+              type="text" placeholder='Atualize o nome'
+              value={name}
+              onChange={(self) => setName(self.target.value)}
+              />
+          </S.styledCell>          
         </TableCell>
         <TableCell>
           <S.StyledEditInput 
-          type="text" placeholder='Atualize Tipo'
+          type="text" placeholder='Atualize o tipo'
+          value={type}
           onChange={(self) => setType(self.target.value)}
           />
         </TableCell>
