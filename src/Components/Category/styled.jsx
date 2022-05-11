@@ -40,6 +40,13 @@ export const styledCell = styled.div`
     display: flex;
     align-items: center;
     gap:10px;
+
+    //change color input
+    input[type="color"]{
+        border: 1px solid transparent;
+        outline-style: none;
+        border-radius: 50px;
+    }
 `
 
 
@@ -232,3 +239,5 @@ export const StyledEditInput = styled.input`
         width:100%;
         border-bottom-color: #e9e9e9;
 `
+
+export const styledColorInput  = styled.input``;

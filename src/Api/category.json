@@ -1,0 +1,12 @@
+{
+        "category":
+                [
+                        {"id":1,"name":"restaurante","type":"Estabelecimento", "color": "#c85ba9"},
+                        {"id":2,"name":"comercio","type":"Ponto Turistico", "color": "#95a28e"},
+                        {"id":3,"name":"balada","type":"Roteiro", "color": "#ed5252"},
+                        {"id":4,"name":"livraria","type":"Roteiro", "color": "#95a28e"},
+                        {"id":5,"name":"lazer","type":"Roteiro", "color": "#61be8c"},
+                        {"id":6,"name":"bar","type":"Roteiro", "color": "#f4a072"},
+                        {"id":7,"name":"cultural","type":"Estabelecimento", "color":"#789aff"}
+                ]
+}

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import category from "../Api/server.json"
+import category from "../Api/category.json"
 
 const CategorySlice = createSlice({
     name : "category",
@@ -11,14 +11,10 @@ const CategorySlice = createSlice({
         //update
         UpdateRow(state,{payload}){
             state.value.map(item => {
-                if(item.id === payload.id){
-                    
-                    //check if payload not null
-                    if(payload.name !== null){
-                        item.name = payload.name;
-                    }else if(payload.type !== null){
-                        item.type = payload.type;
-                    }
+                if(item.id === payload.id){ 
+                    item.name = payload.name;
+                    item.type = payload.type;
+                    item.color = payload.color;
                 }
             })
         },
