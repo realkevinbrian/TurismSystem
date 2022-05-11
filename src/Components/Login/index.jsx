@@ -1,4 +1,3 @@
-import { ArrowBack } from '@mui/icons-material';
 import { LinearProgress } from "@mui/material";
 import {setNavbarState} from "../../features/MenuSlice"
 import React, { useEffect, useState } from 'react';
@@ -67,10 +66,7 @@ function Login() {
     <>
         <S.LoginContainer>
             
-            <S.LoginWrapper>
-                <S.backButtonWrapper>
-                    <ArrowBack/>
-                </S.backButtonWrapper>                
+            <S.LoginWrapper>               
                 <S.LoginBanner>
                     <S.BannerImage src={bannerImg}/>
                 </S.LoginBanner>
