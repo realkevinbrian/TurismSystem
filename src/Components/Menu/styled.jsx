@@ -14,7 +14,6 @@ export const MenuContainer = styled.div`
     position: fixed;
     z-index: 50;
     background-color: #0808088f;
-    border:1px solid red;
 `;
 export const MenuListWrapper = styled.ul`
     display: flex;
