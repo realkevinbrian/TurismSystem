@@ -40,7 +40,7 @@ export const MenuIconWrapper = styled.div`
 
 export const Bars = styled.div`
         background-color: ${({theme}) => theme.colors.white};
-        width: 35px;
+        width: 30px;
         height: 4px;
         margin:3px;
         border-radius: 10px;
@@ -59,8 +59,21 @@ export const LogoWrapper = styled.div`
     justify-content: center;
     align-content: center;
 
+    //=> MOBILE VERSION
+    @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+    padding:0 10px;
+    
+        img{
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        }
+    }
+
     img{
-            width: 200px;
+        width: 100%;
+        max-width: 200px;
+        height: auto;
     }
     
 `;
@@ -69,5 +82,30 @@ export const Logo = styled.img``;
 export const NavMenuLinksWrapper = styled.div`
     display: flex;
     font-size:.9rem;
-    gap: 30px;
+    
+    a{
+        text-decoration: inherit;
+        color:inherit;
+        margin:0 20px;
+        padding:0 10px;
+        border: 1px solid transparent;
+        background-color: transparent;
+        
+        :hover{
+            color : "#042d35";
+            background-color: "#ffffff";
+        }
+
+    }
+    //=> MOBILE VERSION
+    @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
+        font-size:.8rem;
+        a{
+        margin:0 5px;
+        padding:0 0px;
+        }
+        span{
+            padding:0 10px;
+        }
+    }
 `;

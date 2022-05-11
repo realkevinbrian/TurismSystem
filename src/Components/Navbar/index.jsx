@@ -1,11 +1,12 @@
 import React from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch } from 'react-redux';
 import LOGO from "../../Assets/LOGO.png";
 import useAuth from "../../Hooks/useAuth";
 import {setMenuState} from "../../features/MenuSlice";
 import { Anchor, H4 } from '../Global';
 import Menu from "../Menu/index";
-import { Bars, Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinksWrapper } from './styled';
+import {Logo, LogoWrapper, MenuIconWrapper, NavbarContainer, NavMenuLinksWrapper } from './styled';
 
 
 function Navbar() {
@@ -20,15 +21,13 @@ function Navbar() {
     <>
         <NavbarContainer>
             <MenuIconWrapper onClick={()=>dispatch(setMenuState(true))}>
-                <Bars/>
-                <Bars/>
-                <Bars/>
+            <MenuIcon/>
             </MenuIconWrapper>
             <LogoWrapper>
                 <Logo src={LOGO}/>
             </LogoWrapper>
             <NavMenuLinksWrapper>
-                <H4>Ola, Administrador</H4>
+                <span>Ola,Administrador</span>
                 <Anchor href="/logout">Sair</Anchor>
             </NavMenuLinksWrapper>
         </NavbarContainer>

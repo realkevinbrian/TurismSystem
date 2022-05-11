@@ -22,27 +22,6 @@ export const LoginContainer = styled.section`
         height:100%;
         }
 `
-export const backButtonWrapper = styled.div`
-        display:none;
-
-        //=> MOBILE VERSION
-        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-        display: block;
-
-        svg{
-                background-color:${({theme}) => theme.colors.white};
-                padding: 4px;
-                font-size: 2rem;
-                position: absolute;
-                border-radius:50px;
-                transform: translateY(100px);
-
-        }
-
-        
-        }
-
-`
 //===============Login Wrapper===========\\
 export const LoginWrapper = styled.div`
         display: grid;
