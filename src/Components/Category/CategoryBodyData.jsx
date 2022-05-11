@@ -56,7 +56,7 @@ export const ReadOnlyRow = ({data:row,handleDelete,setEditId}) =>{
                   : (row.name === "lazer") ? <S.styledCell><S.Ball bColor ={"#61be8c"}/><span>{row.name}</span></S.styledCell>
                     : (row.name === "bar") ? <S.styledCell><S.Ball bColor ={"#f4a072"}/><span>{row.name}</span></S.styledCell>
                       : (row.name === "cultural") ? <S.styledCell><S.Ball bColor ={"#789aff"}/><span>{row.name}</span></S.styledCell> 
-                        : <S.styledCell><S.Ball className='bg-cyan-900' /><span>{row.name}</span></S.styledCell>}
+                        : <S.styledCell><S.Ball className='' bColor={row.color} /><span>{row.name}</span></S.styledCell>}
         </TableCell>
         <TableCell>{row.type}</TableCell>
         <TableCell align="right"><S.Edit className='text-cyan-900 text-lg' onClick={()=>setEditId(row.id)}><FontAwesomeIcon icon={faEdit} /></S.Edit></TableCell>
