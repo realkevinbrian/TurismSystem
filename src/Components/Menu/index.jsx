@@ -57,13 +57,21 @@ function Menu() {
   ]);
   const [ClickedId, setClickedId] = useState(null)
   //get menuState and add dispatch methods
-  const menuState = useSelector((state)=>state.menu.menuState)
+  const menuState = useSelector((state)=>state.menu.menuState);
+  const dispatch = useDispatch();
 
-
+  //Funcao para fechar o menu ao clickar ao lado
+  function handleCloseMenu (self) {
+    try{
+      if(self.target.className.includes("MenuContainer")){
+        dispatch(setMenuState());
+      }
+    }catch(e){}
+  }
 
   return (
     <>
-        <S.MenuContainer menuState={menuState}>
+        <S.MenuContainer menuState={menuState} onClick={handleCloseMenu} className="MenuContainer">
             <S.MenuListWrapper>
                 {
                     data.map((item)=>(
@@ -76,7 +84,7 @@ function Menu() {
                     )) 
                 }
             </S.MenuListWrapper>
-            <MenuViewer data={data} ClickedId={ClickedId}/>
+            <MenuViewer data={data} ClickedId={ClickedId} dispatch={dispatch}/>
         </S.MenuContainer>
     </>
   )
@@ -88,14 +96,11 @@ export default Menu
 /***
  * Menu Viewer
  */
-export function MenuViewer ({data,ClickedId}){
-
+export function MenuViewer ({data,ClickedId,dispatch}){
   /**
    * Filter the Clicked Link to get specified Link
    */
   const Selected = data.filter(item => item.id === ClickedId).map((item) => item.otherLinks);
-
-  const dispatch = useDispatch();
 
   return(
     <>{
