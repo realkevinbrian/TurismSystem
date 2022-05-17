@@ -90,29 +90,34 @@ export function AgendaBodyData() {
         <TableCell>
           <StyledEditInput
           type="text" placeholder='Atualize Nome'
+          value={row.name}
           onChange={(self) => setName(self.target.value)}
           />
         </TableCell>
         <TableCell>
           <StyledEditInput
+          value={row.date}
           type="text" placeholder='Atualize data'
           onChange={(self) => setDate(self.target.value)}
           />
         </TableCell>
         <TableCell>
           <StyledEditInput
+          value={row.start}
           type="text" placeholder='Atualize a hora do inicio'
           onChange={(self) => setStartTime(self.target.value)}
           />
         </TableCell>
         <TableCell>
           <StyledEditInput
+          value={row.entrance}
           type="text" placeholder='Atualize Valor da Entrada'
           onChange={(self) => setEntrance(self.target.value)}
           />
         </TableCell>
         <TableCell>
           <StyledEditInput
+          value={row.local}
           type="text" placeholder='Atualize o Local'
           onChange={(self) => setLocal(self.target.value)}
           />
