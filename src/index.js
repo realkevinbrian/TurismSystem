@@ -1,21 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import "./index.css"
 import App from './App';
-import GlobalStyles from "./Components/Global"
-import theme from "./Components/Global/theme";
-import {ThemeProvider} from "styled-components"
-import store from "./features/index";
-import {Provider} from "react-redux"
+import { BrowserRouter } from "react-router-dom"
+import { theme } from "./Components/Global"
+import { GlobalStyle } from "./Components/Global"
+import { ThemeProvider } from 'styled-components';
+import store from "./features/index"
+import { Provider } from "react-redux"
 
 ReactDOM.render(
   <React.StrictMode>
-  <Provider store={store}>
+    <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <GlobalStyles/>
-        <App/>
+        <GlobalStyle />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </ThemeProvider>
-  </Provider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

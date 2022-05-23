@@ -1,133 +1,59 @@
-import { LinearProgress } from "@mui/material";
-import {setNavbarState} from "../../features/MenuSlice"
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import bannerImg from "../../Assets/bgImage.png";
-import LOGO from "../../Assets/LOGO.png";
-import { Logo, LogoWrapper } from '../../Components/Navbar/styled';
-import useAuth from "../../Hooks/useAuth";
-import { Anchor, H1, H5, StyledInput, StyledLabel, SubmitBtn } from '../Global';
-import * as S from './styled';
+/**
+ * Login Component
+ * In this component we write all the Login Funcionalities 
+ * We are going to include Authetication 
+ * As In our Sysytem we have two types of Clients (Admin and Standard User)
+ * We will have to Autheticate for both Clients
+ * 
+ * ********************LOGIC****************
+ * As we stored in our database a key => user role
+ * So we are going to use that key (user_role) to verify user role , 
+ * and we are going to redirect to admin Dashboard if role is Admin else to Standard User Page
+ */
 
-function Login() {
 
-    useAuth();
-    //=>SETUP DATA IN FORM
-    const [email,setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [getErrors,setErrors] = useState("");
-    const [isLoading,setLoading] = useState(false);
-    //=>SETUP NAVIGATE
-    const Navigate = useNavigate();
 
-    //=>DISPATCH navbar state @@Close the navbar
-    const dispatch = useDispatch();
-    // dispatch(MenuActions.setNavbarState(false))
 
-    useEffect(()=>{
-        //authetication
-    if(localStorage.length !== 0){
-        Navigate("/admin")
-    }
-    },)
-    
-    //Authetication
-    function handleSubmit(self){
-        //prevent from reloading
-        self.preventDefault();
+import React from "react";
+import {
+  InputGroup,
+  LoginContainer,
+  LoginLeft,
+  LoginRight,
+  LinkContainer,
+  StyledContainer,
+} from "./styled";
+import LoginBanner from "../../Assets/bgImage.png";
+import { Link } from "react-router-dom";
 
-        /***
-         * THIS WOULD BE OUR DATABASE DATA IN THAT CASE
-         */
-        let db_email = "admin@company.com";
-        let db_password = "12345";
-        
-        if(email === db_email && password === db_password){
-            setErrors("");
-                setTimeout(() => {
-                    setLoading(true)
-                    setTimeout(()=>{
-                        setLoading(false);
-                        Navigate("/admin");
-                        //store LocalStorage
-                        localStorage.setItem("email", email)
-                        localStorage.setItem("password", password)
-                        dispatch(setNavbarState(true))
-                    },1000)
-                }, 1);   
-        }else{
-            setErrors("Email ou Senha Incorrecta! Tente de Novo");
-        }
-        
-    }
-
+function index() {
   return (
-    <>
-        <S.LoginContainer>
-            
-            <S.LoginWrapper>               
-                <S.LoginBanner>
-                    <S.BannerImage src={bannerImg}/>
-                </S.LoginBanner>
+    <StyledContainer>
+      <LoginContainer>
+        <LoginLeft>
+          <img src={LoginBanner} alt="Login Banner" />
+        </LoginLeft>
+        <LoginRight>
+          <form>
+            <h5>Login</h5>
+            <InputGroup>
+              <label>Email</label>
+              <input type="email" name="email" required />
+            </InputGroup>
 
-                <S.LoginContent>
+            <InputGroup>
+              <label>Senha</label>
+              <input type="password" name="password" required />
+            </InputGroup>
 
-                    <S.LoginHeader>
-                        <H5>Não possui cadastro?</H5>
-                        <Anchor href="#">Cadastre-se</Anchor>
-                    </S.LoginHeader>
-
-                    <LogoWrapper>
-                        <Logo src={LOGO}/>
-                    </LogoWrapper>
-
-                    <S.LoginBody>
-                        <S.FormWrapper>
-                            <H1>Login</H1>
-                            <S.Form onSubmit = {handleSubmit}>
-                                <S.InputGroup>
-                                    <StyledLabel>E-mail</StyledLabel>
-                                    <StyledInput type="email" autocomplete onChange={(self)=>setEmail(self.target.value)} required/>
-                                </S.InputGroup>
-
-                                <S.InputGroup>
-                                    <StyledLabel>Senha</StyledLabel>
-                                    <StyledInput type="password" autocomplete onChange={(self)=>setPassword(self.target.value)} required/>
-                                </S.InputGroup>
-                                
-                                {getErrors && <S.customAlert variant="outlined" severity="error">{getErrors}</S.customAlert>}
-
-                                <S.FormOptionWrapper>
-                                    <Anchor href='#'>Esqueci minha senha</Anchor>
-                                    <SubmitBtn type="submit">Login</SubmitBtn>
-                                </S.FormOptionWrapper>
-                            
-                            </S.Form>
-                                
-                                {isLoading && <LinearProgress/>}
-
-                        </S.FormWrapper>
-                    </S.LoginBody>
-
-                </S.LoginContent>
-            
-            </S.LoginWrapper>
-        
-        </S.LoginContainer>
-    </>
-  )
+            <LinkContainer>
+              <Link to="/">Esquece minha senha</Link>
+              <button type="submit">Login</button>
+            </LinkContainer>
+          </form>
+        </LoginRight>
+      </LoginContainer>
+    </StyledContainer>
+  );
 }
-
-export default Login
-
-
-export function Logout(){
-    
-    //=>SETUP NAVIGATE
-    const Navigate = useNavigate();
-    useEffect(() => {
-        localStorage.clear();
-        Navigate("/login");
-    })
-}
+export default index;

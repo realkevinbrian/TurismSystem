@@ -1,29 +1,33 @@
-import {BrowserRouter as Router, Routes,Route} from "react-router-dom";
-import React from "react"
-import Home from "./Pages/Home";
-import Agenda from './Pages/Agenda';
-import Category from './Pages/Category';
-import Finance from './Pages/Finance';
-import Login,{Logout} from './Components/Login';
-import NotFound from "./Pages/ErrorPage"
-import Approved from "./Pages/Approved"
+/***
+ * In this Component we delcare all route funcionality
+ * All the routes we going declare in this Component
+ */
+
+import React from "react";
+import {Routes, Route} from "react-router-dom"
+import NavMenu from "./Components/Admin/NavMenu"
+import Login from "./Components/Login"
+import AdminHome from "./Components/Admin/Home"
+import Finance from "./Components/Admin/Finance"
+import Category from "./Components/Admin/Category"
+import Agenda from "./Components/Admin/Agenda"
+import Approved from "./Components/Admin/Approved"
+
 
 
 function App() {
     return ( 
-    <Router>
-        <Routes>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/logout' element={<Logout/>}/>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/admin" element={<Home/>}/>
-            <Route path='/admin/agenda' element={<Agenda/>}/>
-            <Route path='/admin/categoria' element={<Category/>}/>
-            <Route path='/admin/financeiro' element={<Finance/>}/>
-            <Route path='/admin/approvados' element={<Approved/>}/>
-            <Route path='/*' element={<NotFound/>}/>
-        </Routes>
-    </Router>
+        <>
+        <NavMenu/>
+            <Routes>
+                <Route path="/" element={<AdminHome/>}/>
+                <Route path="/finance" element={<Finance/>}/>
+                <Route path="/category" element={<Category/>}/>
+                <Route path="/agenda" element={<Agenda/>}/>
+                <Route path="/Approved" element={<Approved/>}/>
+                {/* <Route path="/login" element={<Login/>}/> */}
+            </Routes>
+        </>
     );
 }
 

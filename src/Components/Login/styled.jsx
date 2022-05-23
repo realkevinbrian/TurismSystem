@@ -1,189 +1,167 @@
-import styled from "styled-components"
-import { Alert} from "@mui/material";
+import styled from "styled-components";
 
-/**
- * ************************************\
- * ========STYLED COMPONENTS============\
- * ********LOGIN PAGE *****==============\
- * ********COMPONENTE PARA LOGIN PAGE=====\
+/*****
+ * LOGIN PAGE
  */
 
-//===============CONTAINER===========\\
-export const LoginContainer = styled.section`
-        display: grid;
-        grid-template-columns: 1fr;
-        height: 100vh;
-        align-items:center;
-        justify-items: center;
-        background-color:${({theme}) => theme.colors.dark_cyan};
+export const StyledContainer = styled.div`
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+    background-color: ${({ theme }) => theme.colors.dark_cyan};
+    display: flex;
+    place-items: center;
+    place-content: center;
+  }
 
-        //=> MOBILE VERSION
-        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-        height:100%;
-        }
-`
-//===============Login Wrapper===========\\
-export const LoginWrapper = styled.div`
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        background-color:${({theme}) => theme.colors.white};
-        border-radius:30px;         
-
-        //=> MOBILE VERSION
-        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                grid-template-columns: repeat(1,1fr);
-                border-radius:0px;
-                background-color: transparent;
-                padding:30px;
-                
-        }
-
-
-
-    `;
-//===============Side Wrapper=============\\
-export const LoginBanner = styled.div`
-        object-fit: contain;
-
-        @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                /* position: relative; */
-                z-index:1;
-
-        }
-        
-
-`;
-export const BannerImage = styled.img`
-        width:100%;
-        height:400px;
-        object-fit: contain;
-        border-radius:30px 0px 0px 30px;
-        //=> MOBILE VERSION
-        @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                width:auto;
-                height:auto;
-                object-fit: contain;
-                border-radius:20px;
-                position: relative;
-                transform: translateY(150px);
-        }
+  //on mobile devicess
+  @media screen and (max-width: 767px) {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    place-items: center;
+    background-color: ${({ theme }) => theme.colors.dark_cyan};
+  }
 `;
 
-//===============Right Side Wrapper=============\\
-export const LoginContent = styled.div`
-        /* border:5px dashed green; */
-        display: grid;
-        grid-template-columns: 1fr;
-        flex-direction: column;
-        justify-content: space-between;
-        padding:1rem;
+export const LoginContainer = styled.div`
+  //ON DESKTOP
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    border-radius: 20px;
+    background-color: white;
+  }
 
-        //logo
-        img{
-                width:200px;
-                align-self: center;
-                justify-self: center;
+  //ON MOBILE
+  @media screen and (max-width: 767px) {
+    margin: 0.5rem 5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+export const LoginLeft = styled.div`
+  display: grid;
+  place-items: center;
+  width: 400px;
+  border-radius: 60px;
 
+  img {
+    border-radius: 20px;
+  }
+
+  //ON MOBILE
+  @media screen and (max-width: 767px) {
+    position: relative;
+    transform: translateY(70px);
+    img {
+      width: 100%;
+      z-index: 1;
+      max-width: 100%;
+      border-radius: 20px;
+    }
+  }
+`;
+export const LoginRight = styled.div`
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px;
+
+  /* *{border : 1px dashed red} */
+
+  h5 {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  //STYLE FORM
+  form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.5px;
+
+    div {
+      border: 1px solid ${({ theme }) => theme.colors.dark_cyan};
+      display: flex;
+      flex-direction: column;
+      padding: 6px;
+      border-radius: 3px;
+
+      label {
+        font-size: 0.8rem;
+        position: absolute;
+        transform: translateY(-15px) translateX(10px);
+        background-color: ${({ theme }) => theme.colors.white};
+        padding: 0 4px;
+      }
+      input {
+        border: 1px solid transparent;
+        outline: none;
+        background-color: transparent;
+      }
+    }
+
+    //section link
+    section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+
+      a {
+        text-decoration: underline !important;
+
+        &:hover {
+          color: #ff004c;
         }
+      }
 
-        @media (min-width : 100px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-                z-index:2;
-                background-color:${({theme}) => theme.colors.white};
-                border-radius: 20px;
+      button {
+        background-color: ${({ theme }) => theme.colors.dark_cyan};
+        padding: 5px 30px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          background-color: #054d52;
+          color: #ffae00;
         }
+      }
 
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  //ON MOBILE
+  @media screen and (max-width: 767px) {
+    z-index: 20;
+    transform: translateY(-90px);
+    position: relative;
+    border-radius: 20px;
+    padding-top: 1.5rem;
+    box-shadow: 1px 1px 10px 2px #00000028;
+    padding: 15px;
+
+    section {
+      padding-top: 1rem;
+    }
+  }
 `;
 
-            //LOGIN HEADER\\
-export const LoginHeader = styled.div`
-        display:flex;
-        flex-direction:column;
-        font-size: .8rem;
-        align-items: end;
+//input Group
+export const InputGroup = styled.div``;
 
-        //anchor tag
-        a{
-            color:${({theme}) => theme.colors.dark_cyan};
-            text-decoration: underline;
-        }
-`
-            //LOGIN BODY\\
-export const LoginBody = styled.div``;
-            //FORM\\
-
-export const FormWrapper = styled.div`
-        /* * {border:1px dashed red;} */
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        border-radius:20px;
-
-`;
-export const Form = styled.form`
-        display:flex;
-        flex-direction:column;
-        gap:15px;
-`;
-export const InputGroup = styled.div`
-        display: flex;
-        flex-direction: column;
-        background-color:transparent;
-        padding: 6px;
-        border: 1px solid black;
-        font-size:.8rem;
-        border-radius:5px;
-
-        //labels
-        label{
-            font-size: .9rem;
-            position: absolute;
-            transform: translateY(-16px) translateX(15px);
-            background-color:${({theme}) => theme.colors.white};
-            padding:0px 5px;
-        }
-
-        //input
-    
-`;
-export const FormOptionWrapper = styled.div`
-        display: flex;
-        justify-content: space-between;
-        align-items:center;
-        padding-top: 30px;
-
-        //=> MOBILE VERSION
-        @media (min-width : 200px) and (max-width : ${({theme}) => theme.Layout.Mobile}){
-        }
-
-        a{
-            text-decoration: underline;
-            font-size:.8rem;
-        }
-
-        button{
-            background-color:${({theme}) => theme.colors.dark_cyan};
-            padding:5px 40px;
-            color:#ffff;
-            border-radius:20px;
-            font-size:.9rem;
-            transition: all 0.2s linear;
-
-            //onhover
-            &:hover{
-            background-color:#00a1e6;
-            }
-
-        }
-`;
-
- 
-
-/***
- * CUSTOM ALERT
- */
-
-export const customAlert = styled(Alert)`
-        
-        border-radius: 6px !important;
-        padding:2px 10px!important;
-`
+//LinkContainer
+export const LinkContainer = styled.section``;

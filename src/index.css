@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Poppins;
+    src: url("./Assets/@fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: QuickSand;
+    src: url("./Assets/@fonts/Quicksand-VariableFont_wght.ttf");
+}
