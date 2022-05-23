@@ -5,17 +5,16 @@ import { useSelector } from 'react-redux';
 import { selectAll } from '../../../features/ApprovedSlice';
 
 /****
- * BODY DATA FOR Aproved TABLE TO MAKE OUR TABLE REUSABLE
+ * In this component we declare body data
  */
 
 export default function ApprovedBodyData() {
 
-  //get QUERY_BYSTRING AND QUERY_BYNUM
+  //Retrieve search states from our redux store
   const query = useSelector(state => state.query.query_string);
   const queryNum = useSelector(state => state.query.queryByNumber);
   const AprovedData = useSelector(selectAll);
   
-
   return (
     <>
       {
@@ -37,7 +36,6 @@ export default function ApprovedBodyData() {
 /***
  * Read Only Row
  */
-
 export const ReadOnlyRow = ({data:row}) =>{
   return(
       <TableRow key={row.id}>

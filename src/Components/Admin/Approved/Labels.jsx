@@ -1,10 +1,9 @@
-import { TableCell } from '@mui/material';
-import React from 'react';
-
-
 /****
  * Labels for Approved table
  */
+
+import { TableCell } from '@mui/material';
+import React from 'react';
 
 export default function ApprovedLabels() {
   const columns = [
