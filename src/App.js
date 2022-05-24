@@ -5,22 +5,25 @@
 
 import React from "react";
 import {Routes, Route} from "react-router-dom"
-import NavMenu from "./Components/Admin/NavMenu"
+import NavMenu from "./Components/NavMenu"
 import Login from "./Components/Login"
-import AdminHome from "./Components/Admin/Home"
-import Finance from "./Components/Admin/Finance"
-import Category from "./Components/Admin/Category"
-import Agenda from "./Components/Admin/Agenda"
-import Approved from "./Components/Admin/Approved"
+
+//Admin Pages
+import Home from "./Pages/Admin/Home"
+import Finance from "./Pages/Admin/Finance"
+import Category from "./Pages/Admin/Category"
+import Agenda from "./Pages/Admin/Agenda"
+import Approved from "./Pages/Admin/Approved"
 
 
+//User Pages
 
 function App() {
     return ( 
         <>
         <NavMenu/>
             <Routes>
-                <Route path="/" element={<AdminHome/>}/>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/finance" element={<Finance/>}/>
                 <Route path="/category" element={<Category/>}/>
                 <Route path="/agenda" element={<Agenda/>}/>

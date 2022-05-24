@@ -1,24 +1,16 @@
-import React, { useState } from "react";
 import {
-  NavContainer,
-  LogoContainer,
-  NavSide,
-  SideMenuContainer,
-  SideMenuViewer,
-  MenuContainer,
-} from "./styled";
-import {
-  MenuOutlined,
-  BarChartOutlined,
-  AdminPanelSettingsOutlined,
-  MoneyOutlined,
-  DisplaySettingsOutlined,
-  ComputerOutlined,
+  AdminPanelSettingsOutlined, BarChartOutlined, DisplaySettingsOutlined, MenuOutlined, MoneyOutlined
 } from "@mui/icons-material";
-import Logo from "../../../Assets/LOGO.png";
-import { Link } from "react-router-dom";
-import { setMenuState } from "../../../features/MenuSlice";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import Logo from "../../Assets/LOGO.png";
+import { setMenuState } from "../../features/MenuSlice";
+import {
+  LogoContainer, MenuContainer, NavContainer, NavSide,
+  SideMenuContainer,
+  SideMenuViewer
+} from "./styled";
 
 const MenuData = [
   {

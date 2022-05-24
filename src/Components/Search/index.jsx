@@ -2,7 +2,7 @@ import { SearchOutlined } from "@mui/icons-material";
 import { InputLabel, MenuItem } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { QueryActions } from "../../../features/QuerySlice";
+import { QueryActions } from "../../features/QuerySlice";
 import * as S from "./styled";
 
 function QueryByString({ placeholder }) {

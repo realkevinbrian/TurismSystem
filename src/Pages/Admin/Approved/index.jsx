@@ -5,7 +5,7 @@
 
  import { Container } from "@mui/material";
 import React from "react";
-import StyledTable from "../Table";
+import StyledTable from "../../../Components/Table";
 import ApprovedBodyData from "./bodyData";
 import ApprovedLabels from "./Labels";
  export default function index() {

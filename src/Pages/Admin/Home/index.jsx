@@ -3,21 +3,17 @@
  *
  * */
 import {
-  Flag,
-  Person,
-  Shop,
-  Map,
-  ZoomInMap,
-  Assignment
-} from "@mui/icons-material"
+  Assignment, Flag, Map, Person,
+  Shop, ZoomInMap
+} from "@mui/icons-material";
 import React from "react";
-import { Container } from "../../Global";
-import { Wrapper, Card } from "./styled";
+import { Card, Wrapper } from "./styled";
+import {Container} from "@mui/material"
 
 
 
 
-function index() {
+export default function index() {
 
   const Data = [
     { id: 1, title: "Usuario", value: "1200", icon: <Person/> },
@@ -31,7 +27,7 @@ function index() {
   ];
 
   return (
-     <Container>
+     <Container maxWidth = "lg">
       <h3>Indicadores</h3>
       <Wrapper>
         {Data.map( item => <IndicatorCard key={item.id} item={item}/>)}
@@ -39,9 +35,6 @@ function index() {
      </Container>
   );
 }
-
-export default index;
-
 
 /***
  * Here we are going to create card component to display in our Home Component

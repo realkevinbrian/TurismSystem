@@ -3,15 +3,15 @@
  * We retrieve data from our server
  */
 
- import { useDispatch } from "react-redux";
- import { setAgendaState } from "../../../features/MenuSlice";
- import React from "react";
  import { Container } from "@mui/material";
- import StyledTable from "../Table";
- import AgendaBodyData from "./bodyData";
- import AgendaLabels  from "./Labels";
- import { RegisterButton } from "../Category/styled";
- import Register  from "./Register";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { setAgendaState } from "../../../features/MenuSlice";
+import { RegisterButton } from "../Category/styled";
+import StyledTable from "../../../Components/Table";
+import AgendaBodyData from "./bodyData";
+import AgendaLabels from "./Labels";
+import Register from "./Register";
  
  export default function index() {
    return (

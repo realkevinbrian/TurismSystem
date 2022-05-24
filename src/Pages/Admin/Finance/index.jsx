@@ -6,7 +6,7 @@
 
 import { Container } from "@mui/material";
 import React from "react";
-import StyledTable from "../Table";
+import StyledTable from "../../../Components/Table";
 import { FinanceBodyData } from "./FinanceBodyData";
 import { FinanceLabels } from "./FinanceLabels";
 import {ShowTotalWrapper} from "./styled"

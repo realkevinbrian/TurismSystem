@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { setCategoryState } from "../../../features/MenuSlice";
 import React from "react";
 import { Container } from "@mui/material";
-import StyledTable from "../Table";
+import StyledTable from "../../../Components/Table/index";
 import CategoryData from "./bodyData";
 import { CategoryLabels } from "./Labels";
 import * as S from "./styled";
