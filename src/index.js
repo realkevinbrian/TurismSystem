@@ -9,16 +9,17 @@ import { ThemeProvider } from 'styled-components';
 import store from "./features/index"
 import { Provider } from "react-redux"
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
-    </Provider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

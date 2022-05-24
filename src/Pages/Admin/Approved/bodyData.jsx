@@ -4,10 +4,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectAll } from '../../../features/ApprovedSlice';
 
-/****
- * In this component we declare body data
- */
-
 export default function ApprovedBodyData() {
 
   //Retrieve search states from our redux store

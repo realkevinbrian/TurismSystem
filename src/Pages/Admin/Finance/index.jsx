@@ -9,11 +9,11 @@ import React from "react";
 import StyledTable from "../../../Components/Table";
 import { FinanceBodyData } from "./FinanceBodyData";
 import { FinanceLabels } from "./FinanceLabels";
-import {ShowTotalWrapper} from "./styled"
+import { ShowTotalWrapper } from "./styled";
 
 function FinanceMain() {
   return (
-    <Container maxWidth = "xl">
+    <Container maxWidth="xl">
       <StyledTable
         TableTitle="Financeiro"
         Component={<ShowTotal />}

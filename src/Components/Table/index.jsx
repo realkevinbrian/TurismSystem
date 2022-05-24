@@ -38,24 +38,29 @@ function StyledTable({ TableTitle, Component, Labels, TableData }) {
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell align="justify" colSpan={3}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={4}>
+                <TableCell align="justify" colSpan={12}>
+                  <Grid
+                    container
+                    sx={{
+                      justifyContent: "space-between",
+                      placeItems: "center",
+                    }}
+                  >
+                    <Grid item xl={6}>
                       <QueryByString placeholder={"Pesquise por nome"} />
                     </Grid>
 
-                    <Grid item xs={4}>
+                    <Grid item xl={6}>
                       <QueryByString placeholder={"Pesquise"} />
                     </Grid>
 
-                    <Grid item xs={4}>
+                    <Grid item xl={6}>
                       <QueryByNumber />
                     </Grid>
+                    <Grid item xl={6}>
+                      <Box>{Component}</Box>
+                    </Grid>
                   </Grid>
-                </TableCell>
-
-                <TableCell align="right" colSpan={4}>
-                  <Box>{Component}</Box>
                 </TableCell>
               </TableRow>
               <TableRow>{Labels}</TableRow>

@@ -1,36 +1,29 @@
-// import {createSlice} from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-// /** 
-//  * Init login
-//  */
+const LoginSlice = createSlice({
+    name: "login",
+    initialState: {
+        user_status: null,
+        user_role: "Standard"
+    },
+    reducers: {
 
-// const LoginSlice = createSlice({
-//     name : "login",
-//     initialState : {
-//         userEmail : "",
-//         userPassword : "",
-//         Auth : false
-//     },
-//     reducers : {
-//         setEmail(state,action){
-//             state.userEmail = action.payload;
-//         },
-//         setPassword(state,action){
-//             state.userPassword = action.payload;
-//         }
-//     }
-// })
-
-
-// /**
-//  * Export Actions
-//  */
-
-// export LoginActions = LoginSlice.actions;
+        //Login 
+        Login(state, { payload }) {
+            state.user_status = payload.user_status;
+            state.user_role = payload.user_role;
+        },
+        //Logout
+        Logout(state) {
+            state.user_status = null;
+            state.user_role = null;
+        }
+    }
+})
 
 
-// /***
-//  * exort Login Slice by Default
-//  */
 
-// export default LoginSlice.reducer;
+//export actions
+export const { Login, Logout } = LoginSlice.actions;
+
+export default LoginSlice.reducer;

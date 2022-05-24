@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Home = styled.div`
+  h3{
+    font-size: 1.3rem;
+  }
+
+  margin-top: 1rem;
+`
+
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

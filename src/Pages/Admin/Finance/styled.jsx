@@ -5,7 +5,7 @@ import { TableCell } from "@mui/material";
 
 export const ShowTotalWrapper = style.div`
         text-align: center;
-        padding:.5rem 0;
+        padding:.5rem 1rem;
         box-shadow: 1px 1px 10px 2px #d8d6d695;
         border-radius: 5px;
         display: grid;

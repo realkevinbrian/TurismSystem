@@ -7,7 +7,7 @@ import styled from "styled-components";
 export const StyledContainer = styled.div`
   @media screen and (min-width: 768px) {
     height: 100vh;
-    background-color: ${({ theme }) => theme.colors.dark_cyan};
+    background-color: ${({ theme }) => theme.colors.primary};
     display: flex;
     place-items: center;
     place-content: center;
@@ -20,7 +20,6 @@ export const StyledContainer = styled.div`
     grid-template-columns: 1fr;
     place-content: center;
     place-items: center;
-    background-color: ${({ theme }) => theme.colors.dark_cyan};
   }
 `;
 
@@ -69,10 +68,12 @@ export const LoginRight = styled.div`
   border-radius: 20px;
   padding: 20px;
 
+  /* *{border:1px solid red} */
   /* *{border : 1px dashed red} */
 
+
   h5 {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     align-items: flex-end;
     font-size: 1.2rem;
@@ -88,7 +89,7 @@ export const LoginRight = styled.div`
     padding: 0.5px;
 
     div {
-      border: 1px solid ${({ theme }) => theme.colors.dark_cyan};
+      border: 1px solid ${({ theme }) => theme.colors.primary};
       display: flex;
       flex-direction: column;
       padding: 6px;
@@ -125,7 +126,7 @@ export const LoginRight = styled.div`
       }
 
       button {
-        background-color: ${({ theme }) => theme.colors.dark_cyan};
+        background-color: ${({ theme }) => theme.colors.primary};
         padding: 5px 30px;
         border-radius: 50px;
         font-weight: bold;
@@ -159,6 +160,29 @@ export const LoginRight = styled.div`
     }
   }
 `;
+
+export const FormHeader = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 40px;
+
+  img{
+    justify-self: center;
+    width: 100%;
+    max-width: 200px;    
+  }
+
+  h5{
+    align-self:flex-start;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1.5rem;
+
+  }
+`
 
 //input Group
 export const InputGroup = styled.div``;

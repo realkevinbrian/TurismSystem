@@ -1,16 +1,23 @@
 import {
-  AdminPanelSettingsOutlined, BarChartOutlined, DisplaySettingsOutlined, MenuOutlined, MoneyOutlined
+  AdminPanelSettingsOutlined,
+  BarChartOutlined,
+  DisplaySettingsOutlined, MenuOutlined,
+  MoneyOutlined
 } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../Assets/LOGO.png";
 import { setMenuState } from "../../features/MenuSlice";
 import {
-  LogoContainer, MenuContainer, NavContainer, NavSide,
+  LogoContainer,
+  MenuContainer,
+  NavContainer,
+  NavSide,
   SideMenuContainer,
   SideMenuViewer
 } from "./styled";
+import { Logout } from "../../features/LoginSlice";
 
 const MenuData = [
   {
@@ -24,7 +31,7 @@ const MenuData = [
         {
           id: 1,
           title: "relatorios de Usuario",
-          link: "/",
+          link: "/admin",
         },
         {
           id: 2,
@@ -54,8 +61,8 @@ const MenuData = [
       Link: [
         {
           id: 1,
-          title: "Financeiro de Usuario",
-          link: "/finance",
+          title: "Relatorio Financeiro",
+          link: "/admin/finance",
         },
       ],
     },
@@ -76,7 +83,7 @@ const MenuData = [
         {
           id: 2,
           title: "Aprovações",
-          link: "/Approved",
+          link: "/admin/Approved",
         },
         {
           id: 3,
@@ -97,7 +104,7 @@ const MenuData = [
         {
           id: 1,
           title: "Cadastro de Categorias",
-          link: "/category",
+          link: "/admin/category",
         },
         {
           id: 2,
@@ -107,24 +114,35 @@ const MenuData = [
         {
           id: 3,
           title: "Agenda Cultural",
-          link: "/agenda",
+          link: "/admin/agenda",
         },
       ],
     },
   },
 ];
-
 function index() {
-  
+    
   //get navData
   const data = MenuData;
+  const navigate = useNavigate();
 
   //Declare dispatch and useSelector from Redux
   const dispatch = useDispatch();
   const menuState = useSelector((state) => state.menu.menuState);
 
+  /****
+   * Destructure AuthUser
+   * Authetication
+   */
+  function handleLogOut(self){
+    self.preventDefault();
+    localStorage.clear();
+    navigate("/login");
+    dispatch(Logout())
+  }
+
   return (
-    <>
+    <React.Fragment>
       <NavContainer>
         <MenuOutlined onClick={() => dispatch(setMenuState())} />
         <LogoContainer>
@@ -132,11 +150,11 @@ function index() {
         </LogoContainer>
         <NavSide>
           <span>Ola, Administrador</span>
-          <Link to="/Logout">Sair</Link>
+          <button onClick = {handleLogOut}>Sair</button>
         </NavSide>
       </NavContainer>
       <SideMenu data={data} menuState={menuState} />
-    </>
+    </React.Fragment>
   );
 }
 

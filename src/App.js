@@ -4,31 +4,39 @@
  */
 
 import React from "react";
-import {Routes, Route} from "react-router-dom"
-import NavMenu from "./Components/NavMenu"
-import Login from "./Pages/Login"
-
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import NavMenu from "./Components/NavMenu";
+import Agenda from "./Pages/Admin/Agenda";
+import Approved from "./Pages/Admin/Approved";
+import Category from "./Pages/Admin/Category";
+import Finance from "./Pages/Admin/Finance";
 //Admin Pages
-import Home from "./Pages/Admin/Home"
-import Finance from "./Pages/Admin/Finance"
-import Category from "./Pages/Admin/Category"
-import Agenda from "./Pages/Admin/Agenda"
-import Approved from "./Pages/Admin/Approved"
+import Home from "./Pages/Admin/Home";
+import Login from "./Pages/Login";
+import UserPage from "./Pages/User";
 
 
-//User Pages
 
 function App() {
-    return ( 
+
+    /***
+     * Destructure useAuth Merhod to retrive just Userinformation
+     */
+    const user_status = useSelector(state => state.login.user_status);
+    const user_role = useSelector(state => state.login.user_role);
+
+    return (
         <>
-        <NavMenu/>
+            {user_role === "Admin" && user_status && <NavMenu />}
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/finance" element={<Finance/>}/>
-                <Route path="/category" element={<Category/>}/>
-                <Route path="/agenda" element={<Agenda/>}/>
-                <Route path="/Approved" element={<Approved/>}/>
-                {/* <Route path="/login" element={<Login/>}/> */}
+                <Route path="/admin" element={<Home />} />
+                <Route path="/admin/finance" element={<Finance />} />
+                <Route path="/admin/category" element={<Category />} />
+                <Route path="/admin/agenda" element={<Agenda />} />
+                <Route path="/admin/Approved" element={<Approved />} />
+                <Route path="login" element={<Login />} />
+                <Route path="/" element={<UserPage />} />
             </Routes>
         </>
     );

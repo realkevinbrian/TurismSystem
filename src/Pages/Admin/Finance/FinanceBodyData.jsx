@@ -2,11 +2,10 @@
  * Reusable Component finance body data
  */
 
-
 import { TableCell, TableRow } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectAll } from "../../../features/FinanceSlice"
+import { selectAll } from "../../../features/FinanceSlice";
 
 export function FinanceBodyData() {
   /*****
@@ -36,9 +35,9 @@ export function FinanceBodyData() {
             <TableCell>{row.transaction}</TableCell>
             <TableCell>
               {row.status === "Pendente" ? (
-                <span style={{color: "#ff7300"}}>{row.status}</span>
+                <span style={{ color: "#ff7300" }}>{row.status}</span>
               ) : (
-                <span style={{color: "#01d371"}}>{row.status}</span>
+                <span style={{ color: "#01d371" }}>{row.status}</span>
               )}
             </TableCell>
             <TableCell>{row.total}</TableCell>
