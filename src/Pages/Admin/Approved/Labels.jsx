@@ -15,15 +15,12 @@ export default function ApprovedLabels() {
 
   return (
     <>
-      {//=>Here we looping through our received data from the props
-        columns.map((column) => {
-          return (
-            <TableCell key={column.id} align={column.align}>
-              {column.label}
-            </TableCell>
-          );
-        })}
-    </>
-  );
-}
+      {
+        columns.map((column) => 
+          <TableCell 
+            key={column.id} 
+            align={column.align}>{column.label}
+          </TableCell>)}
+        </>);
+      }
 

@@ -9,6 +9,8 @@ export const NavContainer = styled.div`
   padding: 20px 20px;
   color: white;
   font-size: 1rem;
+  position: sticky;
+
 
   //image
   img {

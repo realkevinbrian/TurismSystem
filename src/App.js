@@ -6,7 +6,7 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom"
 import NavMenu from "./Components/NavMenu"
-import Login from "./Components/Login"
+import Login from "./Pages/Login"
 
 //Admin Pages
 import Home from "./Pages/Admin/Home"
