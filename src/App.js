@@ -13,6 +13,7 @@ import Category from "./Pages/Admin/Category";
 import Finance from "./Pages/Admin/Finance";
 //Admin Pages
 import Home from "./Pages/Admin/Home";
+import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
 import UserPage from "./Pages/User";
 
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/admin/Approved" element={<Approved />} />
                 <Route path="login" element={<Login />} />
                 <Route path="/" element={<UserPage />} />
+                <Route path="*" element={<ErrorPage/>} />
             </Routes>
         </>
     );
