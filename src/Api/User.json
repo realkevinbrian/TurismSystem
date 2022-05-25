@@ -1,0 +1,7 @@
+{
+    "users" : [
+        {"id" : 1, "email" : "admin@connect.com", "password" : "admin12345", "role" : "Admin"},
+        {"id" : 2, "email" : "user1@gmail.com", "password" : "user12345", "role" : "Standard"},
+        {"id" : 3, "email" : "user2@gmail.com", "password" : "user12345", "role" : "Standard"}
+    ]
+}

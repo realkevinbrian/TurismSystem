@@ -5,6 +5,7 @@ import CategorySlice from "./CategorySlice";
 import AgendaSlice from "./AgendaSlice"
 import FinanceSlice from "./FinanceSlice"
 import ApprovedSlice from "./ApprovedSlice"
+import LoginSlice from "./LoginSlice";
 
 /***
  * Setup store
@@ -17,7 +18,8 @@ const store = configureStore({
         category : CategorySlice,
         agenda : AgendaSlice,
         finance : FinanceSlice,
-        approved : ApprovedSlice
+        approved : ApprovedSlice,
+        login : LoginSlice
     }
 
 })

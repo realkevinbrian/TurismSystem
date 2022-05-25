@@ -1,13 +1,13 @@
 {
     "finance" : [
-            {"id":1,"name":"Marcos da Silva","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
-            {"id":2,"name":"Amorim's Lounge","tipo":"Estabelecimento","data":"23/06/2021","transaction":"Cartao","status":"Pago","total":"R$1200"},
-            {"id":3,"name":"Fernanda Machado","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
-            {"id":4,"name":"Shakespeare e Companhia","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
-            {"id":5,"name":"La Pergola","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
-            {"id":6,"name":"Aline do Amaral","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
-            {"id":7,"name":"Spikel","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
-            {"id":8,"name":"La Pergolas","tipo":"Guia Turístico","data":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"}
+            {"id":1,"name":"Marcos da Silva","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
+            {"id":2,"name":"Amorim's Lounge","type":"Estabelecimento","date":"23/06/2021","transaction":"Cartao","status":"Pago","total":"R$1200"},
+            {"id":3,"name":"Fernanda Machado","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
+            {"id":4,"name":"Shakespeare e Companhia","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
+            {"id":5,"name":"La Pergola","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
+            {"id":6,"name":"Aline do Amaral","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
+            {"id":7,"name":"Spikel","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"},
+            {"id":8,"name":"La Pergolas","type":"Guia Turístico","date":"23/07/2021","transaction":"Boleto","status":"Pendente","total":"R$1200"}
     ]
 }
 
