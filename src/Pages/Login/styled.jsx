@@ -71,7 +71,6 @@ export const LoginRight = styled.div`
   /* *{border:1px solid red} */
   /* *{border : 1px dashed red} */
 
-
   h5 {
     /* flex: 1; */
     display: flex;
@@ -87,28 +86,7 @@ export const LoginRight = styled.div`
     flex-direction: column;
     gap: 10px;
     padding: 0.5px;
-
-    div {
-      border: 1px solid ${({ theme }) => theme.colors.primary};
-      display: flex;
-      flex-direction: column;
-      padding: 6px;
-      border-radius: 3px;
-
-      label {
-        font-size: 0.8rem;
-        position: absolute;
-        transform: translateY(-15px) translateX(10px);
-        background-color: ${({ theme }) => theme.colors.white};
-        padding: 0 4px;
-      }
-      input {
-        border: 1px solid transparent;
-        outline: none;
-        background-color: transparent;
-      }
-    }
-
+    
     //section link
     section {
       flex: 1;
@@ -169,23 +147,41 @@ export const FormHeader = styled.div`
   align-items: center;
   gap: 40px;
 
-  img{
+  img {
     justify-self: center;
     width: 100%;
-    max-width: 200px;    
+    max-width: 200px;
   }
 
-  h5{
-    align-self:flex-start;
+  h5 {
+    align-self: flex-start;
     padding: 0;
     margin: 0;
     padding-bottom: 1.5rem;
-
   }
-`
+`;
 
 //input Group
-export const InputGroup = styled.div``;
+export const InputGroup = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  border-radius: 3px;
+
+  label {
+    font-size: 0.8rem;
+    position: absolute;
+    transform: translateY(-15px) translateX(10px);
+    background-color: ${({ theme }) => theme.colors.white};
+    padding: 0 4px;
+  }
+  input {
+    border: 1px solid transparent;
+    outline: none;
+    background-color: transparent;
+  }
+`;
 
 //LinkContainer
 export const LinkContainer = styled.section``;

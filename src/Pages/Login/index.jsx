@@ -27,6 +27,7 @@ import {
 } from "./styled";
 import { useDispatch } from "react-redux";
 import {Login} from "../../features/LoginSlice"
+import {Alert} from "@mui/material"
 
 export default function index() {
   return (
@@ -57,6 +58,7 @@ function LoginForm() {
   const user_client = { email, password };
   const { users: user_database } = UserCredentials;
   const navigate = useNavigate();
+  const [error, setError] = useState(null)
 
   /***
  * Autheticate user
@@ -67,6 +69,7 @@ const handleLogin = (self) => {
 
   //destructure received data
   const { email, password } = user_client;
+
 
   /**
    * Match the Specified related to Database Users
@@ -104,8 +107,7 @@ const handleLogin = (self) => {
 
     //Autheticate by Context
   } else {
-    //OutPut
-    console.error("Incorrect Email or Password");
+    setError("Email ou Senha Incorrecta, Tente de novo");
   }
 };
 
@@ -116,6 +118,7 @@ const handleLogin = (self) => {
         <img src={Logo} alt="OfficialLogo" />
         <h5>Login</h5>
       </FormHeader>
+
       <form onSubmit={handleLogin}>
         <InputGroup>
           <label>Email</label>
@@ -135,7 +138,9 @@ const handleLogin = (self) => {
             required
             onChange={(self) => setPassword(self.target.value)}
           />
-        </InputGroup>
+        </InputGroup>       
+
+        {error && <Alert severity="error">{error}</Alert>}
 
         <LinkContainer>
           <Link to="/">Esquece minha senha</Link>
