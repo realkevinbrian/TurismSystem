@@ -1,15 +1,14 @@
 import React from 'react'
-import * as G from "../Components/Global"
 import {Link} from "react-router-dom"
 import Logo from "../Assets/LOGO.png"
 
 function ErrorPage() {
   return (
-    <G.NotFound>
+    <div sx = {{height : "100vh", margin : "0 auto"}}>
         <img src={Logo} alt="Official Logo"/>
-        <G.H5>404 Página não encontrada.</G.H5>
-        <Link to="/">Retorne à página anterior</Link>
-    </G.NotFound>
+        <h5>404 Página não encontrada.</h5>
+        <Link to="/login">Retorne à página anterior</Link>
+    </div>
   )
 }
 

@@ -1,62 +1,76 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Grid, Box } from '@mui/material'
-import React from 'react'
-import StyledSearch from '../Search'
-import { SearchbyNumber } from "../Search/SearchbyNumber"
-import * as S from "./styled"
+/**
+ * In this component we are creating Reusable component
+ */
 
+import {
+  Box,
+  Container,
+  Grid,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import React from "react";
+import { QueryByString, QueryByNumber } from "../Search";
 
-/********************************************\
-*********REUSABLE TABLE COMPONENT*************\
-***********************************************\
-\**********************************************/
-
-function StyledTable({tableTitle,switchComponent,labels,bodyData}) {
+function StyledTable({ TableTitle, Component, Labels, TableData }) {
   return (
-    <S.StyledTableContainer>
-         <Paper sx={{ width: '100%' }}>
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-                <TableCell sx={{borderBottomColor:"transparent", padding:"10px", paddingLeft:"20px", fontSize:"19px"}}>{tableTitle}</TableCell>
-            </TableRow>
-            <TableRow>
-
-              <TableCell align="justify" colSpan={3}>
-
-                <Grid container spacing={4}>
-                    <Grid item xs={4}>
-                        <StyledSearch placeholder={"Pesquise por nome"}/>
+    <Container maxWidth="xl" sx={{ marginTop: "4rem" }}>
+      <Paper>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    borderBottomColor: "transparent",
+                    padding: "0 20px",
+                    paddingTop: "20px",
+                    fontSize: "1.3rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {TableTitle}
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="justify" colSpan={12}>
+                  <Grid
+                    container
+                    sx={{
+                      justifyContent: "space-between",
+                      placeItems: "center",
+                    }}
+                  >
+                    <Grid item xl={6}>
+                      <QueryByString placeholder={"Pesquise por nome"} />
                     </Grid>
 
-                    <Grid item xs={4}>
-                        <StyledSearch placeholder={"Pesquise"}/>
+                    <Grid item xl={6}>
+                      <QueryByString placeholder={"Pesquise"} />
                     </Grid>
-                    <Grid item xs={4}>
-                        <SearchbyNumber/>
+
+                    <Grid item xl={6}>
+                      <QueryByNumber />
                     </Grid>
-                </Grid>
-              </TableCell>
-
-               <TableCell align="right" colSpan={4}>
-                 <Box>
-                    {switchComponent}
-                 </Box>
-              </TableCell>
-
-            </TableRow>
-            <TableRow>
-                {labels}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-              {bodyData}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
-    </S.StyledTableContainer>
-  )
+                    <Grid item xl={6}>
+                      <Box>{Component}</Box>
+                    </Grid>
+                  </Grid>
+                </TableCell>
+              </TableRow>
+              <TableRow>{Labels}</TableRow>
+            </TableHead>
+            <TableBody>{TableData}</TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+    </Container>
+  );
 }
 
-export default StyledTable
+export default StyledTable;
