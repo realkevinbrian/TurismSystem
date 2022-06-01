@@ -67,6 +67,8 @@ export const theme = {
     primary: "#006875",
     white: "#ffff",
     secondary: "#ff9b06",
+    red : "#ec0202",
+    green : "#079784"
   },
   Layout: {
     Mobile: "500px",
