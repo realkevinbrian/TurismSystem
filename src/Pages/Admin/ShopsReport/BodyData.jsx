@@ -1,5 +1,5 @@
 /***
- * Reusable Component finance body data
+ * Reusable Component ShopsReport body data
  */
 
 import { RemoveRedEyeOutlined } from "@mui/icons-material";
