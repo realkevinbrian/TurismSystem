@@ -1,0 +1,16 @@
+Login Algorithm
+
+1-Inputs (email, password)
+2-We verify if the client email and password is correct
+    2.1 - If email and password is equal to database password 
+    2.1.2 -Add to our localStoage
+    2.1.3 - Redirect page to Admin
+
+Authetication Algorithm
+1-we use "UseEffect hook" to look for localStorage to compile our inside useEffect before the component mounts
+2-We verify if the localStoage is empty
+3-If localStorage is not empty
+    3.1-check for localStorage object (user_role, user_email and user_password)
+    3.2-check if the user_role is equal to Admin
+    3.2.1 - if user_role not Admin redirect to Users Home page
+    

@@ -1,3 +1,7 @@
+/***
+ * Admin Navigation Menu
+ */
+
 import {
   AdminPanelSettingsOutlined,
   BarChartOutlined,
@@ -137,7 +141,7 @@ function index() {
   function handleLogOut(self){
     self.preventDefault();
     localStorage.clear();
-    navigate("/login");
+    navigate("admin/login");
     dispatch(Logout())
   }
 

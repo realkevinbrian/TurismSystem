@@ -14,7 +14,8 @@ import Finance from "./Pages/Admin/Finance";
 //Admin Pages
 import Home from "./Pages/Admin/Home";
 import ErrorPage from "./Pages/ErrorPage";
-import Login from "./Pages/Login";
+import Login from "./Pages/Admin/Login";
+import UserLogin from "./Pages/User/Login";
 import UserPage from "./Pages/User";
 
 
@@ -31,13 +32,14 @@ function App() {
         <>
             {user_role === "Admin" && user_status && <NavMenu />}
             <Routes>
-                <Route path="/admin" element={<Home />} />
-                <Route path="/admin/finance" element={<Finance />} />
-                <Route path="/admin/category" element={<Category />} />
-                <Route path="/admin/agenda" element={<Agenda />} />
-                <Route path="/admin/Approved" element={<Approved />} />
-                <Route path="login" element={<Login />} />
+                <Route path="admin" element={<Home />} />
+                <Route path="admin/finance" element={<Finance />} />
+                <Route path="admin/category" element={<Category />} />
+                <Route path="admin/agenda" element={<Agenda />} />
+                <Route path="admin/Approved" element={<Approved />} />
+                <Route path="admin/login" element={<Login />} />
                 <Route path="/" element={<UserPage />} />
+                <Route path="user/login" element={<UserLogin/>} />
                 <Route path="*" element={<ErrorPage/>} />
             </Routes>
         </>

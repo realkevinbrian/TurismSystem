@@ -14,9 +14,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 //We get user Data from UserApi
-import UserCredentials from "../../Api/User.json";
-import LoginBanner from "../../Assets/bgImage.png";
-import Logo from "../../Assets/LOGO.png";
+import UserCredentials from "../../../Api/User.json";
+import LoginBanner from "../../../Assets/bgImage.png";
+import Logo from "../../../Assets/LOGO.png";
 import {
   FormHeader, InputGroup,
   LinkContainer,
@@ -26,7 +26,7 @@ import {
   StyledContainer
 } from "./styled";
 import { useDispatch } from "react-redux";
-import {Login} from "../../features/LoginSlice"
+import {Login} from "../../../features/LoginSlice"
 import {Alert} from "@mui/material"
 
 export default function index() {
