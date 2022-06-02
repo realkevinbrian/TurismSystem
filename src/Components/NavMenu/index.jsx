@@ -34,24 +34,29 @@ const MenuData = [
       Link: [
         {
           id: 1,
-          title: "relatorios de Usuario",
+          title: "Home",
           link: "/admin",
         },
         {
           id: 2,
-          title: "relatorios de Guia Turisticos",
-          link: "/relatorio de Usuario",
+          title: "Relatorio de Usuario",
+          link: "admin/relatorio_de_usuario",
         },
         {
           id: 3,
-          title: "relatorios de Estabelecimentos",
-          link: "/relatorio de Usuario",
+          title: "relatorios de Guia Turisticos",
+          link: "admin/relatorio_de_guias_turisticas",
         },
         {
           id: 4,
-          title: "relatorios de Pontos Turisticos",
-          link: "/relatorio de Usuario",
+          title: "relatorios de Estabelecimentos",
+          link: "admin/relatorio_de_estabelecimentos",
         },
+        {
+          id: 5,
+          title: "relatorios de Pontos Turisticos",
+          link: "admin/relatorio_de_pontos_turisticos",
+        }
       ],
     },
   },
@@ -66,7 +71,7 @@ const MenuData = [
         {
           id: 1,
           title: "Relatorio Financeiro",
-          link: "/admin/finance",
+          link: "/admin/relatorio_financeiro",
         },
       ],
     },

@@ -11,6 +11,9 @@ import Agenda from "./Pages/Admin/Agenda";
 import Approved from "./Pages/Admin/Approved";
 import Category from "./Pages/Admin/Category";
 import Finance from "./Pages/Admin/Finance";
+import UsersReport from "./Pages/Admin/UsersReport";
+import GuideReport from "./Pages/Admin/GuideReport";
+import ShopsReport from "./Pages/Admin/ShopsReport";
 //Admin Pages
 import Home from "./Pages/Admin/Home";
 import ErrorPage from "./Pages/ErrorPage";
@@ -30,10 +33,13 @@ function App() {
 
     return (
         <>
-            {user_role === "Admin" && user_status && <NavMenu />}
+            <NavMenu />
             <Routes>
                 <Route path="admin" element={<Home />} />
-                <Route path="admin/finance" element={<Finance />} />
+                <Route path="admin/relatorio_de_usuario" element={<UsersReport/>} />
+                <Route path="admin/relatorio_de_guias_turisticas" element={<GuideReport/>}/>
+                <Route path="admin/relatorio_de_estabelecimentos" element={<ShopsReport/>}/>
+                <Route path="admin/relatorio_financeiro" element={<Finance/>} />
                 <Route path="admin/category" element={<Category />} />
                 <Route path="admin/agenda" element={<Agenda />} />
                 <Route path="admin/Approved" element={<Approved />} />
