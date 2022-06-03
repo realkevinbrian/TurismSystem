@@ -2,7 +2,6 @@ import style from "styled-components";
 import { styled } from "@mui/material/styles";
 import { TableCell } from "@mui/material";
 
-
 export const ShowTotalWrapper = style.div`
         text-align: center;
         padding:.5rem 1rem;
@@ -29,5 +28,28 @@ export const ShowTotalWrapper = style.div`
         }
 `;
 
-
 export const CustomTableCellHead = styled(TableCell)``;
+
+/***
+ * Display Cateogry
+ *
+ */
+export const StyledDisplayCat = style.div`
+        display : flex;
+        font-variant: all-small-caps;
+        
+        div{
+            display : flex;
+            border : 1px solid red;
+            padding : 5px 10px 5px 5px;
+            gap : 10px;
+            border-radius : 50px;
+            align-items : center;
+
+            span{
+                width : 25px;
+                height : 25px;
+                border-radius : 50%;
+            }
+        }
+`;

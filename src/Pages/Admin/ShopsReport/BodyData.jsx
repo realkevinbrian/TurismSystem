@@ -8,6 +8,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectAll } from "../../../features/ShopsReportSlice";
 import { selectAll  as selectCategory}  from "../../../features/CategorySlice";
+import { StyledDisplayCat } from "./styled";
 
 
 export default function index() {
@@ -26,6 +27,9 @@ export default function index() {
    */
   const data = useSelector(selectAll);
   const category = useSelector(selectCategory);
+
+  console.log("Category :", category)
+
   return (
     <>
       {data
@@ -39,7 +43,15 @@ export default function index() {
             <TableCell>{row.date}</TableCell>
             <TableCell>
             {
-              category.filter(item => item.id == row.cat_id).map((item, index) => <span key={index}>{item.category}</span>)
+              category.filter(item => item.id == row.cat_id)
+              .map((item, index) => 
+                <StyledDisplayCat key={index}>
+                  <div style={{borderColor: `${item.color}`, color : `${item.color}`}}>
+                    <span style={{backgroundColor : `${item.color}`}}></span>
+                    <small key={index}>{item.name}</small>
+                  </div>
+                </StyledDisplayCat>
+              )
             }
             </TableCell>
             <TableCell sx={{width: "70px"}}><RemoveRedEyeOutlined/></TableCell>
