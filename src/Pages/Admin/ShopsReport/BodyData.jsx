@@ -65,7 +65,7 @@ export default function index() {
                   </StyledDisplayCat>
                 ))}
             </TableCell>
-            <TableCell sx={{ width: "70px" }}>
+            <TableCell sx={{width: "70px", color: "#006875", cursor: "pointer"}}>
               <RemoveRedEyeOutlined />
             </TableCell>
             <TableCell sx={{ width: "50px" }} align="left">

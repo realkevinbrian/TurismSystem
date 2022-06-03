@@ -1,8 +1,6 @@
-
 /****
  * Agenda Page
  */
-
 
 import { DeleteOutlined, Edit } from "@mui/icons-material";
 import { TableCell, TableRow } from "@mui/material";
@@ -41,7 +39,6 @@ export default function AgendaBodyData() {
 /***
  * Read Only Row
  */
-
 export const ReadOnlyRow = ({ data: row, setEditId }) => {
   const dispatch = useDispatch();
 
@@ -75,6 +72,7 @@ export const ReadOnlyRow = ({ data: row, setEditId }) => {
  */
 
 export const EditableRow = ({ data: row, setEditId }) => {
+
   const dispatch = useDispatch();
   //Grap our form edit values
   const [name, setName] = useState(row.name);
@@ -133,7 +131,7 @@ export const EditableRow = ({ data: row, setEditId }) => {
       </TableCell>
       <TableCell align="right">
         <span
-          style={{ color: "#04a064", cursor: "pointer" }}
+          style={{ color: "#079784", cursor: "pointer" }}
           onClick={() => handleUpdate(row.id)}
         >
           Atualize
@@ -141,7 +139,7 @@ export const EditableRow = ({ data: row, setEditId }) => {
       </TableCell>
       <TableCell align="right">
         <span
-          style={{ color: "#c00f0f", cursor: "pointer" }}
+          style={{ color: "#ec0202", cursor: "pointer" }}
           onClick={() => setEditId(null)}
         >
           Cancelar

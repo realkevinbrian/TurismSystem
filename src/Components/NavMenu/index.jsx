@@ -5,8 +5,9 @@
 import {
   AdminPanelSettingsOutlined,
   BarChartOutlined,
-  DisplaySettingsOutlined, MenuOutlined,
-  MoneyOutlined
+  DisplaySettingsOutlined,
+  MenuOutlined,
+  MoneyOutlined,
 } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +20,7 @@ import {
   NavContainer,
   NavSide,
   SideMenuContainer,
-  SideMenuViewer
+  SideMenuViewer,
 } from "./styled";
 import { Logout } from "../../features/LoginSlice";
 
@@ -34,29 +35,9 @@ const MenuData = [
       Link: [
         {
           id: 1,
-          title: "Home",
+          title: "Indicadores",
           link: "/admin",
         },
-        {
-          id: 2,
-          title: "Relatorio de Usuario",
-          link: "admin/relatorio_de_usuario",
-        },
-        {
-          id: 3,
-          title: "relatorios de Guia Turisticos",
-          link: "admin/relatorio_de_guias_turisticas",
-        },
-        {
-          id: 4,
-          title: "relatorios de Estabelecimentos",
-          link: "admin/relatorio_de_estabelecimentos",
-        },
-        {
-          id: 5,
-          title: "relatorios de Pontos Turisticos",
-          link: "admin/relatorio_de_pontos_turisticos",
-        }
       ],
     },
   },
@@ -128,9 +109,39 @@ const MenuData = [
       ],
     },
   },
+  {
+    id: 5,
+    title: "Relatorios",
+    icon: <BarChartOutlined />,
+    sub: {
+      id: 1,
+      title: "Relatorios",
+      Link: [
+        {
+          id: 2,
+          title: "Relatorio de Usuario",
+          link: "admin/relatorio_de_usuario",
+        },
+        {
+          id: 3,
+          title: "relatorios de Guia Turisticos",
+          link: "admin/relatorio_de_guias_turisticas",
+        },
+        {
+          id: 4,
+          title: "relatorios de Estabelecimentos",
+          link: "admin/relatorio_de_estabelecimentos",
+        },
+        {
+          id: 5,
+          title: "relatorios de Pontos Turisticos",
+          link: "admin/relatorio_de_pontos_turisticos",
+        },
+      ],
+    },
+  },
 ];
 function index() {
-    
   //get navData
   const data = MenuData;
   const navigate = useNavigate();
@@ -143,15 +154,15 @@ function index() {
    * Destructure AuthUser
    * Authetication
    */
-  function handleLogOut(self){
+  function handleLogOut(self) {
     self.preventDefault();
     localStorage.clear();
     navigate("admin/login");
-    dispatch(Logout())
+    dispatch(Logout());
   }
 
   return (
-    <React.Fragment>
+    <React.Fragment style={{ position: "relative" }}>
       <NavContainer>
         <MenuOutlined onClick={() => dispatch(setMenuState())} />
         <LogoContainer>
@@ -159,7 +170,7 @@ function index() {
         </LogoContainer>
         <NavSide>
           <span>Ola, Administrador</span>
-          <button onClick = {handleLogOut}>Sair</button>
+          <button onClick={handleLogOut}>Sair</button>
         </NavSide>
       </NavContainer>
       <SideMenu data={data} menuState={menuState} />

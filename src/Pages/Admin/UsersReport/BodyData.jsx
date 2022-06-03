@@ -53,7 +53,7 @@ export default function index() {
             <TableCell sx={{width: "40px"}}>{row.code}</TableCell>
             <TableCell sx={{width: "300px"}}>{row.name}</TableCell>
             <TableCell>{row.date}</TableCell>
-            <TableCell sx={{width: "70px"}}><RemoveRedEyeOutlined/></TableCell>
+            <TableCell sx={{width: "70px", color: "#006875", cursor: "pointer"}}><RemoveRedEyeOutlined/></TableCell>
             <TableCell sx={{width: "50px"}} align = "left">
             <Switch
                 checked={row.status === "active" ? true : false}
