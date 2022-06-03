@@ -9,23 +9,9 @@ const GuideReportSlice = createSlice({
     },
     reducers : {
         //update
-        // UpdateRow(state,{payload}){
-        //     state.value.map(item => {
-                
-        //         if(item.id === payload.id){
-        //             return(
-        //             item.name = (payload.name !== null) ? payload.name : item.name,
-        //             item.date = (payload.date !== null) ? payload.date : item.date,
-        //             item.start = (payload.start_time !== null) ? payload.start_time : item.start, 
-        //             item.entrance = (payload.entrance !== null) ? payload.entrance : item.entrance,
-        //             item.local = (payload.local !== null) ? payload.local : item.local
-                
-        //         )
-        //         }
-        //     })
-
-        //     console.log("Update row", state.value)
-        // },
+        UpdateRow(state,{payload}){
+            state.value.map(item => (item.id === payload.id) ? item.status = payload.status : "")
+        },
         //delete
         // DeleteRow(state, {payload}){
         //     //Delete data
@@ -42,5 +28,5 @@ const GuideReportSlice = createSlice({
 })
 
 export const selectAll = state => state.guideReport.value; 
-// export const {} = guideReport.actions;
+export const {UpdateRow} = GuideReportSlice.actions;
 export default GuideReportSlice.reducer;

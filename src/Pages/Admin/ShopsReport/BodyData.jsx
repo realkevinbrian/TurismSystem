@@ -58,12 +58,7 @@ export default function index() {
                 .filter((item) => item.id === row.cat_id)
                 .map((item, index) => (
                   <StyledDisplayCat key={index}>
-                    <div
-                      style={{
-                        borderColor: `${item.color}`,
-                        color: `${item.color}`,
-                      }}
-                    >
+                    <div style={{borderColor: `${item.color}`,color: `${item.color}`}}>
                       <span style={{ backgroundColor: `${item.color}` }}></span>
                       <small key={index}>{item.name}</small>
                     </div>
