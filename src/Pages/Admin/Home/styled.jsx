@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const Home = styled.div`
-  h3{
+  h3 {
     font-size: 1.3rem;
   }
 
   margin-top: 1rem;
-`
+`;
 
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
   gap: 2rem;
+  margin: 2rem 0;
 `;
 
 export const Card = styled.div`
@@ -23,7 +23,7 @@ export const Card = styled.div`
   gap: 2;
   border-radius: 3px;
   transition: all 0.4s linear;
-  cursor:pointer;
+  cursor: pointer;
 
   //on hover
   &:hover {

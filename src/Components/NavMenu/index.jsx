@@ -63,7 +63,7 @@ const MenuData = [
     icon: <AdminPanelSettingsOutlined />,
     sub: {
       id: 1,
-      title: "Configurações",
+      title: "Configurações Gerais",
       Link: [
         {
           id: 1,
@@ -74,12 +74,7 @@ const MenuData = [
           id: 2,
           title: "Aprovações",
           link: "/admin/Approved",
-        },
-        {
-          id: 3,
-          title: "Denuncias",
-          link: "/relatorio de Usuario",
-        },
+        }
       ],
     },
   },
@@ -162,7 +157,7 @@ function index() {
   }
 
   return (
-    <React.Fragment style={{ position: "relative" }}>
+    <React.Fragment>
       <NavContainer>
         <MenuOutlined onClick={() => dispatch(setMenuState())} />
         <LogoContainer>
@@ -262,7 +257,7 @@ function DropDownMenuView({ id, data, setClickedId, handleClose }) {
         SelectedMenu.map((item) => {
           return (
             <SideMenuViewer key={item.id}>
-              <h1>{item.title}</h1>
+              <h4>{item.title}</h4>
               <ul>
                 {item.Link.map((item) => (
                   <li

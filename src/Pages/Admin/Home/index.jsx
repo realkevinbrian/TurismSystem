@@ -27,7 +27,7 @@ export default function index() {
   ];
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Home>
         <h3>Indicadores</h3>
         <Wrapper>

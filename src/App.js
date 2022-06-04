@@ -35,18 +35,26 @@ function App() {
         <>
             <NavMenu />
             <Routes>
-                <Route path="admin" element={<Home />} />
-                <Route path="admin/relatorio_de_usuario" element={<UsersReport/>} />
-                <Route path="admin/relatorio_de_guias_turisticas" element={<GuideReport/>}/>
-                <Route path="admin/relatorio_de_estabelecimentos" element={<ShopsReport/>}/>
-                <Route path="admin/relatorio_financeiro" element={<Finance/>} />
-                <Route path="admin/category" element={<Category />} />
-                <Route path="admin/agenda" element={<Agenda />} />
-                <Route path="admin/Approved" element={<Approved />} />
-                <Route path="admin/login" element={<Login />} />
+                
+                <Route path = "/admin">
+                    <Route index element={<Home />} />
+                    <Route path="relatorio_de_usuario" element={<UsersReport/>} />
+                    <Route path="relatorio_de_guias_turisticas" element={<GuideReport/>}/>
+                    <Route path="relatorio_de_estabelecimentos" element={<ShopsReport/>}/>
+                    <Route path="relatorio_financeiro" element={<Finance/>} />
+                    <Route path="category" element={<Category />} />
+                    <Route path="agenda" element={<Agenda />} />
+                    <Route path="Approved" element={<Approved />} />
+                    <Route path="login" element={<Login />} />
+                </Route>
+
                 <Route path="/" element={<UserPage />} />
-                <Route path="user/login" element={<UserLogin/>} />
-                <Route path="*" element={<ErrorPage/>} />
+
+                <Route path = "/user">
+                    <Route index element={<UserPage />} />
+                    <Route path="login" element={<UserLogin/>} />
+                </Route>
+                    <Route path="*" element={<ErrorPage/>} />
             </Routes>
         </>
     );

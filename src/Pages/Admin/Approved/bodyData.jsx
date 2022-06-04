@@ -35,10 +35,10 @@ export default function ApprovedBodyData() {
 export const ReadOnlyRow = ({data:row}) =>{
   return(
       <TableRow key={row.id}>
-        <TableCell>{row.name}</TableCell>
-        <TableCell>{row.type}</TableCell>
+        <TableCell sx={{ width: "200px"}}>{row.name}</TableCell>
+        <TableCell sx={{ width: "200px"}}>{row.type}</TableCell>
         <TableCell>{row.data}</TableCell>
-        <TableCell align="right"><MICON.Visibility className='text-cyan-800'/></TableCell>
+        <TableCell align="right" sx={{ color: "#006875", cursor: "pointer" }}><MICON.Visibility/></TableCell>
       </TableRow>
   )
 }
