@@ -45,7 +45,6 @@ function CreateForm() {
    * Declare Dispth method and UseSelector to retrieve data from redux store
    */
   const categoryType = useSelector(selectAll).map(item => item.type);
-  console.log("🚀 ~ file: Register.jsx ~ line 48 ~ CreateForm ~ categoryType", categoryType)
   const dispatch = useDispatch();
 
   /****

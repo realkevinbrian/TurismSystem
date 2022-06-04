@@ -14,6 +14,8 @@ import Finance from "./Pages/Admin/Finance";
 import UsersReport from "./Pages/Admin/UsersReport";
 import GuideReport from "./Pages/Admin/GuideReport";
 import ShopsReport from "./Pages/Admin/ShopsReport";
+import PlansReport from "./Pages/Admin/PlansReport";
+import TurismPointsReport from "./Pages/Admin/TurismPointsReport";
 //Admin Pages
 import Home from "./Pages/Admin/Home";
 import ErrorPage from "./Pages/ErrorPage";
@@ -25,36 +27,36 @@ import UserPage from "./Pages/User";
 
 function App() {
 
-    /***
-     * Destructure useAuth Merhod to retrive just Userinformation
-     */
-    const user_status = useSelector(state => state.login.user_status);
-    const user_role = useSelector(state => state.login.user_role);
-
     return (
         <>
             <NavMenu />
             <Routes>
-                
+                {/* Default */}
+                <Route path="/" element={<UserPage />} />
+
+                {/* Admin Routes */}
                 <Route path = "/admin">
                     <Route index element={<Home />} />
                     <Route path="relatorio_de_usuario" element={<UsersReport/>} />
                     <Route path="relatorio_de_guias_turisticas" element={<GuideReport/>}/>
                     <Route path="relatorio_de_estabelecimentos" element={<ShopsReport/>}/>
                     <Route path="relatorio_financeiro" element={<Finance/>} />
+                    <Route path="planos_de_assinatura" element={<PlansReport/>} />
+                    <Route path="relatorio_de_pontos_turisticos" element={<TurismPointsReport/>} />
                     <Route path="category" element={<Category />} />
                     <Route path="agenda" element={<Agenda />} />
                     <Route path="Approved" element={<Approved />} />
                     <Route path="login" element={<Login />} />
                 </Route>
 
-                <Route path="/" element={<UserPage />} />
-
+                {/* USers Routes */}
                 <Route path = "/user">
                     <Route index element={<UserPage />} />
                     <Route path="login" element={<UserLogin/>} />
                 </Route>
-                    <Route path="*" element={<ErrorPage/>} />
+                
+                {/* Not Found 404 Page */}
+                <Route path="*" element={<ErrorPage/>} />
             </Routes>
         </>
     );

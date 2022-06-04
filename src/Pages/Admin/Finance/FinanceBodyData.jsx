@@ -7,7 +7,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectAll } from "../../../features/FinanceSlice";
 
-export function FinanceBodyData() {
+export default function index() {
   /*****
    *
    * Here we read our retrieved data from redux store

@@ -17,10 +17,10 @@ const Labels = [
     format: (value) => value.toLocaleString("en-US"),
   },
   {
-    id: "status",
-    label: "Status",
+    id: "details",
+    label: "Detalhes",
     minWidth: 170,
-    align: "right",
+    align: "justify",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
@@ -29,7 +29,7 @@ const Labels = [
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
-  }
+  },
 ];
 
 export default function index() {
@@ -37,7 +37,13 @@ export default function index() {
     <>
       {Labels.map((column) => {
         return (
-          <TableCell sx={{fontWeight : "bold"}} key={column.id}>{column.label}</TableCell>
+          <TableCell
+            sx={{ fontWeight: "bold" }}
+            key={column.id}
+            align={column.align}
+          >
+            {column.label}
+          </TableCell>
         );
       })}
     </>

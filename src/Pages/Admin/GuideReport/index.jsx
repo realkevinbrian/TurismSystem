@@ -6,32 +6,20 @@
 
 import { Container } from "@mui/material";
 import React from "react";
+import { ShowTotal } from "../../../Components/Global/Reusable";
 import StyledTable from "../../../Components/Table";
 import BodyData from "./BodyData";
 import Labels from "./Labels";
-import { ShowTotalWrapper } from "./styled";
 
 export default function index() {
   return (
     <Container maxWidth="xl">
       <StyledTable
         TableTitle="Guias Turisticos"
-        Component={<ShowTotal />}
+        Component={<ShowTotal total="3,000.00"/>}
         Labels={<Labels />}
         TableData={<BodyData />}
       />
     </Container>
-  );
-}
-
-
-function ShowTotal() {
-  return (
-    <>
-      <ShowTotalWrapper>
-        <h4>Total</h4>
-        <h5>5,0000</h5>
-      </ShowTotalWrapper>
-    </>
   );
 }

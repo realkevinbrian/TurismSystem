@@ -9,6 +9,7 @@ import LoginSlice from "./LoginSlice";
 import UsersReportSlice from "./UsersReportSlice";
 import GuideReportSlice from "./GuideReportSlice";
 import ShopsReportSlice from "./ShopsReportSlice";
+import PlansReportSlice from "./PlansReportSlice";
 
 /***
  * Setup store
@@ -25,7 +26,8 @@ const store = configureStore({
         login : LoginSlice,
         usersReport : UsersReportSlice,
         guideReport : GuideReportSlice,
-        shopsReport : ShopsReportSlice
+        shopsReport : ShopsReportSlice,
+        plansReport : PlansReportSlice
     }
 
 })

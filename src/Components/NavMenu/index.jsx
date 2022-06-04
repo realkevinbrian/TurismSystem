@@ -89,17 +89,17 @@ const MenuData = [
         {
           id: 1,
           title: "Cadastro de Categorias",
-          link: "/admin/category",
+          link: "admin/category",
         },
         {
           id: 2,
           title: "Cadastro de Planos",
-          link: "/Cadastro de Planos",
+          link: "admin/planos_de_assinatura",
         },
         {
           id: 3,
           title: "Agenda Cultural",
-          link: "/admin/agenda",
+          link: "admin/agenda",
         },
       ],
     },
