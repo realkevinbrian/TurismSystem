@@ -48,6 +48,10 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
+    svg{
+      cursor: pointer;
+    }
+
     //////default font
 
 label,input,a{
@@ -67,8 +71,8 @@ export const theme = {
     primary: "#006875",
     white: "#ffff",
     secondary: "#ff9b06",
-    red : "#ec0202",
-    green : "#079784"
+    red: "#ec0202",
+    green: "#079784",
   },
   Layout: {
     Mobile: "500px",
