@@ -7,7 +7,7 @@ import colorPickerImg from "../../../../Assets/ColorPicker.png";
 import { Box, MenuItem, Select, LinearProgress } from "@mui/material";
 import { CreateCategory, selectAll } from "../../../../features/CategorySlice";
 import { setCategoryState } from "../../../../features/MenuSlice";
-import { PrimaryButton } from "../../../../Components/Buttons/styled";
+import { PrimaryButton } from "../../../../Components/Button";
 import * as S from "../styled";
 import { InputGroup } from "../../../../Components/Global/Reusable";
 

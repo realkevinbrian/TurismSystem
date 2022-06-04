@@ -11,7 +11,7 @@ import { setCategoryState } from "../../../features/MenuSlice";
 import CategoryData from "./bodyData";
 import { CategoryLabels } from "./Labels";
 import { Register } from "./Register";
-import { PrimaryButton } from "../../../Components/Buttons/styled";
+import { PrimaryButton } from "../../../Components/Button";
 
 
 export default function index() {

@@ -5,7 +5,7 @@ import { Flag, House } from "@mui/icons-material";
 import { Box, LinearProgress, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PrimaryButton } from "../../../../Components/Buttons/styled";
+import { PrimaryButton } from "../../../../Components/Button";
 import {
   InputGroup,
   InputGroupExtended,

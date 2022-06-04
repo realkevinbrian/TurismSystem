@@ -12,7 +12,7 @@ import TableData from "./bodyData";
 import TableLabels from "./Labels";
 import RegisterTrends from "./Register/RegisterTrends"
 import RegisterPlans from "./Register/RegisterPlans"
-import { PrimaryButton } from "../../../Components/Buttons/styled";
+import { PrimaryButton } from "../../../Components/Button";
 
 export default function index() {
   const dispatch = useDispatch();
