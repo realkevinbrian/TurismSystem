@@ -11,12 +11,14 @@ const ApprovedSlice = createSlice({
         //update
         UpdateRow(state,{payload}){
             state.value.map(item => {
-                if(item.id === payload.id){
-                    //check if payload not null
-                    if(payload.name !== null){
-                        item.name = payload.name;
-                    }else if(payload.type !== null){
-                        item.type = payload.type;
+                return () => {
+                    if(item.id === payload.id){
+                        //check if payload not null
+                        if(payload.name !== null){
+                            item.name = payload.name;
+                        }else if(payload.type !== null){
+                            item.type = payload.type;
+                        }
                     }
                 }
             })

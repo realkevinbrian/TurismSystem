@@ -102,7 +102,7 @@ function CreateForm() {
         </Box>
 
         <S.ColorPicker>
-          <img src={colorPickerImg} alt="color picker image" />
+          <img src={colorPickerImg} alt="colorpickerimage" />
           <input type="color" required onChange={(self) => setColor(self.target.value)} />
           <S.SelectedColor color={color} />
         </S.ColorPicker>

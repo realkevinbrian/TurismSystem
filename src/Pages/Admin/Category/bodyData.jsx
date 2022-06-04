@@ -49,8 +49,8 @@ export const ReadOnlyRow = ({data:row,setEditId}) =>{
       <TableRow key={row.id}>
         <TableCell><S.styledCell><S.Ball bColor={row.color}/><span>{row.name}</span></S.styledCell></TableCell>
         <TableCell>{row.type}</TableCell>
-        <TableCell align="right"><Edit className='text-red-500 text-lg' onClick={()=>setEditId(row.id)}/></TableCell>
-        <TableCell align="right" sx={{margin:"10px"}} colSpan={0}><DeleteOutline className='text-cyan-900 text-lg' onClick={()=>dispatch(DeleteRow({id : row.id}))}/></TableCell>
+        <TableCell align="right"><Edit color = "primary" onClick={()=>setEditId(row.id)}/></TableCell>
+        <TableCell align="right" sx={{margin:"10px"}} colSpan={0}><DeleteOutline color = "error" onClick={()=>dispatch(DeleteRow({id : row.id}))}/></TableCell>
       </TableRow>
   )
 }
