@@ -18,10 +18,13 @@ import { UpdateRow } from "../../../features/GuideReportSlice";
 import TableData from "./bodyData";
 import TableLabels from "./Labels";
 import { Modal } from "./styled";
+import Details from "./Details";
+
 
 export default function index() {
   const [modal, setModal] = useState(false);
   const [data, setData] = useState(null);
+  const [details, OpenDetails] = useState(false)
 
   /**
    * Declare switch functionality
@@ -43,6 +46,8 @@ export default function index() {
         Labels={<TableLabels />}
         TableData={<TableData OpenModal={OpenModal} />}
       />
+
+      {details && <Details/>}
       <Modal open={modal}>
         <CardModal data={data} setModal={setModal} />
       </Modal>
@@ -93,3 +98,5 @@ function CardModal({ setModal, data }) {
     </Card>
   );
 }
+
+
