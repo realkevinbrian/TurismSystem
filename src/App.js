@@ -52,7 +52,7 @@ function App() {
                 {/* USers Routes */}
                 <Route path = "/user">
                     <Route index element={<UserPage />} />
-                    <Route path="login" element={<UserLogin/>} />
+                    {/* <Route path="login" element={<UserLogin/>} /> */}
                 </Route>
                 
                 {/* Not Found 404 Page */}
