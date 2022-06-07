@@ -9,7 +9,7 @@ import {
   MenuOutlined,
   MoneyOutlined,
 } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../Assets/LOGO.png";
@@ -136,7 +136,7 @@ const MenuData = [
     },
   },
 ];
-function index() {
+function index({setToken}) {
   //get navData
   const data = MenuData;
   const navigate = useNavigate();
@@ -144,19 +144,24 @@ function index() {
   //Declare dispatch and useSelector from Redux
   const dispatch = useDispatch();
   const menuState = useSelector((state) => state.menu.menuState);
+  const [navbar,setNavbar] = useState(null);
 
   /****
    * Destructure AuthUser
    * Authetication
    */
+  
+
   function handleLogOut(self) {
     self.preventDefault();
     localStorage.clear();
-    navigate("admin/login");
-    dispatch(Logout());
+    setToken(null)
+
   }
 
   return (
+    <>
+    {
     <React.Fragment>
       <NavContainer>
         <MenuOutlined onClick={() => dispatch(setMenuState())} />
@@ -170,6 +175,8 @@ function index() {
       </NavContainer>
       <SideMenu data={data} menuState={menuState} />
     </React.Fragment>
+    }
+    </>
   );
 }
 

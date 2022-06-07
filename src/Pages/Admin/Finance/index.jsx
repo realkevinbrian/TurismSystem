@@ -9,10 +9,11 @@ import StyledTable from "../../../Components/Table";
 import TableBody from "./FinanceBodyData";
 import TableLabels from "./FinanceLabels";
 import { ShowTotal } from "../../../Components/Global/Reusable";
+import NavMenu from "../../../Components/NavMenu";
 
 export default function index() {
   return (
-    <Container maxWidth="xl">
+  <Container maxWidth="xl">
       <StyledTable
         TableTitle="Financeiro"
         Component={<ShowTotal/>}

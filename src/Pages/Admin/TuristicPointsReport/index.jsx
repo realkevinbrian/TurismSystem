@@ -19,7 +19,7 @@ export default function index() {
   const [modal, setModal] = useState(false);
   const [data, setData] = useState(null);
   const [Id, setId] = useState(null);
-  const [details, setDetails] = useState(true);
+  const [details, setDetails] = useState(false);
 
   /***
    * Declare a method to Open and close Details

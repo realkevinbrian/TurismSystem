@@ -13,11 +13,12 @@ import TableLabels from "./Labels";
 import RegisterTrends from "./Register/RegisterTrends"
 import RegisterPlans from "./Register/RegisterPlans"
 import { PrimaryButton } from "../../../Components/Button";
+import NavMenu from "../../../Components/NavMenu";
 
 export default function index() {
   const dispatch = useDispatch();
   return (
-    <Container maxWidth="xl">
+  <Container maxWidth="xl">
       <StyledTable
         TableTitle = "Planos de Assinaturas"
         Component = {<PrimaryButton onClick={ () => dispatch(setCategoryState())}>Cadastrar Destaques</PrimaryButton>}

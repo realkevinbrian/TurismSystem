@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { Dialog } from "@mui/material";
+import {PrimaryButton} from "../Button"
 
 //InputGroup
 export const InputGroup = styled.div`
@@ -239,3 +240,172 @@ export function ShowTotal({total}) {
    }
  }
 `
+
+//Display Address
+export const Address = ({ address }) => {
+  return (
+    <div>
+      <h5 style={{ margin: "5px 0 0 0" }}>Endereço</h5>
+
+      <p
+        style={{
+          margin: "5px 0 0 0",
+          display: "grid",
+          gap: "5px",
+          color: "#949494",
+          fontSize: ".8rem",
+        }}
+      >
+        {address.split(",").map((item, index) => (
+          <span key={index}>{item}</span>
+        ))}
+      </p>
+    </div>
+  );
+};
+
+
+//Album Images
+export const ImagesAlbum = ({ photos }) => {
+  return (
+    <div>
+      <div>
+        <Title style={{ margin: "5px 0 0 0" }}>Fotos</Title>
+        <span style={{ color: "#949494", fontSize: ".8rem" }}>
+          Clique nas imagens para expandir
+        </span>
+      </div>
+
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          gap: "4px",
+          flexWrap: "wrap",
+          borderRadius: "20px",
+          marginTop: "5px",
+        }}
+      >
+        {photos.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt="previewImage"
+            style={{ width: "70px" }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+//Description
+
+export const Description = ({ desc }) => {
+  return (
+    <div>
+      <Title>Descrição</Title>
+      <p style={{ margin: "5px 0 0 0", color: "#949494", fontSize: ".7rem" }}>
+        {desc}
+      </p>
+    </div>
+  );
+};
+
+
+//Action Buttons
+export const ActionButtons = ({ active, block, id }) => {
+  /**
+   * In this component we declare Approve and Disapprove Functionality
+   * @params (__active , _block, __id)
+   * */
+
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <PrimaryButton
+          style={{ backgroundColor: "#079784" }}
+          onClick={() => active({ id })}
+        >
+          Approvar
+        </PrimaryButton>
+        <PrimaryButton
+          style={{ backgroundColor: "#ec0202" }}
+          onClick={() => block({ id })}
+        >
+          Reprovar
+        </PrimaryButton>
+      </div>
+    </>
+  );
+};
+
+//ContactInfo
+export const ContactInfo = ({ contact }) => {
+  return (
+    <>
+      <div style={{ display: "grid", gap: "7px" }}>
+        <Title>Dados Cadastrais</Title>
+        <ul style={{ color: "#949494", fontSize: ".8rem" }}>
+          {contact.map((item, index) => (
+            <li key={index}>Telefone : {item.tel}</li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
+
+//Plano Vigente
+export const Plan = ({ plans }) => {
+  return (
+    <div style={{ display: "grid", gap: "7px" }}>
+      <Title>Plano Vigente</Title>
+      {plans.map((item, index) => (
+        <ul style={{ color: "#949494", fontSize: ".8rem" }} key={index}>
+          <li>{item.title}</li>
+          <li>{item.price}</li>
+        </ul>
+      ))}
+    </div>
+  );
+};
+
+//Spoken Languages
+export const SpokenLang = ({ languages }) => {
+  return (
+    <>
+      <div style={{ display: "grid", gap: "7px" }}>
+        <Title>Idiomas Falados</Title>
+        <ul style={{ color: "#949494", fontSize: ".8rem" }}>
+          {languages.split(",").map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
+
+
+/*****
+ * Styled Components
+ */
+
+ export const StyledProfile = styled.div`
+ display: flex;
+ justify-content: space-between;
+
+ ul {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   font-size: 0.8rem;
+ }
+`;
+

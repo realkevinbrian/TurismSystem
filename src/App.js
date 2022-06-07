@@ -3,7 +3,7 @@
  * All the routes we going declare in this Component
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import NavMenu from "./Components/NavMenu";
@@ -27,12 +27,18 @@ import UserPage from "./Pages/User";
 
 function App() {
 
+    const [token, setToken] = useState(null)
+
+    if(!token){
+        return <Login setToken = {setToken}/>
+    }
+
     return (
         <>
-            <NavMenu />
+            {token &&<NavMenu setToken={setToken}/>}
             <Routes>
-                {/* Default */}
-                <Route path="/" element={<UserPage />} />
+                {/* Default */  console.log("App Main")}
+                <Route path="/" element={<Login />} />
 
                 {/* Admin Routes */}
                 <Route path = "/admin">
@@ -46,9 +52,7 @@ function App() {
                     <Route path="category" element={<Category />} />
                     <Route path="agenda" element={<Agenda />} />
                     <Route path="Approved" element={<Approved />} />
-                    <Route path="login" element={<Login />} />
                 </Route>
-
                 {/* USers Routes */}
                 <Route path = "/user">
                     <Route index element={<UserPage />} />

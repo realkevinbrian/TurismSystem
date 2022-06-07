@@ -24,8 +24,8 @@ const Labels = [
     format: (value) => value.toLocaleString("en-US"),
   },
   {
-    id: "status",
-    label: "Status",
+    id: "details",
+    label: "Detalhes",
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),

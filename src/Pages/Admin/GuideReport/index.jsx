@@ -5,21 +5,46 @@
  */
 
 import { Container } from "@mui/material";
-import React from "react";
+import React, {useState} from "react";
 import { ShowTotal } from "../../../Components/Global/Reusable";
 import StyledTable from "../../../Components/Table";
 import BodyData from "./BodyData";
 import Labels from "./Labels";
+import Details  from './Details'
+import NavMenu from "../../../Components/NavMenu";
+
 
 export default function index() {
+
+  const [modal, setModal] = useState(false);
+  const [data, setData] = useState(null);
+  const [Id, setId] = useState(null);
+  const [details, setDetails] = useState(false);
+
+   /***
+   * Declare a method to Open and close Details
+   * We are receiving {row.id} parameters
+   */
+
+    function OpenDetails(rowId) {
+      setDetails(true);
+      setId(rowId);
+    }
+  
+    function CloseDetails() {
+      setDetails(false);
+    }
+  
+
   return (
     <Container maxWidth="xl">
       <StyledTable
         TableTitle="Guias Turisticos"
         Component={<ShowTotal total="3,000.00"/>}
         Labels={<Labels />}
-        TableData={<BodyData />}
+        TableData={<BodyData OpenDetails={OpenDetails}/>}
       />
+      {details && <Details CloseDetails={CloseDetails} detailsID={Id} />}
     </Container>
   );
 }

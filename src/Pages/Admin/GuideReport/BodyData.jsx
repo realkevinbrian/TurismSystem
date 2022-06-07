@@ -8,17 +8,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAll, UpdateRow } from "../../../features/GuideReportSlice";
 
-export default function index() {
+export default function index({ OpenModal,OpenDetails }) {
   /**
    * Here we read our retrieved data from redux store
    * */
   const query = useSelector((state) => state.query.query_string);
   const queryNum = useSelector((state) => state.query.queryByNumber);
-
-  /*****
-   * Here we read our data being retrieved from our redux store
-   * And decalre Dispatch
-   */
   const data = useSelector(selectAll);
   const dispatch = useDispatch();
   
@@ -52,7 +47,7 @@ export default function index() {
             <TableCell sx={{ width: "300px" }}>{row.name}</TableCell>
             <TableCell>{row.date}</TableCell>
             <TableCell sx={{ width: "70px",color: "#006875", cursor: "pointer" }} align="center">
-              <RemoveRedEyeOutlined />
+              <RemoveRedEyeOutlined onClick = { () => OpenDetails(row.id)}/>
             </TableCell>
             <TableCell sx={{ width: "50px"}} align="left">
               <Switch

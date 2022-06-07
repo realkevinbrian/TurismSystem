@@ -10,11 +10,15 @@ import { useDispatch, useSelector } from "react-redux";
 import image from "../../../Assets/bgImage.png";
 import { PrimaryButton } from "../../../Components/Button";
 import {
+  Address,
+  ImagesAlbum,
   OverlayBody,
   OverlayChild,
   OverlayContainer,
   OverlayHeader,
   Title,
+  Description,
+  ActionButtons
 } from "../../../Components/Global/Reusable";
 import {
   selectAll,
@@ -67,94 +71,5 @@ export default function index({ CloseDetails, detailsID }) {
   );
 }
 
-export const Description = ({ desc }) => {
-  return (
-    <div>
-      <Title>Descrição</Title>
-      <p style={{ margin: "5px 0 0 0", color: "#949494", fontSize: ".9rem" }}>
-        {desc}
-      </p>
-    </div>
-  );
-};
 
-export const Address = ({ address }) => {
-  return (
-    <div>
-      <h5 style={{ margin: "5px 0 0 0" }}>Endereço</h5>
 
-      <p
-        style={{
-          margin: "5px 0 0 0",
-          display: "grid",
-          gap: "5px",
-          color: "#949494",
-          fontSize: ".8rem",
-        }}
-      >
-        {address.split(",").map((item, index) => (
-          <span key={index}>{item}</span>
-        ))}
-      </p>
-    </div>
-  );
-};
-
-export const ImagesAlbum = ({ photos }) => {
-  return (
-    <div>
-      <div>
-        <Title style={{ margin: "5px 0 0 0" }}>Fotos</Title>
-        <span style={{ color: "#949494", fontSize: ".8rem" }}>
-          Clique nas imagens para expandir
-        </span>
-      </div>
-
-      <div
-        style={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(3,1fr)",
-          gap: "4px",
-          borderRadius: "20px",
-          marginTop: "5px",
-        }}
-      >
-        {photos.map((image, index) => (
-          <img key={index} src={image} alt="previewImage" />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export const ActionButtons = ({ active, block, id }) => {
-  /**
-   * In this component we declare Approve and Disapprove Functionality
-   * @params (__active , _block, __id)
-   * */
-
-  return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <PrimaryButton
-          style={{ backgroundColor: "#079784" }}
-          onClick={() => active({ id })}
-        >
-          Approvar
-        </PrimaryButton>
-        <PrimaryButton
-          style={{ backgroundColor: "#ec0202" }}
-          onClick={() => block({ id })}
-        >
-          Reprovar
-        </PrimaryButton>
-      </div>
-    </>
-  );
-};

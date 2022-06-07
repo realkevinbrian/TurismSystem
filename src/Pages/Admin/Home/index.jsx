@@ -13,6 +13,8 @@ import {
 import React from "react";
 import { Card, Wrapper,Home } from "./styled";
 import { Container } from "@mui/material";
+import NavMenu from "../../../Components/NavMenu";
+
 
 export default function index() {
   const Data = [

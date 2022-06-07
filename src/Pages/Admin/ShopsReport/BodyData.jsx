@@ -10,7 +10,7 @@ import { selectAll as selectCategory } from "../../../features/CategorySlice";
 import { selectAll, UpdateRow } from "../../../features/ShopsReportSlice";
 import { StyledDisplayCat } from "./styled";
 
-export default function index() {
+export default function index({ OpenModal,OpenDetails }) {
   /*****
    *
    * Here we read our retrieved data from redux store
@@ -18,7 +18,9 @@ export default function index() {
    * */
   const query = useSelector((state) => state.query.query_string);
   const queryNum = useSelector((state) => state.query.queryByNumber);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch({OpenModal,OpenDetails});
+  const data = useSelector(selectAll);
+  const category = useSelector(selectCategory);
 
   //Declare switch functionality
   function handleSwitch(rowStatus, rowId) {
@@ -35,12 +37,6 @@ export default function index() {
         break;
     }
   }
-
-  /*****
-   * Here we read our data being retrieved from our redux store
-   */
-  const data = useSelector(selectAll);
-  const category = useSelector(selectCategory);
 
   return (
     <>
@@ -66,7 +62,7 @@ export default function index() {
                 ))}
             </TableCell>
             <TableCell sx={{width: "70px", color: "#006875", cursor: "pointer"}}>
-              <RemoveRedEyeOutlined />
+              <RemoveRedEyeOutlined onClick = { () => OpenDetails(row.id)}/>
             </TableCell>
             <TableCell sx={{ width: "50px" }} align="left">
               <Switch

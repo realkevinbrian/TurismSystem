@@ -8,6 +8,7 @@ import React from "react";
 import StyledTable from "../../../Components/Table";
 import ApprovedBodyData from "./bodyData";
 import ApprovedLabels from "./Labels";
+
  export default function index() {
    return (
      <Container maxWidth="xl">
