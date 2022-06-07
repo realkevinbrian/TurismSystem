@@ -27,7 +27,7 @@ import UserPage from "./Pages/User";
 
 function App() {
 
-    const [token, setToken] = useState(null)
+    const [token, setToken] = useState()
 
     if(!token){
         return <Login setToken = {setToken}/>
