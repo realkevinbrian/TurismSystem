@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import React from "react";
+import { Dialog } from "@mui/material";
+
 //InputGroup
 export const InputGroup = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -25,6 +27,13 @@ export const InputGroup = styled.div`
   }
 `;
 
+//TILTLE
+export const Title = styled.h1`
+  margin : 0;
+  padding : 0;
+  font-size: medium;
+
+`
 //InputGroup type 2
 export const InputGroupExtended = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -111,7 +120,7 @@ export const OverlayChild = styled.div`
 
 //Overlay Component Header
 export const OverlayHeader = styled.div`
-  padding: 0 10px;
+  padding: 10px 10px;
   border: 1px solid transparent;
   border-bottom-color: #151515;
   display: flex;
@@ -196,3 +205,37 @@ export function ShowTotal({total}) {
     </>
   );
 }
+
+/***
+ * Modal
+ */
+
+ export const Modal =  styled(Dialog)`
+ p{
+   padding:0;
+   margin:0;
+ }
+
+ span{
+   font-weight: bold;
+ }
+
+ strong{
+   cursor: pointer;
+   font-variant: small-caps;
+
+   &:nth-child(1){
+  
+     :hover{
+     color : ${({theme})=>theme.colors.green};
+     }
+   }
+
+   &:nth-child(2){
+
+     :hover{
+     color : #910404;
+     }
+   }
+ }
+`

@@ -96,36 +96,3 @@ export const StyledEditInput = styled.input`
 `;
 
 
-/***
- * Modal
- */
-
-export const Modal =  styled(Dialog)`
-  p{
-    padding:0;
-    margin:0;
-  }
-
-  span{
-    font-weight: bold;
-  }
-
-  strong{
-    cursor: pointer;
-    font-variant: small-caps;
-
-    &:nth-child(1){
-   
-      :hover{
-      color : ${({theme})=>theme.colors.green};
-      }
-    }
-
-    &:nth-child(2){
-
-      :hover{
-      color : #910404;
-      }
-    }
-  }
-`

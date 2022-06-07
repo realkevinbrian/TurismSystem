@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import usersReport from "../Api/usersReport.json";
+import turisticPoints from "../Api/turisticPointsReport.json";
 
-const UsersReportSlice = createSlice({
-  name: "usersReport",
+const TuristicReportSlice = createSlice({
+  name: "turisticPoint",
   initialState: {
-    value: usersReport.usersReport,
+    value: turisticPoints.turisticPoints,
   },
   reducers: {
-    //update Method
+    //update
     UpdateRow(state, { payload }) {
       state.value.map((item) => {
         if (item.id === payload.id) {
@@ -21,14 +21,14 @@ const UsersReportSlice = createSlice({
     //     state.value = state.value.filter((item)=> item.id !== payload.id);
     // },
     //Create Cateogy
-    // Createfinance(state,{payload}){
+    // CreateplansReport(state,{payload}){
     //     state.value.push(payload)
-    //     console.log("Pushed payload :",payload);
-    //     console.log("data today :",state.value);
+    //     // console.log(payload);
     // }
   },
 });
 
-export const selectAll = (state) => state.usersReport.value;
-export const { UpdateRow } = UsersReportSlice.actions;
-export default UsersReportSlice.reducer;
+export const selectAll = (state) => state.turisticPoint.value;
+export const { DeleteRow, UpdateRow, CreateplansReport } =
+  TuristicReportSlice.actions;
+export default TuristicReportSlice.reducer;

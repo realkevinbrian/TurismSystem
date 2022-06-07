@@ -15,7 +15,7 @@ import UsersReport from "./Pages/Admin/UsersReport";
 import GuideReport from "./Pages/Admin/GuideReport";
 import ShopsReport from "./Pages/Admin/ShopsReport";
 import PlansReport from "./Pages/Admin/PlansReport";
-import TurismPointsReport from "./Pages/Admin/TurismPointsReport";
+import TuristicPointsReport from "./Pages/Admin/TuristicPointsReport";
 //Admin Pages
 import Home from "./Pages/Admin/Home";
 import ErrorPage from "./Pages/ErrorPage";
@@ -42,7 +42,7 @@ function App() {
                     <Route path="relatorio_de_estabelecimentos" element={<ShopsReport/>}/>
                     <Route path="relatorio_financeiro" element={<Finance/>} />
                     <Route path="planos_de_assinatura" element={<PlansReport/>} />
-                    <Route path="relatorio_de_pontos_turisticos" element={<TurismPointsReport/>} />
+                    <Route path="relatorio_de_pontos_turisticos" element={<TuristicPointsReport/>} />
                     <Route path="category" element={<Category />} />
                     <Route path="agenda" element={<Agenda />} />
                     <Route path="Approved" element={<Approved />} />
@@ -52,7 +52,7 @@ function App() {
                 {/* USers Routes */}
                 <Route path = "/user">
                     <Route index element={<UserPage />} />
-                    {/* <Route path="login" element={<UserLogin/>} /> */}
+                    <Route path="login" element={<UserLogin/>} />
                 </Route>
                 
                 {/* Not Found 404 Page */}

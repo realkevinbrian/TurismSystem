@@ -28,6 +28,6 @@ const ShopsReportSlice = createSlice({
     }
 })
 
-export const selectAll = state => state.shopsReport.value; 
+export const selectAll = state => state.shopsReport.value;
 export const {UpdateRow} = ShopsReportSlice.actions;
 export default ShopsReportSlice.reducer;

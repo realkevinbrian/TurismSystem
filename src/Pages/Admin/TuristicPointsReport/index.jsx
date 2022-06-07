@@ -1,27 +1,25 @@
 /****
- * Users Report Page Component
- * In this component we declare all the Users Report page functionlities
- * we Diiplay Users Report data in this compont
+ * In this component we declare all functionlities for TurismPointsReport Page
+ * We retrieve data from our server
  */
 
 import { Container } from "@mui/material";
-import React , {useState} from "react";
+import React, { useState } from "react";
 import ConfirmModal from "../../../Components/ConfirmModal/ConfirmModal";
 import { ShowTotal } from "../../../Components/Global/Reusable";
-import StyledTable from "../../../Components/Table";
-import BodyData from "./BodyData";
+import StyledTable from "../../../Components/Table/index";
+import TableData from "./bodyData";
 import Details from "./Details";
-import Labels from "./Labels";
+import TableLabels from "./Labels";
 import {Modal} from "../../../Components/Global/Reusable"
-import { UpdateRow } from "../../../features/UsersReportSlice";
+import { UpdateRow } from "../../../features/TuristicPointsReportSlice";
 
 
 export default function index() {
-
   const [modal, setModal] = useState(false);
   const [data, setData] = useState(null);
   const [Id, setId] = useState(null);
-  const [details, setDetails] = useState(false);
+  const [details, setDetails] = useState(true);
 
   /***
    * Declare a method to Open and close Details
@@ -38,7 +36,7 @@ export default function index() {
   }
 
   /**
-   * Declare Method to Open Modal for Confirmation @param {rowStatus, rowId, rowName}
+   * Declare Method to Open Modal for Confirmation
    * Declare switch functionality
    */
   function OpenModal(rowStatus, rowId, rowName) {
@@ -48,23 +46,22 @@ export default function index() {
       Status: rowStatus,
       Name: rowName,
     });
-    // console.log(data)
   }
-
 
   return (
     <Container maxWidth="xl">
       <StyledTable
-        TableTitle="Usuarios"
-        Component={<ShowTotal />}
-        Labels={<Labels />}
-        TableData={<BodyData OpenModal={OpenModal} OpenDetails={OpenDetails}/>}
+        TableTitle="Pontos Turisticos"
+        Component={<ShowTotal total={"5,000"} />}
+        Labels={<TableLabels />}
+        TableData={
+          <TableData OpenModal={OpenModal} OpenDetails={OpenDetails} />
+        }
       />
       {details && <Details CloseDetails={CloseDetails} detailsID={Id} />}
       <Modal open={modal}>
-        <ConfirmModal data={data} setModal={setModal} UpdateRow = {UpdateRow} role = "Usuario"/>
+        <ConfirmModal data={data} setModal={setModal} UpdateRow = {UpdateRow} role = "Ponto turistico"/>
       </Modal>
     </Container>
   );
 }
-

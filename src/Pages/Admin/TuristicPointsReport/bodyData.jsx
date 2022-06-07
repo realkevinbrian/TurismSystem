@@ -2,13 +2,13 @@ import { RemoveRedEyeOutlined } from "@mui/icons-material";
 import { Switch, TableCell, TableRow } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectAll } from "../../../features/GuideReportSlice";
+import { selectAll } from "../../../features/TuristicPointsReportSlice";
 
 /****
  * BODY DATA FOR Category TABLE TO MAKE OUR TABLE REUSABLE
  */
 
-export default function index({ OpenModal }) {
+export default function index({ OpenModal,OpenDetails }) {
   //get QUERY_BYSTRING AND QUERY_BYNUM
   const query = useSelector((state) => state.query.query_string);
   const queryNum = useSelector((state) => state.query.queryByNumber);
@@ -29,7 +29,7 @@ export default function index({ OpenModal }) {
                 sx={{ width: "70px", color: "#006875", cursor: "pointer" }}
                 align="center"
               >
-                <RemoveRedEyeOutlined />
+                <RemoveRedEyeOutlined onClick = { () => OpenDetails(row.id)}/>
               </TableCell>
               <TableCell sx={{ width: "50px" }} align="left">
                 <Switch
