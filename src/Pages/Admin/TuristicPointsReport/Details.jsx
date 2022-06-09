@@ -7,8 +7,10 @@ import { ArrowBack } from "@mui/icons-material";
 import { Alert } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import image from "../../../Assets/bgImage.png";
-import { PrimaryButton } from "../../../Components/Button";
+import place1 from "../../../Assets/Images/place01.webp";
+import place2 from "../../../Assets/Images/place02.webp";
+import place3 from "../../../Assets/Images/place03.webp";
+import place4 from "../../../Assets/Images/place04.webp";
 import {
   Address,
   ImagesAlbum,
@@ -29,18 +31,18 @@ export default function index({ CloseDetails, detailsID }) {
   const reportData = useSelector(selectAll);
   const [message, setMessage] = useState(null);
   const dispatch = useDispatch();
-  const images = [image, image, image, image, image, image];
+  const images = [place1, place2, place3, place4, place3, place1];
 
   //Method to Approve
   function Active({ id }) {
     dispatch(UpdateRow({ id: id, status: "active" }));
-    setMessage("Approvado com Successo");
+    setMessage("Aprovado");
   }
 
   //Method to Blocked
   function Block({ id }) {
     dispatch(UpdateRow({ id: id, status: "blocked" }));
-    setMessage("Reapprovado com successo");
+    setMessage("Reprovado");
   }
 
   return (

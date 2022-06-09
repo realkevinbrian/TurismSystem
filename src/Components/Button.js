@@ -7,7 +7,7 @@ import styled from "styled-components";
  export const PrimaryButton = styled.button`
  background-color: ${({ theme }) => theme.colors.primary};
  color: ${({ theme }) => theme.colors.white};
- padding: 0.4rem 1.2rem;
+ padding: .2rem 1.2rem;
  border-radius: 50px;
  transition: all 0.2s linear;
  font-size: 0.9rem;

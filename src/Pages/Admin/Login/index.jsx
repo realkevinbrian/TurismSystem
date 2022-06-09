@@ -15,8 +15,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 //We get user Data from UserApi
 import UserCredentials from "../../../Api/User.json";
-import LoginBanner from "../../../Assets/bgImage.png";
-import Logo from "../../../Assets/LOGO.png";
+import LoginBanner from "../../../Assets/Images/loginBanner.webp";
+import Logo from "../../../Assets/Images/logo.webp";
 import {
   FormHeader, InputGroup,
   LinkContainer,

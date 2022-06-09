@@ -11,13 +11,9 @@ import StyledTable from "../../../Components/Table";
 import BodyData from "./BodyData";
 import Labels from "./Labels";
 import Details  from './Details'
-import NavMenu from "../../../Components/NavMenu";
 
 
 export default function index() {
-
-  const [modal, setModal] = useState(false);
-  const [data, setData] = useState(null);
   const [Id, setId] = useState(null);
   const [details, setDetails] = useState(false);
 

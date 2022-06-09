@@ -5,9 +5,11 @@
 
 import { ArrowBack } from "@mui/icons-material";
 import { Grid } from "@mui/material";
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import image from "../../../Assets/avatar.jpg";
+import React from "react";
+import { useSelector } from "react-redux";
+import image from "../../../Assets/Images/avatar2.webp";
+import aventure2 from  "../../../Assets/Images/aventure03.webp"
+import aventure4 from  "../../../Assets/Images/place05.webp"
 import {
   Description,
   ImagesAlbum,
@@ -27,22 +29,8 @@ export default function index({ CloseDetails, detailsID }) {
   /***
    * In this component we display details
    */
-  const images = [image, image, image, image, image, image];
+  const images = [aventure2, aventure4, aventure4];
   const reportData = useSelector(selectAll);
-  const [message, setMessage] = useState(null);
-  const dispatch = useDispatch();
-
-  // //Method to Approve
-  // function Active({ id }) {
-  //   dispatch(UpdateRow({ id: id, status: "active" }));
-  //   setMessage("Approvado com Successo");
-  // }
-
-  // //Method to Blocked
-  // function Block({ id }) {
-  //   dispatch(UpdateRow({ id: id, status: "blocked" }));
-  //   setMessage("Reapprovado com successo");
-  // }
 
   return (
     <OverlayContainer>
@@ -55,7 +43,7 @@ export default function index({ CloseDetails, detailsID }) {
           .filter((item) => item.id === detailsID)
           .map((item, index) => (
             <OverlayBody
-              style={{ gap: "15px", paddingTop: "40px" }}
+              style={{ gap: "15px", paddingTop: "15px" }}
               key={index}
             >
               <Profile name={item.name} />
@@ -82,7 +70,7 @@ export const Profile = ({ photos, name }) => {
   return (
     <StyledProfile>
       <div style={{ display: "grid", gap: "5px", alignContent: "center" }}>
-        <Title style={{ margin: "5px 0 0 0" }}>{name}</Title>
+        <Title style={{ margin: "5px 0 0 0", fontSize : "1.3rem"}}>{name}</Title>
       </div>
 
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -90,7 +78,9 @@ export const Profile = ({ photos, name }) => {
           src={image}
           alt="profileImage"
           style={{
+            objectFit : "cover",
             width: "70px",
+            height: "70px",
             borderRadius: "50%",
             border: "2px solid #006875",
           }}

@@ -22,12 +22,13 @@ import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Admin/Login";
 import UserLogin from "./Pages/User/Login";
 import UserPage from "./Pages/User";
+import TermsOfUse from "./Pages/Admin/TermsOfUse"
 
 
 
 function App() {
 
-    const [token, setToken] = useState()
+    const [token, setToken] = useState(true)
 
     if(!token){
         return <Login setToken = {setToken}/>
@@ -49,6 +50,7 @@ function App() {
                     <Route path="relatorio_financeiro" element={<Finance/>} />
                     <Route path="planos_de_assinatura" element={<PlansReport/>} />
                     <Route path="relatorio_de_pontos_turisticos" element={<TuristicPointsReport/>} />
+                    <Route path="termos_de_uso" element={<TermsOfUse/>} />
                     <Route path="category" element={<Category />} />
                     <Route path="agenda" element={<Agenda />} />
                     <Route path="Approved" element={<Approved />} />

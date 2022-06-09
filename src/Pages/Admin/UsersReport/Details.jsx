@@ -7,34 +7,18 @@ import { ArrowBack } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import image from "../../../Assets/avatar.jpg";
-import { PrimaryButton } from "../../../Components/Button";
+import image from "../../../Assets/Images/avatar1.webp";
 import {
   OverlayBody,
   OverlayChild,
   OverlayContainer,
   OverlayHeader,
-  Title,
+  Title
 } from "../../../Components/Global/Reusable";
-import { selectAll, UpdateRow } from "../../../features/UsersReportSlice";
+import { selectAll } from "../../../features/UsersReportSlice";
 
 export default function index({ CloseDetails, detailsID }) {
   const reportData = useSelector(selectAll);
-  const [message, setMessage] = useState(null);
-  const dispatch = useDispatch();
-
-  // //Method to Approve
-  // function Active({ id }) {
-  //   dispatch(UpdateRow({ id: id, status: "active" }));
-  //   setMessage("Approvado com Successo");
-  // }
-
-  // //Method to Blocked
-  // function Block({ id }) {
-  //   dispatch(UpdateRow({ id: id, status: "blocked" }));
-  //   setMessage("Reapprovado com successo");
-  // }
-
   return (
     <OverlayContainer>
       <OverlayChild style={{ width: "400px" }}>
@@ -43,7 +27,7 @@ export default function index({ CloseDetails, detailsID }) {
           <Title>Detalhes</Title>
         </OverlayHeader>
         {reportData
-          .filter((item) => item.id === 1)
+          .filter((item) => item.id === detailsID)
           .map((item, index) => (
             <OverlayBody
               style={{ gap: "15px", paddingTop: "40px" }}
@@ -110,6 +94,7 @@ export const Profile = ({ photos }) => {
           src={image}
           alt="profileImage"
           style={{
+            objectFit : "cover",
             width: "100px",
             height: "100px",
             borderRadius: "50%",
@@ -120,37 +105,6 @@ export const Profile = ({ photos }) => {
     </StyledProfile>
   );
 };
-
-// export const ActionButtons = ({ active, block, id }) => {
-//   /**
-//    * In this component we declare Approve and Disapprove Functionality
-//    * @params (__active , _block, __id)
-//    * */
-
-//   return (
-//     <>
-//       <div
-//         style={{
-//           display: "flex",
-//           justifyContent: "space-evenly",
-//         }}
-//       >
-//         <PrimaryButton
-//           style={{ backgroundColor: "#079784" }}
-//           onClick={() => active({ id })}
-//         >
-//           Approvar
-//         </PrimaryButton>
-//         <PrimaryButton
-//           style={{ backgroundColor: "#ec0202" }}
-//           onClick={() => block({ id })}
-//         >
-//           Reprovar
-//         </PrimaryButton>
-//       </div>
-//     </>
-//   );
-// };
 
 /*****
  * Styled Components

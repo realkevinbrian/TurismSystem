@@ -7,12 +7,12 @@ import {
   BarChartOutlined,
   DisplaySettingsOutlined,
   MenuOutlined,
-  MoneyOutlined,
+  MoneyOutlined
 } from "@mui/icons-material";
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../Assets/LOGO.png";
+import { Link } from "react-router-dom";
+import Logo from "../../Assets/Images/logo02.webp";
 import { setMenuState } from "../../features/MenuSlice";
 import {
   LogoContainer,
@@ -20,9 +20,8 @@ import {
   NavContainer,
   NavSide,
   SideMenuContainer,
-  SideMenuViewer,
+  SideMenuViewer
 } from "./styled";
-import { Logout } from "../../features/LoginSlice";
 
 const MenuData = [
   {
@@ -68,7 +67,7 @@ const MenuData = [
         {
           id: 1,
           title: "Termos de Uso",
-          link: "/termosdeuso",
+          link: "/admin/termos_de_uso",
         },
         {
           id: 2,
@@ -139,12 +138,10 @@ const MenuData = [
 function index({setToken}) {
   //get navData
   const data = MenuData;
-  const navigate = useNavigate();
 
   //Declare dispatch and useSelector from Redux
   const dispatch = useDispatch();
   const menuState = useSelector((state) => state.menu.menuState);
-  const [navbar,setNavbar] = useState(null);
 
   /****
    * Destructure AuthUser

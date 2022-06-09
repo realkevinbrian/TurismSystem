@@ -1,0 +1,32 @@
+
+.wrapper-class{
+    border: 1px solid rgb(77, 76, 76);
+
+}
+
+
+.toolbar-class{
+    border: 1px solid rgb(77, 76, 76);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0;
+}
+
+.toolbar-class * img{
+    width: 15px;
+}
+
+.editor-class{
+    height: 250px;
+    padding: 0 30px;
+    /* border: 1px solid rgb(77, 76, 76); */
+
+    
+
+}
+
+.customToolbar{
+    border: 1px solid transparent;
+    
+}

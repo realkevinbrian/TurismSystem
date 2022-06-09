@@ -283,11 +283,10 @@ export const ImagesAlbum = ({ photos }) => {
       <div
         style={{
           width: "100%",
-          display: "flex",
+          display: "grid",
           gap: "4px",
-          flexWrap: "wrap",
-          borderRadius: "20px",
-          marginTop: "5px",
+          gridTemplateColumns : "repeat(3,1fr)",
+          
         }}
       >
         {photos.map((image, index) => (
@@ -295,7 +294,7 @@ export const ImagesAlbum = ({ photos }) => {
             key={index}
             src={image}
             alt="previewImage"
-            style={{ width: "70px" }}
+            style={{ width: "100%" }}
           />
         ))}
       </div>

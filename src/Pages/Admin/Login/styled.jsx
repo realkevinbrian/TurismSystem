@@ -46,7 +46,12 @@ export const LoginLeft = styled.div`
   border-radius: 60px;
 
   img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 400px;
     border-radius: 20px;
+    height: 100%;
+    min-height: 400px;
   }
 
   //ON MOBILE

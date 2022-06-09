@@ -15,8 +15,6 @@ import Details from "./Details"
 
 export default function index() {
 
-  const [modal, setModal] = useState(false);
-  const [data, setData] = useState(null);
   const [Id, setId] = useState(null);
   const [details, setDetails] = useState(false);
 

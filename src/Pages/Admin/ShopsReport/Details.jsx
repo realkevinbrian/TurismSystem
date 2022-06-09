@@ -6,7 +6,10 @@
 import { ArrowBack } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import image from "../../../Assets/avatar.jpg";
+import image from "../../../Assets/Images/place05.webp";
+import food from "../../../Assets/Images/food01.webp"
+
+
 import {
   Address,
   Description,
@@ -27,7 +30,7 @@ export default function index({ CloseDetails, detailsID }) {
   /***
    * In this component we display details
    */
-  const images = [image, image, image, image, image, image];
+  const images = [food, food, food, food, food, food];
   const reportData = useSelector(selectAll);
   const [message, setMessage] = useState(null);
   const dispatch = useDispatch();
@@ -43,7 +46,7 @@ export default function index({ CloseDetails, detailsID }) {
           .filter((item) => item.id === detailsID)
           .map((item, index) => (
             <OverlayBody
-              style={{ gap: "15px", paddingTop: "40px" }}
+              style={{ gap: "15px", paddingTop: "15px" }}
               key={index}
             >
               <Profile name={item.name} catId={item.cat_id} />

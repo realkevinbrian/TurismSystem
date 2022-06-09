@@ -28,10 +28,10 @@ const ApprovedSlice = createSlice({
             //Delete data
             state.value = state.value.filter((item)=> item.id !== payload.id);
         },
+        
         //Create Cateogy
         Createapproved(state,{payload}){
             state.value.push(payload)
-            // console.log(payload);
         }
 
     }
