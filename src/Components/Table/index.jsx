@@ -26,12 +26,13 @@ function StyledTable({ TableTitle, Component, Labels, TableData,SecondComponent 
             <TableHead>
               <TableRow>
                 <TableCell
-                  sx={{
+                colSpan={3}
+                  style={{
                     borderBottomColor: "transparent",
                     padding: "0 20px",
                     paddingTop: "20px",
                     fontSize: "1.3rem",
-                    fontWeight: "bold",
+                    fontWeight: "bold"
                   }}
                 >
                   {TableTitle}
