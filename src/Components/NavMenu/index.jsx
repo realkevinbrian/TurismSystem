@@ -7,12 +7,12 @@ import {
   BarChartOutlined,
   DisplaySettingsOutlined,
   MenuOutlined,
-  MoneyOutlined,
+  MoneyOutlined
 } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../Assets/LOGO.png";
+import { Link } from "react-router-dom";
+import Logo from "../../Assets/Images/logo02.webp";
 import { setMenuState } from "../../features/MenuSlice";
 import {
   LogoContainer,
@@ -20,9 +20,8 @@ import {
   NavContainer,
   NavSide,
   SideMenuContainer,
-  SideMenuViewer,
+  SideMenuViewer
 } from "./styled";
-import { Logout } from "../../features/LoginSlice";
 
 const MenuData = [
   {
@@ -63,23 +62,18 @@ const MenuData = [
     icon: <AdminPanelSettingsOutlined />,
     sub: {
       id: 1,
-      title: "Configurações",
+      title: "Configurações Gerais",
       Link: [
         {
           id: 1,
           title: "Termos de Uso",
-          link: "/termosdeuso",
+          link: "/admin/termos_de_uso",
         },
         {
           id: 2,
           title: "Aprovações",
           link: "/admin/Approved",
-        },
-        {
-          id: 3,
-          title: "Denuncias",
-          link: "/relatorio de Usuario",
-        },
+        }
       ],
     },
   },
@@ -94,17 +88,17 @@ const MenuData = [
         {
           id: 1,
           title: "Cadastro de Categorias",
-          link: "/admin/category",
+          link: "admin/category",
         },
         {
           id: 2,
           title: "Cadastro de Planos",
-          link: "/Cadastro de Planos",
+          link: "admin/planos_de_assinatura",
         },
         {
           id: 3,
           title: "Agenda Cultural",
-          link: "/admin/agenda",
+          link: "admin/agenda",
         },
       ],
     },
@@ -141,10 +135,9 @@ const MenuData = [
     },
   },
 ];
-function index() {
+function index({setToken}) {
   //get navData
   const data = MenuData;
-  const navigate = useNavigate();
 
   //Declare dispatch and useSelector from Redux
   const dispatch = useDispatch();
@@ -154,15 +147,19 @@ function index() {
    * Destructure AuthUser
    * Authetication
    */
+  
+
   function handleLogOut(self) {
     self.preventDefault();
     localStorage.clear();
-    navigate("admin/login");
-    dispatch(Logout());
+    setToken(null)
+
   }
 
   return (
-    <React.Fragment style={{ position: "relative" }}>
+    <>
+    {
+    <React.Fragment>
       <NavContainer>
         <MenuOutlined onClick={() => dispatch(setMenuState())} />
         <LogoContainer>
@@ -175,6 +172,8 @@ function index() {
       </NavContainer>
       <SideMenu data={data} menuState={menuState} />
     </React.Fragment>
+    }
+    </>
   );
 }
 
@@ -262,7 +261,7 @@ function DropDownMenuView({ id, data, setClickedId, handleClose }) {
         SelectedMenu.map((item) => {
           return (
             <SideMenuViewer key={item.id}>
-              <h1>{item.title}</h1>
+              <h4>{item.title}</h4>
               <ul>
                 {item.Link.map((item) => (
                   <li

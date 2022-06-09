@@ -1,0 +1,22 @@
+{
+        "plansReport": [
+                {
+                        "id": 1,
+                        "name": "Seja um guia",
+                        "type": "Estabelecimento",
+                        "value": "20.00"
+                },
+                {
+                        "id": 2,
+                        "name": "Basico",
+                        "type": "Ponto Turistico",
+                        "value": "10.00"
+                },
+                {
+                        "id": 3,
+                        "name": "Avançado",
+                        "type": "Guias Turisticas",
+                        "value": "20.00"
+                }
+        ]
+}

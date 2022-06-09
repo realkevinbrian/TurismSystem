@@ -46,6 +46,8 @@ export const GlobalStyle = createGlobalStyle`
 
     button,a,img{
         cursor: pointer;
+        font-family: NunitoSansRegular;
+
     }
 
     svg{
@@ -54,10 +56,20 @@ export const GlobalStyle = createGlobalStyle`
 
     //////default font
 
-label,input,a{
-    font-family: QuickSand;
-    font-weight: bold;
+label,input,a,span,li{
+  font-family: NunitoSans;
 }
+
+p{
+  font-family: NunitoSansRegular;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: NunitoSansBold;
+  word-break: keep-all;
+}
+
+
 
 
 

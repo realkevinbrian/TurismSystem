@@ -44,7 +44,7 @@ export const ReadOnlyRow = ({ data: row, setEditId }) => {
 
   return (
     <TableRow hover tabIndex={-1} key={row.id}>
-      <TableCell colSpan={0} sx={{ maxWidth: "100px" }}>
+      <TableCell colSpan={0} sx={{ width: "200px" }}>
         {row.name}
       </TableCell>
       <TableCell>{row.date}</TableCell>

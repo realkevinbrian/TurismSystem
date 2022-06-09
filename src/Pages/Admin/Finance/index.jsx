@@ -3,36 +3,24 @@
  * In this component we declare all the finance page functionlities
  * we Diiplay finance data in this compont
  */
-
 import { Container } from "@mui/material";
 import React from "react";
+import { ShowTotal } from "../../../Components/Global/Reusable";
 import StyledTable from "../../../Components/Table";
-import { FinanceBodyData } from "./FinanceBodyData";
-import { FinanceLabels } from "./FinanceLabels";
-import { ShowTotalWrapper } from "./styled";
+import TableBody from "./FinanceBodyData";
+import TableLabels from "./FinanceLabels";
 
-function FinanceMain() {
+export default function index() {
   return (
-    <Container maxWidth="xl">
+  <Container maxWidth="xl">
       <StyledTable
         TableTitle="Financeiro"
-        Component={<ShowTotal />}
-        Labels={<FinanceLabels />}
-        TableData={<FinanceBodyData />}
+        Component={<ShowTotal/>}
+        Labels={<TableLabels/>}
+        TableData={<TableBody/>}
       />
     </Container>
   );
 }
 
-export default FinanceMain;
 
-function ShowTotal() {
-  return (
-    <>
-      <ShowTotalWrapper>
-        <h4>Total</h4>
-        <h5>R$12,500000</h5>
-      </ShowTotalWrapper>
-    </>
-  );
-}

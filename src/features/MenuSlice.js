@@ -12,7 +12,8 @@ const MenuSlice = createSlice({
         menuState : false,
         AgendaState : false,
         NavbarState : false,
-        CategoryState : false
+        CategoryState : false,
+        PlansRegisterState : false
     },
     reducers : {
 
@@ -44,6 +45,14 @@ const MenuSlice = createSlice({
                 state.CategoryState = true;
             }
         }
+        ,
+        setPlanRegisterState(state){
+            if(state.PlansRegisterState === true){
+                state.PlansRegisterState = false;
+            }else{
+                state.PlansRegisterState = true;
+            }
+        }
         
     }
 })
@@ -52,7 +61,7 @@ const MenuSlice = createSlice({
  * Export actions
  */
 
-export const {setMenuState, setAgendaState, setCategoryState,setNavbarState} = MenuSlice.actions;
+export const {setMenuState, setAgendaState, setCategoryState,setNavbarState,setPlanRegisterState} = MenuSlice.actions;
 
 
 

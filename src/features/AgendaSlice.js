@@ -25,8 +25,6 @@ const AgendaSlice = createSlice({
                     }
                 }
             })
-
-            console.log("Update row", state.value)
         },
         //delete
         DeleteRow(state, {payload}){
@@ -36,8 +34,6 @@ const AgendaSlice = createSlice({
         //Create Cateogy
         CreateAgenda(state,{payload}){
             state.value.push(payload)
-            console.log("Pushed payload :",payload);
-            console.log("data today :",state.value);
         }
 
     }

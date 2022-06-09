@@ -15,8 +15,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 //We get user Data from UserApi
 import UserCredentials from "../../../Api/User.json";
-import LoginBanner from "../../../Assets/bgImage.png";
-import Logo from "../../../Assets/LOGO.png";
+import LoginBanner from "../../../Assets/Images/loginBanner.webp";
+import Logo from "../../../Assets/Images/logo.webp";
 import {
   FormHeader, InputGroup,
   LinkContainer,
@@ -29,7 +29,7 @@ import { useDispatch } from "react-redux";
 import {Login} from "../../../features/LoginSlice"
 import {Alert} from "@mui/material"
 
-export default function index() {
+export default function index({setToken}) {
   return (
     <StyledContainer>
       <LoginContainer>
@@ -37,14 +37,14 @@ export default function index() {
           <img src={LoginBanner} alt="Login Banner" />
         </LoginLeft>
         <LoginRight>
-          <LoginForm />
+          <LoginForm setToken={setToken}/>
         </LoginRight>
       </LoginContainer>
     </StyledContainer>
   );
 }
 
-function LoginForm() {
+function LoginForm({setToken}) {
 
   //Decale dispatch
   const dispatch = useDispatch();
@@ -87,21 +87,17 @@ const handleLogin = (self) => {
     switch (FoundUser.role) {
 
       case "Admin":
-        AddUser(FoundUser.id, FoundUser.role, FoundUser.email);
+        // AddUser(FoundUser.role);
+        setToken("13243242")
         navigate("/admin");
-        dispatch(Login({user_role : FoundUser.role, user_status : true}))
         break;
 
       case "Standard":
-        AddUser(FoundUser.id, FoundUser.role, FoundUser.email);
-        dispatch(Login({user_role : FoundUser.role, user_status : true}))
-        navigate("/");
+        setToken("13243242")
+        navigate("/user");
         break;
 
       default:
-        AddUser(FoundUser.id, FoundUser.role, FoundUser.email);
-        dispatch(Login({user_role : FoundUser.role, user_status : true}))
-        navigate("/");
         break;
     }
 
@@ -156,9 +152,7 @@ const handleLogin = (self) => {
  * Declare a method to add data to localStorage
  */
 
-function AddUser(user_id, user_role, user_email) {
-  localStorage.setItem("user_id", user_id);
+function AddUser(user_role) {
+  localStorage.setItem("user_token", "12345678");
   localStorage.setItem("user_role", user_role);
-  localStorage.setItem("user_email", user_email);
-  localStorage.setItem("user_status", true);
 }

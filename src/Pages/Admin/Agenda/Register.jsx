@@ -7,13 +7,10 @@ import { CreateAgenda, selectAll } from "../../../features/AgendaSlice";
 import { setAgendaState } from "../../../features/MenuSlice";
 import { useFetch } from "../../../Hooks/useFetch";
 import {
-  InputGroup,
-  OverlayContainer,
   RegisterButton,
-  RegisterContainer,
-  RegisterHeader
 } from "../Category/styled";
 import * as S from "./styled";
+import {InputGroup,OverlayContainer,OverlayHeader,OverlayBody,OverlayChild} from "../../../Components/Global/Reusable"
 
 /**
  * 
@@ -27,16 +24,16 @@ export default function index() {
     <>
       {AgendaState && (
         <OverlayContainer>
-          <RegisterContainer>
-            <RegisterHeader>
+          <OverlayChild>
+            <OverlayHeader>
               <ArrowBack onClick={() => dispatch(setAgendaState())} />
               <h3>Cadastro de Agenda Cultural</h3>
-            </RegisterHeader>
+            </OverlayHeader>
 
-            <S.RegisterBody>
+            <OverlayBody>
               <CreateForm />
-            </S.RegisterBody>
-          </RegisterContainer>
+            </OverlayBody>
+          </OverlayChild>
         </OverlayContainer>
       )}
     </>

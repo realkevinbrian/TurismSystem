@@ -13,14 +13,14 @@ const Labels = [
   { id: "nome", label: "Nome", minWidth: 100 },
   {
     id: "data",
-    label: "data",
+    label: "Data",
     minWidth: 170,
     align: "left",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
-    id: "status",
-    label: "Status",
+    id: "detalhes",
+    label: "Detalhes",
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
