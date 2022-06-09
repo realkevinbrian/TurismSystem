@@ -11,11 +11,11 @@ const CategorySlice = createSlice({
         //update
         UpdateRow(state,{payload}){
             state.value.map(item => {
-                if(item.id === payload.id){ 
-                    item.name = payload.name;
-                    item.type = payload.type;
-                    item.color = payload.color;
-                }
+                    if(item.id === payload.id){ 
+                        item.name = payload.name;
+                        item.type = payload.type;
+                        item.color = payload.color;
+                    }
             })
         },
         //delete

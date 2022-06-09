@@ -1,0 +1,80 @@
+{
+    "shopsReport": [
+        {
+            "id": 1,
+            "cat_id": 1,
+            "code": 3242,
+            "name": "Marcos da Silva",
+            "date": "23/07/2021",
+            "status": "active",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        },
+        {
+            "id": 2,
+            "cat_id": 3,
+            "code": 2342,
+            "name": "Amorim's Lounge",
+            "date": "23/06/2021",
+            "status": "blocked",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        },
+        {
+            "id": 3,
+            "cat_id": 4,
+            "code": 3332,
+            "name": "Fernanda Machado",
+            "date": "23/07/2021",
+            "status": "active",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        },
+        {
+            "id": 4,
+            "cat_id": 5,
+            "code": 4323,
+            "name": "Shakespeare e Companhia",
+            "date": "23/07/2021",
+            "status": "blocked",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        },
+        {
+            "id": 5,
+            "cat_id": 2,
+            "code": 53232,
+            "name": "La Pergola",
+            "date": "23/07/2021",
+            "status": "active",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        },
+        {
+            "id": 6,
+            "cat_id": 3,
+            "code": 6323,
+            "name": "Aline do Amaral",
+            "date": "23/07/2021",
+            "status": "blocked",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        },
+        {
+            "id": 7,
+            "cat_id": 6,
+            "code": 7323,
+            "name": "Spikel",
+            "date": "23/07/2021",
+            "status": "active",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est errorodit, obcaecati illo explicabo sit ipsam quam qui. Accusamus illumperspiciatis officiis quia tenetur esse veniam neque porro laboriosamfugit.",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "plans" : [{"title" : "sou um guia"}, {"price" : "R$10,00"}]
+        }]
+}

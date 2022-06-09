@@ -5,7 +5,8 @@ function index() {
   return (
     <div>
         <h1 style={{textAlign : "center"}}>You are in User</h1>
-        <Link to="/login" style={{textAlign : "center"}}>Login</Link>
+        {/* <Link to="admin/login" style={{textAlign : "center"}}>Login admin</Link> */}
+        {/* <Link to="#" style={{textAlign : "center"}} disabled>Login to User (Under Developerment)</Link> */}
     </div>
   )
 }

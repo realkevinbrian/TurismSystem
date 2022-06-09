@@ -6,6 +6,11 @@ import AgendaSlice from "./AgendaSlice"
 import FinanceSlice from "./FinanceSlice"
 import ApprovedSlice from "./ApprovedSlice"
 import LoginSlice from "./LoginSlice";
+import UsersReportSlice from "./UsersReportSlice";
+import GuideReportSlice from "./GuideReportSlice";
+import ShopsReportSlice from "./ShopsReportSlice";
+import PlansReportSlice from "./PlansReportSlice";
+import TuristicPointsReportSlice from "./TuristicPointsReportSlice";
 
 /***
  * Setup store
@@ -19,9 +24,17 @@ const store = configureStore({
         agenda : AgendaSlice,
         finance : FinanceSlice,
         approved : ApprovedSlice,
-        login : LoginSlice
+        login : LoginSlice,
+        usersReport : UsersReportSlice,
+        guideReport : GuideReportSlice,
+        shopsReport : ShopsReportSlice,
+        plansReport : PlansReportSlice,
+        turisticPoint : TuristicPointsReportSlice
+
     }
 
 })
 
+
+// console.log(store.getState())
 export default store;

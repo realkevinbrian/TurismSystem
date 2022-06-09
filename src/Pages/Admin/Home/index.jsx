@@ -13,6 +13,8 @@ import {
 import React from "react";
 import { Card, Wrapper,Home } from "./styled";
 import { Container } from "@mui/material";
+import NavMenu from "../../../Components/NavMenu";
+
 
 export default function index() {
   const Data = [
@@ -27,7 +29,7 @@ export default function index() {
   ];
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Home>
         <h3>Indicadores</h3>
         <Wrapper>

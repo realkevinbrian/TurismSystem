@@ -1,9 +1,14 @@
 @font-face {
-    font-family: Poppins;
-    src: url("./Assets/@fonts/Poppins-Medium.ttf");
+    font-family: NunitoSans;
+    src: url("./Assets/@fonts/NunitoSans-SemiBold.ttf");
 }
 
 @font-face {
-    font-family: QuickSand;
-    src: url("./Assets/@fonts/Quicksand-VariableFont_wght.ttf");
+    font-family: NunitoSansRegular;
+    src: url("./Assets/@fonts/NunitoSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: NunitoSansBold;
+    src: url("./Assets/@fonts/NunitoSans-Bold.ttf");
 }

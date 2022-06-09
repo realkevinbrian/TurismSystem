@@ -1,0 +1,67 @@
+{
+    "turisticPoints": [
+        {
+            "id": 1,
+            "code": 3242,
+            "name": "Coliseu",
+            "date": "23/07/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "code": 2342,
+            "name": "Museu do Louvre",
+            "date": "23/06/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "blocked"
+        },
+        {
+            "id": 3,
+            "code": 3332,
+            "name": "Arco do Triunfo",
+            "date": "23/07/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "active"
+        },
+        {
+            "id": 4,
+            "code": 4323,
+            "name": "Jungfrau",
+            "date": "23/07/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "blocked"
+        },
+        {
+            "id": 5,
+            "code": 53232,
+            "name": "Meteora",
+            "date": "23/07/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "active"
+        },
+        {
+            "id": 6,
+            "code": 6323,
+            "name": "Alpes",
+            "date": "23/07/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "blocked"
+        },
+        {
+            "id": 7,
+            "code": 7323,
+            "name": "Spikel",
+            "date": "23/07/2021",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error praesentium labore voluptatem provident corrupti animi, facilis ",
+            "address": "6800, Avenue du Marechal Juin 16, Saint-Louis - França",
+            "status": "active"
+        }
+    ]
+}

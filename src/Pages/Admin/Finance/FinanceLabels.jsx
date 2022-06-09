@@ -39,13 +39,11 @@ const Labels = [
   },
 ];
 
-export function FinanceLabels() {
+export default function index() {
   return (
     <>
       {Labels.map((column) => {
-        return (
-          <TableCell key={column.id}>{column.label}</TableCell>
-        );
+        return <TableCell key={column.id}>{column.label}</TableCell>;
       })}
     </>
   );

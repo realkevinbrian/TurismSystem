@@ -45,7 +45,6 @@ function CreateForm() {
    * Declare Dispth method and UseSelector to retrieve data from redux store
    */
   const categoryType = useSelector(selectAll).map(item => item.type);
-  console.log("🚀 ~ file: Register.jsx ~ line 48 ~ CreateForm ~ categoryType", categoryType)
   const dispatch = useDispatch();
 
   /****
@@ -102,7 +101,7 @@ function CreateForm() {
         </Box>
 
         <S.ColorPicker>
-          <img src={colorPickerImg} alt="color picker image" />
+          <img src={colorPickerImg} alt="colorpickerimage" />
           <input type="color" required onChange={(self) => setColor(self.target.value)} />
           <S.SelectedColor color={color} />
         </S.ColorPicker>

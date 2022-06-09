@@ -17,7 +17,7 @@ import {
 import React from "react";
 import { QueryByString, QueryByNumber } from "../Search";
 
-function StyledTable({ TableTitle, Component, Labels, TableData }) {
+function StyledTable({ TableTitle, Component, Labels, TableData,SecondComponent }) {
   return (
     <Container maxWidth="xl" sx={{ marginTop: "4rem" }}>
       <Paper>
@@ -26,12 +26,13 @@ function StyledTable({ TableTitle, Component, Labels, TableData }) {
             <TableHead>
               <TableRow>
                 <TableCell
-                  sx={{
+                colSpan={3}
+                  style={{
                     borderBottomColor: "transparent",
                     padding: "0 20px",
                     paddingTop: "20px",
                     fontSize: "1.3rem",
-                    fontWeight: "bold",
+                    fontWeight: "bold"
                   }}
                 >
                   {TableTitle}
@@ -60,6 +61,7 @@ function StyledTable({ TableTitle, Component, Labels, TableData }) {
                     <Grid item xl={6}>
                       <Box>{Component}</Box>
                     </Grid>
+                    {SecondComponent && <Grid item xl={6}><Box>{SecondComponent}</Box></Grid>}
                   </Grid>
                 </TableCell>
               </TableRow>

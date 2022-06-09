@@ -1,20 +1,16 @@
 import { ArrowBack } from "@mui/icons-material";
-import { Box, LinearProgress, MenuItem} from "@mui/material";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { Box, LinearProgress, MenuItem } from "@mui/material";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FileInputImage from "../../../Assets/fileInputImage.svg";
 import { CreateAgenda, selectAll } from "../../../features/AgendaSlice";
 import { setAgendaState } from "../../../features/MenuSlice";
+import { useFetch } from "../../../Hooks/useFetch";
 import {
-  InputGroup,
-  OverlayContainer,
   RegisterButton,
-  RegisterContainer,
-  RegisterHeader
 } from "../Category/styled";
 import * as S from "./styled";
-import { useFetch } from "../../../Hooks/useFetch";
+import {InputGroup,OverlayContainer,OverlayHeader,OverlayBody,OverlayChild} from "../../../Components/Global/Reusable"
 
 /**
  * 
@@ -28,16 +24,16 @@ export default function index() {
     <>
       {AgendaState && (
         <OverlayContainer>
-          <RegisterContainer>
-            <RegisterHeader>
+          <OverlayChild>
+            <OverlayHeader>
               <ArrowBack onClick={() => dispatch(setAgendaState())} />
               <h3>Cadastro de Agenda Cultural</h3>
-            </RegisterHeader>
+            </OverlayHeader>
 
-            <S.RegisterBody>
+            <OverlayBody>
               <CreateForm />
-            </S.RegisterBody>
-          </RegisterContainer>
+            </OverlayBody>
+          </OverlayChild>
         </OverlayContainer>
       )}
     </>
@@ -119,7 +115,7 @@ export function CreateForm() {
 
         <S.FileInputWrapper>
           <Box>
-            <img src={FileInputImage} alt="image" />
+            <img src={FileInputImage} alt="fileInputImage" />
             <input type="file" />
           </Box>
         </S.FileInputWrapper>
@@ -137,7 +133,7 @@ export function CreateForm() {
  */
 export function CustomMultiSelectWrapper() {
   const [city, setCity] = useState("selecione cidade");
-  const [region, setRegion] = useState("selecione região");
+  // const [region, setRegion] = useState("selecione região");
   const [country, setCountry] = useState("selecione país");
 
   /***
@@ -148,7 +144,6 @@ export function CustomMultiSelectWrapper() {
 
   const fetchedData = useFetch("http://localhost:4000/countries");
   
-  const loading = fetchedData.loading;
   const data = fetchedData.data;
 
   //Declare data
@@ -163,7 +158,7 @@ export function CustomMultiSelectWrapper() {
       <S.MultipleSelect>
         <strong>Selecione o Local</strong>
         {<ReusableComponent trigger={setCountry} title={country} data={countries}/>}
-        {<ReusableComponent trigger={setCountry} title={city} data={country_states}/>}
+        {<ReusableComponent trigger={setCity} title={city} data={country_states}/>}
       </S.MultipleSelect>
     </>
   );
