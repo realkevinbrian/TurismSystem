@@ -9,7 +9,8 @@ import { PrimaryButton } from "../../../../Components/Button";
 import {
   InputGroup,
   InputGroupExtended,
-  TextAreaGroup
+  TextAreaGroup,
+  StyledSelect
 } from "../../../../Components/Global/Reusable";
 import { CreateCategory, selectAll } from "../../../../features/CategorySlice";
 import { setCategoryState } from "../../../../features/MenuSlice";
@@ -20,7 +21,7 @@ export default function index() {
    * Declare Dispatch method
    * Retrieve CategotyTypes from redux store
    */
-  const categoryType = useSelector(selectAll).map((item) => item.type);
+  const categoryType = [{id  : 1, name : "Sou um guia"},{id  : 2, name : "Avançada"}];
   const dispatch = useDispatch();
 
   /****
@@ -58,7 +59,7 @@ export default function index() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Box>
+        
           <InputGroup>
             <label htmlFor="name">Nome</label>
             <input
@@ -72,6 +73,7 @@ export default function index() {
           <InputGroup>
             <label htmlFor="name">Tipo</label>
             <Select
+            variant="standard"
               value={type}
               onChange={(self) => setType(self.target.value)}
             >
@@ -79,8 +81,8 @@ export default function index() {
                 <em>{type}</em>
               </MenuItem>
               {categoryType.map((item, index) => (
-                <MenuItem key={index} value={item}>
-                  {item}
+                <MenuItem key={index} value={item.name}>
+                  {item.name}
                 </MenuItem>
               ))}
             </Select>
@@ -99,7 +101,7 @@ export default function index() {
               </li>
             </ul>
           </DisplayBox>
-        </Box>
+       
 
         <InputGroupExtended>
           <label htmlFor="Valor">Valor</label>

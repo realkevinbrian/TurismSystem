@@ -1,34 +1,45 @@
 /***
  * Register Form Component
  */
+import { Flag, House, Map } from "@mui/icons-material";
+import {
+  Box,
+  Grid,
+  Input,
+  InputLabel,
+  LinearProgress,
+  MenuItem,
+  Radio,
+  Select,
+} from "@mui/material";
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import colorPickerImg from "../../../../Assets/ColorPicker.png";
-import { Box, MenuItem, Select, LinearProgress } from "@mui/material";
-import { CreateCategory, selectAll } from "../../../../features/CategorySlice";
-import { setCategoryState } from "../../../../features/MenuSlice";
+import { useDispatch } from "react-redux";
 import { PrimaryButton } from "../../../../Components/Button";
-import * as S from "../styled";
 import { InputGroup } from "../../../../Components/Global/Reusable";
+import { CreateCategory } from "../../../../features/CategorySlice";
+import { setCategoryState } from "../../../../features/MenuSlice";
+import { DisplayBox } from "../styled";
 
 export default function index() {
   /**
    * Declare Dispatch method
    * Retrieve CategotyTypes from redux store
    */
-  const categoryType = useSelector(selectAll).map((item) => item.type);
   const dispatch = useDispatch();
 
   /****
    * Form Data
    */
-  const [color, setColor] = useState("#181764");
   const [progress, setProgress] = useState(false);
   const [name, setName] = useState(null);
-  const [type, setType] = useState("Selecione categoria");
+  const [type, setType] = useState("Selecione o tipo de usuario");
+  const categoryType = [
+    { id: 1, name: "Sou um guia" },
+    { id: 2, name: "Avançada" },
+  ];
 
   //Join data for submission
-  const data = { name, type, color };
+  const data = { name, type };
 
   /**
    * Declare Submit function to dispatch our data
@@ -55,46 +66,141 @@ export default function index() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Box>
-          <InputGroup>
-            <label htmlFor="name">Nome</label>
-            <input
-              type="text"
-              required
-              onChange={(self) => setName(self.target.value)}
-            />
-          </InputGroup>
-
-          <InputGroup>
-            <label htmlFor="name">Tipo</label>
-            <Select
-              value={type}
-              onChange={(self) => setType(self.target.value)}
-            >
-              <MenuItem value={type}>
-                <em>{type}</em>
+        <InputGroup>
+          <label htmlFor="name">Tipo</label>
+          <Select
+            sx={{ fontSize: ".9rem" }}
+            variant="standard"
+            value={type}
+            onChange={(self) => setType(self.target.value)}
+          >
+            <MenuItem value={type}>
+              <em>{type}</em>
+            </MenuItem>
+            {categoryType.map((item, index) => (
+              <MenuItem key={index} value={item.name}>
+                {item.name}
               </MenuItem>
-              {categoryType.map((item, index) => (
-                <MenuItem key={index} value={item}>
-                  {item}
-                </MenuItem>
-              ))}
-            </Select>
-          </InputGroup>
-        </Box>
+            ))}
+          </Select>
+        </InputGroup>
 
-        <S.ColorPicker>
-          <img src={colorPickerImg} alt="colorpickerimage" />
-          <input
-            type="color"
-            required
-            onChange={(self) => setColor(self.target.value)}
-          />
-          <S.SelectedColor color={color} />
-        </S.ColorPicker>
+        <DisplayBox sx={{ fontSize: ".9rem" }}>
+          <ul>
+            <li>
+              <Flag />
+              <span>Guia Turistica</span>
+            </li>
+
+            <li>
+              <House />
+              <span>Estabelecimentos</span>
+            </li>
+
+            <li>
+              <Map />
+              <span>Roteiro</span>
+            </li>
+          </ul>
+        </DisplayBox>
+
+        <RadioForm />
+        <MultiInputs />
+
         <PrimaryButton type="submit">Cadastrar</PrimaryButton>
         {progress && <LinearProgress />}
       </form>
     </>
+  );
+}
+
+function RadioForm() {
+  return (
+    <>
+      <Box>
+        <Grid container direction="column">
+          <Grid item sx={{ display: "flex", alignItems: "center" }}>
+            <Radio style={{ color: "#006875" }} />
+            <InputLabel sx={{ fontSize: ".9rem" }}>Tela Principal</InputLabel>
+          </Grid>
+
+          <Grid item sx={{ display: "flex", alignItems: "center" }}>
+            <Radio style={{ color: "#006875" }} />
+            <InputLabel sx={{ fontSize: ".9rem" }}>
+              Tela de Categoria
+            </InputLabel>
+          </Grid>
+
+          <Grid item sx={{ display: "flex", alignItems: "center" }}>
+            <Radio style={{ color: "#006875" }} />
+            <InputLabel sx={{ fontSize: ".9rem" }}>
+              Tela Principal + Categoria
+            </InputLabel>
+          </Grid>
+        </Grid>
+      </Box>
+    </>
+  );
+}
+
+function MultiInputs() {
+  return (
+    <Box sx={{ marginTop: "15px" }}>
+      <Grid container spacing={2}>
+        <Grid item>
+          <Grid container spacing={1}>
+            <Grid item xs={5}>
+              <InputGroup>
+                <label>Dias</label>
+                <input type="text" placeholder="05" />
+              </InputGroup>
+            </Grid>
+
+            <Grid item xs={7}>
+              <InputGroup>
+                <label>Valor</label>
+                <input type="text" placeholder="R$" />
+              </InputGroup>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid item>
+          <Grid container spacing={1}>
+            <Grid item xs={5}>
+              <InputGroup>
+                <label>Dias</label>
+                <input type="text" placeholder="10" />
+              </InputGroup>
+            </Grid>
+
+            <Grid item xs={7}>
+              <InputGroup>
+                <label>Valor</label>
+                <input type="text" placeholder="R$" />
+              </InputGroup>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid item>
+          <Grid container spacing={1}>
+            <Grid item xs={5}>
+              <InputGroup>
+                <label>Dias</label>
+                <input type="text" placeholder="15" />
+              </InputGroup>
+            </Grid>
+
+            <Grid item xs={7}>
+              <InputGroup>
+                <label>Valor</label>
+                <input type="text" placeholder="R$" />
+              </InputGroup>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }

@@ -6,7 +6,7 @@ export const DisplayBox = styled.div`
 border: 1px solid ${({theme})=>theme.colors.primary};
 color: ${({theme})=>theme.colors.primary};
 padding: 10px;
-margin-top: 10px;
+margin-top: 0px;
 
   ul{
     display: grid;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
-import { Dialog } from "@mui/material";
-import {PrimaryButton} from "../Button"
+import { Dialog, Select } from "@mui/material";
+import { PrimaryButton } from "../Button";
 
 //InputGroup
 export const InputGroup = styled.div`
@@ -17,6 +17,7 @@ export const InputGroup = styled.div`
     top: -10px;
     background-color: white;
     padding: 0 5px;
+    font-size: 0.8rem;
   }
 
   div {
@@ -30,11 +31,10 @@ export const InputGroup = styled.div`
 
 //TILTLE
 export const Title = styled.h1`
-  margin : 0;
-  padding : 0;
+  margin: 0;
+  padding: 0;
   font-size: medium;
-
-`
+`;
 //InputGroup type 2
 export const InputGroupExtended = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -49,6 +49,7 @@ export const InputGroupExtended = styled.div`
     top: -10px;
     background-color: white;
     padding: 0 5px;
+    font-size: 0.8rem;
   }
 
   div {
@@ -121,12 +122,24 @@ export const OverlayChild = styled.div`
 
 //Overlay Component Header
 export const OverlayHeader = styled.div`
-  padding: 10px 10px;
+  padding: 15px 10px;
   border: 1px solid transparent;
   border-bottom-color: #151515;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+
   //svg
   svg {
     background-color: ${({ theme }) => theme.colors.primary};
@@ -146,19 +159,15 @@ export const OverlayBody = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    /* > * {border: 1px dashed red;} */
-    /* border: 2px dashed green; */
-
-    div:nth-child(1) {
-      margin: 20px 0;
-    }
+    gap: 15px;
+    padding-top: 25px;
+    font-size: 0.9rem;
 
     button {
       align-self: center;
       justify-self: center;
-      padding: 10px 30px;
-      margin-top: 1.5rem;
+      padding: 7px 30px;
+      margin-top: 10px;
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.secondary}!important;
@@ -169,34 +178,32 @@ export const OverlayBody = styled.div`
 `;
 
 export const ShowTotalWrapper = styled.div`
-        text-align: center;
-        padding:.5rem 1rem;
-        box-shadow: 1px 1px 10px 2px #d8d6d695;
-        border-radius: 5px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap:5px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  box-shadow: 1px 1px 10px 2px #d8d6d695;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
 
-
-        h4{
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin: 0;
-            padding:0;
-        }
-        h5{
-            word-break: keep-all;
-            word-wrap: normal;
-            font-weight: 400;
-            font-size: 1.2rem;
-            margin: 0;
-            padding:0;
-        }
+  h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+  h5 {
+    word-break: keep-all;
+    word-wrap: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
-
 //Display Total
-export function ShowTotal({total}) {
+export function ShowTotal({ total }) {
   return (
     <>
       <ShowTotalWrapper>
@@ -211,35 +218,33 @@ export function ShowTotal({total}) {
  * Modal
  */
 
- export const Modal =  styled(Dialog)`
- p{
-   padding:0;
-   margin:0;
- }
+export const Modal = styled(Dialog)`
+  p {
+    padding: 0;
+    margin: 0;
+  }
 
- span{
-   font-weight: bold;
- }
+  span {
+    font-weight: bold;
+  }
 
- strong{
-   cursor: pointer;
-   font-variant: small-caps;
+  strong {
+    cursor: pointer;
+    font-variant: small-caps;
 
-   &:nth-child(1){
-  
-     :hover{
-     color : ${({theme})=>theme.colors.green};
-     }
-   }
+    &:nth-child(1) {
+      :hover {
+        color: ${({ theme }) => theme.colors.green};
+      }
+    }
 
-   &:nth-child(2){
-
-     :hover{
-     color : #910404;
-     }
-   }
- }
-`
+    &:nth-child(2) {
+      :hover {
+        color: #910404;
+      }
+    }
+  }
+`;
 
 //Display Address
 export const Address = ({ address }) => {
@@ -263,7 +268,6 @@ export const Address = ({ address }) => {
     </div>
   );
 };
-
 
 //Album Images
 export const ImagesAlbum = ({ photos }) => {
@@ -311,7 +315,6 @@ export const Description = ({ desc }) => {
     </div>
   );
 };
-
 
 //Action Buttons
 export const ActionButtons = ({ active, block, id }) => {
@@ -392,20 +395,18 @@ export const SpokenLang = ({ languages }) => {
   );
 };
 
-
 /*****
  * Styled Components
  */
 
- export const StyledProfile = styled.div`
- display: flex;
- justify-content: space-between;
+export const StyledProfile = styled.div`
+  display: flex;
+  justify-content: space-between;
 
- ul {
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
-   font-size: 0.8rem;
- }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8rem;
+  }
 `;
-
