@@ -3,7 +3,7 @@
  * We retrieve data from our server
  */
 
- import { Container } from "@mui/material";
+import { AppContainer } from "../../../Components/Global/Reusable";
 import React from "react";
 import StyledTable from "../../../Components/Table";
 import ApprovedBodyData from "./bodyData";
@@ -11,13 +11,13 @@ import ApprovedLabels from "./Labels";
 
  export default function index() {
    return (
-     <Container maxWidth="xl">
+     <AppContainer maxWidth="xl">
        <StyledTable
          TableTitle = "Aprovações"
          Labels = {<ApprovedLabels/>}
          TableData = {<ApprovedBodyData/>}
        />
-     </Container>
+     </AppContainer>
    );
  }
  

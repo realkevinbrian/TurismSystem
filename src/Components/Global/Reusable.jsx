@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import React from "react";
-import { Dialog, Select } from "@mui/material";
+import { Dialog, Container } from "@mui/material";
 import { PrimaryButton } from "../Button";
+
+
+//AppContainer
+export const AppContainer = styled(Container)`
+  background-color:  ${({ theme }) => theme.colors.grey};
+  height: 100vh;
+`
+
 
 //InputGroup
 export const InputGroup = styled.div`
@@ -270,7 +278,7 @@ export const Address = ({ address }) => {
 };
 
 //Album Images
-export const ImagesAlbum = ({ photos }) => {
+export const ImagesAlbum = ({ photos, openPreview }) => {
   return (
     <div>
       <div>
@@ -295,6 +303,7 @@ export const ImagesAlbum = ({ photos }) => {
             src={image}
             alt="previewImage"
             style={{ width: "100%" }}
+            onClick = {() =>  openPreview(true)}
           />
         ))}
       </div>

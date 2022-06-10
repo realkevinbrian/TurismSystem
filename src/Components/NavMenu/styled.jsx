@@ -6,24 +6,10 @@ export const NavContainer = styled.div`
   flex-direction: row;
   background-color: ${({ theme }) => theme.colors.primary};
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 30px;
   color: white;
   font-size: 1rem;
   position: sticky;
-
-  //image
-  img {
-    width: 100%;
-    max-width: 250px;
-  }
-  //mobile
-  @media screen and (max-width: 768px) {
-    padding: 15px 10px;
-
-    img {
-      max-width: 150px;
-    }
-  }
 `;
 export const LogoContainer = styled.div`
   flex: 1;
@@ -34,8 +20,8 @@ export const LogoContainer = styled.div`
   img {
     width: 100%;
     height: auto;
-    max-height: 150px;
-    max-width: 250px;
+    max-height: 250px;
+    max-width: 450px;
   }
 `;
 
