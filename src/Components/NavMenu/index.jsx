@@ -30,7 +30,7 @@ const MenuData = [
     icon: <BarChartOutlined />,
     sub: {
       id: 1,
-      title: "Relatorios",
+      title: "Relatórios",
       Link: [
         {
           id: 1,
@@ -50,7 +50,7 @@ const MenuData = [
       Link: [
         {
           id: 1,
-          title: "Relatorio Financeiro",
+          title: "Relatório Financeiro",
           link: "/admin/relatorio_financeiro",
         },
       ],
@@ -105,30 +105,30 @@ const MenuData = [
   },
   {
     id: 5,
-    title: "Relatorios",
+    title: "Relatórios",
     icon: <BarChartOutlined />,
     sub: {
       id: 1,
-      title: "Relatorios",
+      title: "Relatórios",
       Link: [
         {
           id: 2,
-          title: "Relatorio de Usuario",
+          title: "Relatório de Usuário",
           link: "admin/relatorio_de_usuario",
         },
         {
           id: 3,
-          title: "relatorios de Guia Turisticos",
+          title: "Relatórios de Guia",
           link: "admin/relatorio_de_guias_turisticas",
         },
         {
           id: 4,
-          title: "relatorios de Estabelecimentos",
+          title: "Relatórios de Estabelecimentos",
           link: "admin/relatorio_de_estabelecimentos",
         },
         {
           id: 5,
-          title: "relatorios de Pontos Turisticos",
+          title: "Relatórios de Pontos Turistícos",
           link: "admin/relatorio_de_pontos_turisticos",
         },
       ],
@@ -166,7 +166,7 @@ function index({setToken}) {
           <img src={Logo} alt="official Logo" />
         </LogoContainer>
         <NavSide>
-          <span>Ola, Administrador</span>
+          <span>Olá, Administrador</span>
           <button onClick={handleLogOut}>Sair</button>
         </NavSide>
       </NavContainer>
