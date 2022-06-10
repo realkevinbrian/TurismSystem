@@ -10,7 +10,7 @@ import { selectAll as selectCategory } from "../../../features/CategorySlice";
 import { selectAll, UpdateRow } from "../../../features/ShopsReportSlice";
 import { StyledDisplayCat } from "./styled";
 
-export default function index({ OpenModal,OpenDetails }) {
+export default function index({ OpenModal, OpenDetails }) {
   /*****
    *
    * Here we read our retrieved data from redux store
@@ -18,25 +18,9 @@ export default function index({ OpenModal,OpenDetails }) {
    * */
   const query = useSelector((state) => state.query.query_string);
   const queryNum = useSelector((state) => state.query.queryByNumber);
-  const dispatch = useDispatch({OpenModal,OpenDetails});
+  const dispatch = useDispatch({ OpenModal, OpenDetails });
   const data = useSelector(selectAll);
   const category = useSelector(selectCategory);
-
-  //Declare switch functionality
-  function handleSwitch(rowStatus, rowId) {
-    switch (rowStatus) {
-      case "active":
-        dispatch(UpdateRow({id : rowId, status : "blocked"}))
-        break;
-
-      case "blocked":
-        dispatch(UpdateRow({id : rowId, status : "active"}))
-        break;
-
-      default:
-        break;
-    }
-  }
 
   return (
     <>
@@ -54,21 +38,28 @@ export default function index({ OpenModal,OpenDetails }) {
                 .filter((item) => item.id === row.cat_id)
                 .map((item, index) => (
                   <StyledDisplayCat key={index}>
-                    <div style={{borderColor: `${item.color}`,color: `${item.color}`}}>
+                    <div
+                      style={{
+                        borderColor: `${item.color}`,
+                        color: `${item.color}`,
+                      }}
+                    >
                       <span style={{ backgroundColor: `${item.color}` }}></span>
                       <small key={index}>{item.name}</small>
                     </div>
                   </StyledDisplayCat>
                 ))}
             </TableCell>
-            <TableCell sx={{width: "70px", color: "#006875", cursor: "pointer"}}>
-              <RemoveRedEyeOutlined onClick = { () => OpenDetails(row.id)}/>
+            <TableCell
+              sx={{ width: "70px", color: "#006875", cursor: "pointer" }}
+            >
+              <RemoveRedEyeOutlined onClick={() => OpenDetails(row.id)} />
             </TableCell>
             <TableCell sx={{ width: "50px" }} align="left">
               <Switch
                 checked={row.status === "active" ? true : false}
                 color="success"
-                onChange={() => handleSwitch(row.status, row.id)}
+                onChange={() => OpenModal(row.status, row.id, row.name)}
                 inputProps={{ "aria-label": "controlled" }}
               />
             </TableCell>
