@@ -11,7 +11,7 @@ export const Home = styled.div`
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
 `;
@@ -24,8 +24,10 @@ export const Card = styled(CardMUI)`
   border-radius: 8px;
   transition: all 0.4s linear;
   cursor: pointer;
-  width: 190px;
-  height: 246px;
+  width: 100%;
+  max-width: clamp(150px, 200px, 100vw);
+  height: 100%;
+  max-height: clamp(200px, 250px, 100vh);
   border-radius: 12px;
   justify-content: space-around;
   
@@ -43,9 +45,9 @@ export const Card = styled(CardMUI)`
     }
 
   }
-  //h1
+  //header
   h4 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: black;
     font-weight: lighter;
   }
