@@ -12,22 +12,20 @@ export const Home = styled.div`
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 1.2rem;
+  margin: 3rem 0;
 `;
 
 export const Card = styled(CardMUI)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2;
-  border-radius: 8px;
   transition: all 0.4s linear;
   cursor: pointer;
   width: 100%;
-  max-width: clamp(150px, 200px, 100vw);
+  max-width: clamp(150px, 180px, 100vw);
   height: 100%;
-  max-height: clamp(200px, 250px, 100vh);
+  max-height: clamp(190px, 190px, 100vh);
   border-radius: 12px;
   justify-content: space-around;
   
@@ -47,7 +45,7 @@ export const Card = styled(CardMUI)`
   }
   //header
   h4 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: black;
     font-weight: lighter;
   }
@@ -56,7 +54,7 @@ export const Card = styled(CardMUI)`
   span {
     color: ${({ theme }) => theme.colors.primary};
     svg {
-      font-size: 6rem;
+      font-size: 4rem;
       color: inherit;
     }
   }
