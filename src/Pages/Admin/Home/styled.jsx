@@ -24,7 +24,11 @@ export const Card = styled(CardMUI)`
   border-radius: 8px;
   transition: all 0.4s linear;
   cursor: pointer;
-
+  width: 190px;
+  height: 246px;
+  border-radius: 12px;
+  justify-content: space-around;
+  
   //on hover
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
