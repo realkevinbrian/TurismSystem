@@ -22,7 +22,7 @@ import { useDispatch } from "react-redux";
 import {Login} from "../../../features/LoginSlice"
 import {Alert} from "@mui/material"
 import UserCredentials from "../../../Api/User.json";
-import Logo from "../../../Assets/LOGO.png";
+import Logo from "../../../Assets/Images/logo02.webp";
 
 import { Link, useNavigate } from "react-router-dom";
 

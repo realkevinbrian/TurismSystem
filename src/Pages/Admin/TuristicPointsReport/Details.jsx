@@ -27,7 +27,7 @@ import {
   UpdateRow,
 } from "../../../features/TuristicPointsReportSlice";
 
-export default function index({ CloseDetails, detailsID }) {
+export default function index({ CloseDetails, detailsID,openPreview }) {
   const reportData = useSelector(selectAll);
   const [message, setMessage] = useState(null);
   const dispatch = useDispatch();
@@ -63,7 +63,7 @@ export default function index({ CloseDetails, detailsID }) {
               <Title>{item.name}</Title>
               <Description desc={item.description} />
               <Address address={item.address} />
-              <ImagesAlbum photos={images} />
+              <ImagesAlbum photos={images}  openPreview={openPreview}/>
               {message && <Alert severity="success">{message}</Alert>}
               <ActionButtons id={item.id} active={Active} block={Block} />
             </OverlayBody>

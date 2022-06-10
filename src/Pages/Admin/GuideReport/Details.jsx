@@ -25,7 +25,7 @@ import {
 } from "../../../Components/Global/Reusable";
 import { selectAll } from "../../../features/GuideReportSlice";
 
-export default function index({ CloseDetails, detailsID }) {
+export default function index({ CloseDetails, detailsID,openPreview }) {
   /***
    * In this component we display details
    */
@@ -59,7 +59,7 @@ export default function index({ CloseDetails, detailsID }) {
                   <SpokenLang languages={item.languages} />
                 </Grid>
               </Grid>
-              <ImagesAlbum photos={images} />
+              <ImagesAlbum photos={images} openPreview={openPreview}/>
             </OverlayBody>
           ))}
       </OverlayChild>

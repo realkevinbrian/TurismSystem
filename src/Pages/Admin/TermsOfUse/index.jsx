@@ -2,15 +2,16 @@ import { Card, Container, Box, Grid } from "@mui/material";
 import React from "react";
 import TextEditor from "../../../Components/TextEditor";
 import { InputGroup } from "../../../Components/Global/Reusable";
+import { AppContainer } from "../../../Components/Global/Reusable";
 
 function index() {
   return (
-    <Container maxWidth="xl">
-      <Card style={{ padding: "20px", marginTop: "30px" }}>
+    <AppContainer maxWidth="xl" style={{paddingTop : "40px"}}>
+      <Card style={{ padding: "25px", display : "grid", gap : "20px"}}>
         <Header />
         <TextEditor />
       </Card>
-    </Container>
+    </AppContainer>
   );
 }
 
