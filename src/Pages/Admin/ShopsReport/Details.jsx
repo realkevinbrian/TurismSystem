@@ -26,7 +26,7 @@ import { selectAll } from "../../../features/ShopsReportSlice";
 import { StyledDisplayCat } from "./styled";
 import { selectAll as selectCategory } from "../../../features/CategorySlice";
 
-export default function index({ CloseDetails, detailsID }) {
+export default function index({ CloseDetails, detailsID,openPreview }) {
   /***
    * In this component we display details
    */
@@ -53,7 +53,7 @@ export default function index({ CloseDetails, detailsID }) {
               <Description desc={item.description} />
               <Address address={item.address} />
               <Plan plans={item.plans} />
-              <ImagesAlbum photos={images} />
+              <ImagesAlbum photos={images} openPreview={openPreview}/>
             </OverlayBody>
           ))}
       </OverlayChild>

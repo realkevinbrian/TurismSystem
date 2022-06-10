@@ -29,6 +29,6 @@ const UsersReportSlice = createSlice({
   },
 });
 
-export const selectAll = (state) => state.usersReport.value;
+export const selectAll = state => state.usersReport.value;
 export const { UpdateRow } = UsersReportSlice.actions;
 export default UsersReportSlice.reducer;

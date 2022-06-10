@@ -3,7 +3,7 @@
  * We retrieve data from our server
  */
 
-import { Container } from "@mui/material";
+import { AppContainer } from "../../../Components/Global/Reusable";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setAgendaState } from "../../../features/MenuSlice";
@@ -15,7 +15,7 @@ import Register from "./Register";
 
 export default function index() {
   return (
-    <Container maxWidth="xl">
+    <AppContainer maxWidth="xl">
       <StyledTable
         TableTitle="Cadastro de Agenda Cultural"
         Component={<RegisterBtn />}
@@ -23,7 +23,7 @@ export default function index() {
         TableData={<AgendaBodyData />}
       />
       <Register />
-    </Container>
+    </AppContainer>
   );
 }
 

@@ -3,7 +3,7 @@
  * We retrieve data from our server
  */
 
-import { Container } from "@mui/material";
+ import { AppContainer } from "../../../Components/Global/Reusable";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { PrimaryButton } from "../../../Components/Button";
@@ -20,7 +20,7 @@ import RegisterTrends from "./Register/RegisterTrends";
 export default function index() {
   const dispatch = useDispatch();
   return (
-    <Container maxWidth="xl">
+    <AppContainer maxWidth="xl">
       <StyledTable
         TableTitle="Planos de Assinaturas"
         Component={
@@ -38,6 +38,6 @@ export default function index() {
       />
       <RegisterTrends />
       <RegisterPlans />
-    </Container>
+    </AppContainer>
   );
 }

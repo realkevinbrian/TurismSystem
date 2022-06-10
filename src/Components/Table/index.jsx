@@ -17,22 +17,28 @@ import {
 import React from "react";
 import { QueryByString, QueryByNumber } from "../Search";
 
-function StyledTable({ TableTitle, Component, Labels, TableData,SecondComponent }) {
+function StyledTable({
+  TableTitle,
+  Component,
+  Labels,
+  TableData,
+  SecondComponent,
+}) {
   return (
-    <Container maxWidth="xl" sx={{ marginTop: "4rem" }}>
-      <Paper>
+    <Container maxWidth="xl" sx={{ paddingTop: "4rem"}}>
+      <Paper sx={{ borderRadius: "18px" }}>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
                 <TableCell
-                colSpan={3}
+                  colSpan={3}
                   style={{
                     borderBottomColor: "transparent",
                     padding: "0 20px",
                     paddingTop: "20px",
                     fontSize: "1.3rem",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
                   }}
                 >
                   {TableTitle}
@@ -42,26 +48,40 @@ function StyledTable({ TableTitle, Component, Labels, TableData,SecondComponent 
                 <TableCell align="justify" colSpan={12}>
                   <Grid
                     container
+                    direction="row"
                     sx={{
                       justifyContent: "space-between",
                       placeItems: "center",
                     }}
                   >
-                    <Grid item xl={6}>
-                      <QueryByString placeholder={"Pesquise por nome"} />
+                    <Grid item md={6} lg={6}  xl={6}  spacing = {3} container>
+                      <Grid item>
+                        <QueryByString placeholder={"Pesquise por nome"} />
+                      </Grid>
+
+                      <Grid item>
+                        <QueryByString placeholder={"Pesquise"} />
+                      </Grid>
                     </Grid>
 
-                    <Grid item xl={6}>
-                      <QueryByString placeholder={"Pesquise"} />
+                    <Grid item spacing = {3} container md={6} lg={6} xl={6} sx={{justifyContent : "space-between" , alignItems : "center"}}>
+                      
+                      <Grid item>
+                        <QueryByNumber />
+                      </Grid>
+                      
+                      <Grid item sx={{alignSelf : "end", justifySelf : "end"}}>
+                        <Box>{Component}</Box>
+                      </Grid>
+
+                      {SecondComponent && (
+                        <Grid item >
+                          <Box>{SecondComponent}</Box>
+                        </Grid>
+                    )}
                     </Grid>
 
-                    <Grid item xl={6}>
-                      <QueryByNumber />
-                    </Grid>
-                    <Grid item xl={6}>
-                      <Box>{Component}</Box>
-                    </Grid>
-                    {SecondComponent && <Grid item xl={6}><Box>{SecondComponent}</Box></Grid>}
+                    
                   </Grid>
                 </TableCell>
               </TableRow>

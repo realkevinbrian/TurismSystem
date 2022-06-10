@@ -80,11 +80,13 @@ h1,h2,h3,h4,h5,h6{
 /********************theme******************/
 export const theme = {
   colors: {
-    primary: "#006875",
+    primary: "#03738C",
     white: "#ffff",
     secondary: "#ff9b06",
     red: "#ec0202",
     green: "#079784",
+    grey : "#F5F5F5",
+    greyDark : "#D8D8D8"
   },
   Layout: {
     Mobile: "500px",

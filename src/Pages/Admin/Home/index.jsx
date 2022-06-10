@@ -8,12 +8,12 @@ import {
   Map,
   Person,
   Shop,
-  ZoomInMap,
+  ZoomInMap
 } from "@mui/icons-material";
+import { CardContent, CardHeader, CardMedia } from "@mui/material";
 import React from "react";
-import { Card, Wrapper,Home } from "./styled";
-import { Container } from "@mui/material";
-import NavMenu from "../../../Components/NavMenu";
+import { AppContainer } from "../../../Components/Global/Reusable";
+import { Card, Home, Wrapper } from "./styled";
 
 
 export default function index() {
@@ -29,7 +29,7 @@ export default function index() {
   ];
 
   return (
-    <Container maxWidth="xl">
+    <AppContainer maxWidth="xl">
       <Home>
         <h3>Indicadores</h3>
         <Wrapper>
@@ -38,7 +38,7 @@ export default function index() {
           ))}
         </Wrapper>
       </Home>
-    </Container>
+    </AppContainer>
   );
 }
 
@@ -47,12 +47,13 @@ export default function index() {
  */
 
 const IndicatorCard = ({ item }) => {
+
   return (
     <>
       <Card>
-        <h4>{item.title}</h4>
-        <span>{item.icon}</span>
-        <h5>{item.value}</h5>
+        <CardHeader title={<h4>{item.title}</h4>}/>
+        <CardMedia><span>{item.icon}</span></CardMedia>
+        <CardContent><h4>{item.value}</h4></CardContent> 
       </Card>
     </>
   );
