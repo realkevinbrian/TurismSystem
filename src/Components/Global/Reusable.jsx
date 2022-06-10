@@ -145,7 +145,10 @@ export const OverlayHeader = styled.div`
   h6 {
     margin: 0;
     padding: 0;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    align-self: center;
+    justify-self: center;
+    padding-right: 4rem;
   }
 
   //svg
@@ -153,6 +156,8 @@ export const OverlayHeader = styled.div`
     background-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.white};
     border-radius: 50px;
+    align-self: flex-start;
+    justify-self: flex-start;
   }
 `;
 
