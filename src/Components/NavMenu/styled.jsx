@@ -98,7 +98,7 @@ export const SideMenuViewer = styled.div`
   max-width: 350px;
   min-width: 250px;
   border-radius: 10px;
-  padding-left: 5rem;
+  padding-left: clamp(5rem, 7em, 10rem);
   z-index: 50;
   box-shadow: 1px 1px 10px 2px #97979792;
   padding-top: 1rem;
