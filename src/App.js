@@ -28,7 +28,7 @@ import TermsOfUse from "./Pages/Admin/TermsOfUse"
 
 function App() {
 
-    const [token, setToken] = useState(true)
+    const [token, setToken] = useState()
 
     if(!token){
         return <Login setToken = {setToken}/>
