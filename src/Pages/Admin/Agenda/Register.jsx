@@ -96,6 +96,11 @@ export function CreateForm() {
         <InputGroup>
           <label>Valor da Entrada</label>
           <input
+            onKeyPress={(event) => {
+              if (!/[0-9]/.test(event.key)) {
+                event.preventDefault();
+              }
+            }}
             onChange={(self) => setEntrance(self.target.value)}
             type="text"
             placeholder="digite o valor da entrada"

@@ -50,7 +50,7 @@ const IndicatorCard = ({ item }) => {
 
   return (
     <>
-      <Card>
+      <Card sx={{borderRadius: "10px"}}>
         <CardHeader title={<h4>{item.title}</h4>}/>
         <CardMedia><span>{item.icon}</span></CardMedia>
         <CardContent><h4>{item.value}</h4></CardContent> 
